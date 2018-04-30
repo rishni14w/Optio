@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">Optio</string>
+
+    //home page
+    <string name="stress">Stress and Health Manager</string>
+    <string name="training">Exercise and Training Manager</string>
+    <string name="diet">Diet Planner</string>
+    <string name="decision">Decision support</string>
 </resources>
