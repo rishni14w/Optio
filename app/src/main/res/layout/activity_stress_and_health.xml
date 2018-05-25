@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbarStyle="outsideInset"
+    tools:context=".StressAndHealth">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <Button
+            android:id="@+id/questionnaire_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/questionnaire_SH"
+            android:layout_marginBottom="30dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:onClick="questionnaireClicked"/>
+
+        <Button
+            android:id="@+id/recommendation_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/recommendation_SH"
+            android:layout_marginBottom="30dp"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/injury_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/injury_SH"
+            android:layout_marginBottom="30dp"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/vaccination_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/vaccination_SH"
+            android:layout_marginBottom="30dp"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/heartrate_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/heartrate_SH"
+            android:layout_marginBottom="30dp"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/bodycomposition_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/bodycomposition_SH"
+            android:layout_marginBottom="30dp"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/sleep_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/sleep_SH"
+            android:layout_gravity="center"
+            android:layout_marginBottom="15dp"/>
+    </LinearLayout>
+
+
+</ScrollView>
+
