@@ -6,4 +6,22 @@
     <string name="training">Exercise and Training Manager</string>
     <string name="diet">Diet Planner</string>
     <string name="decision">Decision support</string>
+
+    //Stress and health UI
+    <string name="questionnaire_SH">Questionnaires</string>
+    <string name="recommendation_SH">Recommendations</string>
+    <string name="injury_SH">Injury</string>
+    <string name="vaccination_SH">Vaccination</string>
+    <string name="heartrate_SH">Heart Rate</string>
+    <string name="bodycomposition_SH">Body Composition</string>
+    <string name="sleep_SH">Sleep</string>
+
+    //questionnaire UI
+    <string name="competition_Q">Competition</string>
+    <string name="precompetition_Q">Pre-Competition</string>
+    <string name="psychological_Q">Psychological Demands</string>
+    <string name="social_Q">Social Relationship</string>
+    <string name="failure_Q">Failure Issues</string>
+    <string name="illness_Q">Illness and Injury</string>
+    <string name="personal_Q">Personal Life concerns</string>
 </resources>
