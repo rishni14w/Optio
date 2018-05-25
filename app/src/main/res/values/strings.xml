@@ -24,4 +24,25 @@
     <string name="failure_Q">Failure Issues</string>
     <string name="illness_Q">Illness and Injury</string>
     <string name="personal_Q">Personal Life concerns</string>
+
+    //UI titles
+    <string name="stressHealth_Title">Stress and Health</string>
+    <string name="questionnaire_Title">Questionnaires</string>
+    <string name="recommendation_Title">Recommendations</string>
+    <string name="injury_Title">Injury</string>
+    <string name="vaccination_Title">Vaccination</string>
+    <string name="heartrate_Title">Heart Rate</string>
+    <string name="bodycomposition_Title">Body Composition</string>
+    <string name="sleep_Title">Sleep</string>
+
+    <string name="competition_Title">Competition</string>
+    <string name="precompetition_Title">Pre-Competition</string>
+    <string name="psychological_Title">Psychological Demands</string>
+    <string name="social_Title">Social Relationship</string>
+    <string name="failure_Title">Failure Issues</string>
+    <string name="illness_Title">Illness and Injury</string>
+    <string name="personal_Title">Personal Life concerns</string>
+
+    <string name="injuryAdd_Title">Add Injury</string>
+    <string name="vaccinationAdd_Title">Add Vaccination</string>
 </resources>

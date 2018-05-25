@@ -32,7 +32,8 @@
             android:layout_weight="1"
             android:text="@string/recommendation_SH"
             android:layout_marginBottom="30dp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:onClick="recommendation_clicked"/>
 
         <Button
             android:id="@+id/injury_btn"
@@ -41,7 +42,8 @@
             android:layout_weight="1"
             android:text="@string/injury_SH"
             android:layout_marginBottom="30dp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:onClick="injury_clicked"/>
 
         <Button
             android:id="@+id/vaccination_btn"
@@ -50,7 +52,8 @@
             android:layout_weight="1"
             android:text="@string/vaccination_SH"
             android:layout_marginBottom="30dp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:onClick="vaccination_clicked"/>
 
         <Button
             android:id="@+id/heartrate_btn"
@@ -59,7 +62,8 @@
             android:layout_weight="1"
             android:text="@string/heartrate_SH"
             android:layout_marginBottom="30dp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:onClick="heartRate_clicked"/>
 
         <Button
             android:id="@+id/bodycomposition_btn"
@@ -68,7 +72,8 @@
             android:layout_weight="1"
             android:text="@string/bodycomposition_SH"
             android:layout_marginBottom="30dp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:onClick="bodycomposition_clicked"/>
 
         <Button
             android:id="@+id/sleep_btn"
@@ -77,7 +82,8 @@
             android:layout_weight="1"
             android:text="@string/sleep_SH"
             android:layout_gravity="center"
-            android:layout_marginBottom="15dp"/>
+            android:layout_marginBottom="15dp"
+            android:onClick="sleep_clicked"/>
     </LinearLayout>
 
 

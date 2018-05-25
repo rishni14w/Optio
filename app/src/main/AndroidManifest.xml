@@ -17,7 +17,15 @@
             </intent-filter>
         </activity>
         <activity android:name=".StressAndHealth" />
-        <activity android:name=".questionnaire"></activity>
+        <activity android:name=".questionnaire" />
+        <activity android:name=".HeartRate" />
+        <activity android:name=".BodyComposition" />
+        <activity android:name=".Sleep" />
+        <activity android:name=".Injury" />
+        <activity android:name=".InjuryAdd" />
+        <activity android:name=".Vaccination" />
+        <activity android:name=".Recommendation" />
+        <activity android:name=".VaccinationAdd"></activity>
     </application>
 
 </manifest>
