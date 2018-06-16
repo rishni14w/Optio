@@ -45,4 +45,95 @@
 
     <string name="injuryAdd_Title">Add Injury</string>
     <string name="vaccinationAdd_Title">Add Vaccination</string>
+
+    //Yes/No radio button
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    //Reason
+    <string name="reason">Reason</string>
+
+    //None
+    <string name="none">None</string>
+
+    //Submit
+    <string name="submit">Submit</string>
+    //Competition UI
+    //section 1
+    <string name="Competition_Section_1">On Court Tension</string>
+
+    <string name="Question_1_CS1">1. Hesitant to play a certain Stroke?</string>
+    //Reasons
+    <string name="Reason_1_CS1_Q1">Afraid that my returning Shuttlecock will create harm to partner</string>
+    <string name="Reason_2_CS1_Q1">Unsure to execute a chosen stroke correctly</string>
+
+    <string name="Question_2_CS1">2. Difficulties during match</string>
+    //Answers
+    <string name="Answer_1_CS1_Q2">Feeling under pressure</string>
+    <string name="Answer_2_CS1_Q2">Being tense during a match</string>
+    <string name="Answer_3_CS1_Q2">Me or partner making errors</string>
+
+    <string name="Question_3_CS1">3. Game plan does not work</string>
+    //Answers
+    <string name="Answer_1_CS1_Q3">Being dictated by the opponent</string>
+    <string name="Answer_2_CS1_Q3">Not being able to change a game plan</string>
+
+    <string name="Question_4_CS1">4. Tension Concerning the game score</string>
+    //Answers
+    <string name="Answer_1_CS1_Q4">At the decisive point</string>
+    <string name="Answer_2_CS1_Q4">When points get tight</string>
+    <string name="Answer_3_CS1_Q4">The points trailing behind points of the lower rank opponent</string>
+    <string name="Answer_4_CS1_Q4">Being caught up when leading</string>
+    <string name="Answer_5_CS1_Q4">Afraid of losing when leading</string>
+    <string name="Answer_6_CS1_Q4">Having score behind the score of lower rank opponent</string>
+
+    //section 2
+    <string name="Competition_Section_2">Receiving Negative treatment from others during competition</string>
+
+    <string name="Question_1_CS2">1. Negative behaviour of Opponent</string>
+    //Answers
+    <string name="Answer_1_CS2_Q1">Provoked by the opponent</string>
+    <string name="Answer_2_CS2_Q1">Opponent purposefully does not want to change the shuttle</string>
+    <string name="Answer_3_CS2_Q1">Upset by the attitude of the opponent</string>
+    <string name="Answer_4_CS2_Q1">Opponent\'s action</string>
+
+    <string name="Question_2_CS2">2. Biased judging of Referee</string>
+    //Answers
+    <string name="Answer_1_CS2_Q2">Misjudged by referee or service judge at critical points</string>
+    <string name="Answer_2_CS2_Q2">Faulted by the service judge or linesmen</string>
+    <string name="Answer_3_CS2_Q2">Referees or linesmen get too outrageous</string>
+    <string name="Answer_4_CS2_Q2">Different views to line-judge</string>
+
+    <string name="Question_3_CS2">3. Are you facing Negative Spectators?</string>
+    //Answers
+    <string name="Answer_1_CS2_Q3">MWorrying of being booed by the audience</string>
+    <string name="Answer_2_CS2_Q3">Facing noisy, brutal, abusive, wild spectators</string>
+    <string name="Answer_3_CS2_Q3">Spectators at the team competition</string>
+
+    //section 3
+    <string name="Competition_Section_3">Unpleasant Tournament Site</string>
+
+    <string name="Question_1_CS3">1. Is the court environment unpleasant?</string>
+    //Answers
+    <string name="Answer_1_CS3_Q1">Unpleasant court condition</string>
+    <string name="Answer_2_CS3_Q1">Slippery floor</string>
+    <string name="Answer_3_CS3_Q1">Air conditioner</string>
+    <string name="Answer_4_CS3_Q1">Lighting - not able to see the shuttle clearly</string>
+    <string name="Answer_5_CS3_Q1">Unsuitable speed of shuttle</string>
+    <string name="Answer_6_CS3_Q1">Playing in the final, at the main court</string>
+    <string name="Answer_7_CS3_Q1">Being watched by so many people</string>
+    <string name="Answer_8_CS3_Q1">Have not played before in the court where the competition is held</string>
+
+    <string name="Question_2_CS3">2. Are you playing in cold weather countries?</string>
+    //Reasons
+    <string name="Reason_1_CS3_Q2">Feeling uncomfortable playing in snowy weather</string>
+    <string name="Reason_2_CS3_Q2">Cold court</string>
+    <string name="Reason_3_CS3_Q2">Playing in a cold weather country</string>
+
+    <string name="Question_3_CS3">3. Are you playing far away from home for a long time?</string>
+    //Reasons
+    <string name="Reason_1_CS3_Q3">Going away for a tournament for a long time</string>
+    <string name="Reason_2_CS3_Q3">Travelling far away from home</string>
+    <string name="Reason_3_CS3_Q3">Arriving at the tournament site a while before the game starts</string>
+    <string name="Reason_4_CS3_Q3">Have to manage the food when playing away from home</string>
 </resources>
