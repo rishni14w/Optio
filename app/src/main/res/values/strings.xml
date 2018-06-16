@@ -58,26 +58,31 @@
 
     //Submit
     <string name="submit">Submit</string>
+
     //Competition UI
     //section 1
     <string name="Competition_Section_1">On Court Tension</string>
 
+    //Question 1
     <string name="Question_1_CS1">1. Hesitant to play a certain Stroke?</string>
     //Reasons
     <string name="Reason_1_CS1_Q1">Afraid that my returning Shuttlecock will create harm to partner</string>
     <string name="Reason_2_CS1_Q1">Unsure to execute a chosen stroke correctly</string>
 
+    //Question 2
     <string name="Question_2_CS1">2. Difficulties during match</string>
     //Answers
     <string name="Answer_1_CS1_Q2">Feeling under pressure</string>
     <string name="Answer_2_CS1_Q2">Being tense during a match</string>
     <string name="Answer_3_CS1_Q2">Me or partner making errors</string>
 
+    //Question 3
     <string name="Question_3_CS1">3. Game plan does not work</string>
     //Answers
     <string name="Answer_1_CS1_Q3">Being dictated by the opponent</string>
     <string name="Answer_2_CS1_Q3">Not being able to change a game plan</string>
 
+    //Question 4
     <string name="Question_4_CS1">4. Tension Concerning the game score</string>
     //Answers
     <string name="Answer_1_CS1_Q4">At the decisive point</string>
@@ -90,6 +95,7 @@
     //section 2
     <string name="Competition_Section_2">Receiving Negative treatment from others during competition</string>
 
+    //Question 1
     <string name="Question_1_CS2">1. Negative behaviour of Opponent</string>
     //Answers
     <string name="Answer_1_CS2_Q1">Provoked by the opponent</string>
@@ -97,6 +103,7 @@
     <string name="Answer_3_CS2_Q1">Upset by the attitude of the opponent</string>
     <string name="Answer_4_CS2_Q1">Opponent\'s action</string>
 
+    //Question 2
     <string name="Question_2_CS2">2. Biased judging of Referee</string>
     //Answers
     <string name="Answer_1_CS2_Q2">Misjudged by referee or service judge at critical points</string>
@@ -104,6 +111,7 @@
     <string name="Answer_3_CS2_Q2">Referees or linesmen get too outrageous</string>
     <string name="Answer_4_CS2_Q2">Different views to line-judge</string>
 
+    //Question 3
     <string name="Question_3_CS2">3. Are you facing Negative Spectators?</string>
     //Answers
     <string name="Answer_1_CS2_Q3">MWorrying of being booed by the audience</string>
@@ -113,6 +121,7 @@
     //section 3
     <string name="Competition_Section_3">Unpleasant Tournament Site</string>
 
+    //Question 1
     <string name="Question_1_CS3">1. Is the court environment unpleasant?</string>
     //Answers
     <string name="Answer_1_CS3_Q1">Unpleasant court condition</string>
@@ -124,16 +133,70 @@
     <string name="Answer_7_CS3_Q1">Being watched by so many people</string>
     <string name="Answer_8_CS3_Q1">Have not played before in the court where the competition is held</string>
 
+    //Question 2
     <string name="Question_2_CS3">2. Are you playing in cold weather countries?</string>
     //Reasons
     <string name="Reason_1_CS3_Q2">Feeling uncomfortable playing in snowy weather</string>
     <string name="Reason_2_CS3_Q2">Cold court</string>
     <string name="Reason_3_CS3_Q2">Playing in a cold weather country</string>
 
+    //Question 3
     <string name="Question_3_CS3">3. Are you playing far away from home for a long time?</string>
     //Reasons
     <string name="Reason_1_CS3_Q3">Going away for a tournament for a long time</string>
     <string name="Reason_2_CS3_Q3">Travelling far away from home</string>
     <string name="Reason_3_CS3_Q3">Arriving at the tournament site a while before the game starts</string>
     <string name="Reason_4_CS3_Q3">Have to manage the food when playing away from home</string>
+
+
+    //Personal Life Concern UI
+    //section 1
+    <string name="Personal_Section_1">Personal problems and Family relationship Concerns</string>
+
+    //Question 1
+    <string name="Question_1_PLC_S1">1. Are you having personal problems?</string>
+
+    //Question 2
+    <string name="Question_2_PLC_S1">2. Are you having family relationship concerns?</string>
+    //Reasons
+    <string name="Reason_1_PLC_S1_Q2">Worrying bad things will happen to family</string>
+    <string name="Reason_2_PLC_S1_Q2">Family member sick</string>
+    <string name="Reason_3_PLC_S1_Q2">Being asked to stop playing</string>
+
+
+    //section 2
+    <string name="Personal_Section_2">Financial Concerns</string>
+
+    //Question 1
+    <string name="Question_1_PLC_S2">1. Do you have any financial concerns?</string>
+    //Reasons
+    <string name="Reason_1_PLC_S2_Q1">Need to support family financially</string>
+    <string name="Reason_2_PLC_S2_Q1">Cannot manage financial affairs</string>
+
+
+    //section 3
+    <string name="Personal_Section_3">Future Life Concerns</string>
+
+    //Question 1
+    <string name="Question_1_PLC_S3">1. Are you doubting about future life?</string>
+    //Reasons
+    <string name="Reason_1_PLC_S3_Q1">Thinking about your own future</string>
+    <string name="Reason_2_PLC_S3_Q1">You still doubt about your future</string>
+
+    //Question 2
+    <string name="Question_2_PLC_S3">2. Are you doubting about life after retired?</string>
+    //Reasons
+    <string name="Reason_1_PLC_S3_Q2">Not certain whether you will get a job after retired</string>
+    <string name="Reason_2_PLC_S3_Q2">Realising that one day you will stop playing</string>
+    <string name="Reason_3_PLC_S3_Q2">Worrying about not having a happy life</string>
+
+    //section 4
+    <string name="Personal_Section_4">Specific Personal Problems</string>
+
+    //Question 1
+    <string name="Question_1_PLC_S4">1. Do you have specific personal problems?</string>
+    //Reasons
+    <string name="Reason_1_PLC_S4_Q1">Tyring to go to work beside playing</string>
+    <string name="Reason_2_PLC_S4_Q1">Superstitious things</string>
+    <string name="Reason_3_PLC_S4_Q1">Being banned from playing</string>
 </resources>

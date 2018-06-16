@@ -23,4 +23,14 @@ public class questionnaire extends AppCompatActivity {
         }
 
     }
+
+    public void personalConcernClicked(View view)
+    {
+        if (view.getId()==R.id.personal_btn)
+        {
+            Intent i= new Intent(this,PersonalLifeConcern.class);
+            startActivity(i);
+        }
+
+    }
 }
