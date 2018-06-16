@@ -28,7 +28,8 @@
         <activity android:name=".VaccinationAdd" />
         <activity android:name=".Competition" />
         <activity android:name=".PersonalLifeConcern" />
-        <activity android:name=".IllnessAndInjuryConcern"></activity>
+        <activity android:name=".IllnessAndInjuryConcern" />
+        <activity android:name=".ExerciseSteps"></activity>
     </application>
 
 </manifest>
