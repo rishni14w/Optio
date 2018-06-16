@@ -212,6 +212,16 @@
     <string name="Question_7_IIC">7. Are you getting flashbacks of previous injuries?</string>
 
 
+
+    //Exercise Module
+    //Athlete Daily Steps Activity
+    <string name="GreetingsLbl">Hello</string>
+    <string name="YourStepsLbl">Your Steps for </string>
+    <string name="ViewWeekLbl">View Your Week For the Week</string>
+    <string name="StepsNameLbl">(NAME)</string>
+    <string name="DateLbl">(Date)</string>
+
+
     //Failure Issues UI
     //Section 1
     <string name="Failure_Section_1">Experiencing failure outcomes</string>
