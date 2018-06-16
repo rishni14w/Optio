@@ -9,5 +9,6 @@ public class IllnessAndInjuryConcern extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_illness_and_injury_concern);
+        setTitle(R.string.illness_Title);
     }
 }

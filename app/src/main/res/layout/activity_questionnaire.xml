@@ -59,6 +59,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="30dp"
             android:layout_weight="1"
+            android:onClick="illnessInjuryClicked"
             android:text="@string/illness_Q" />
 
         <Button

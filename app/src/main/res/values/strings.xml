@@ -199,4 +199,15 @@
     <string name="Reason_1_PLC_S4_Q1">Tyring to go to work beside playing</string>
     <string name="Reason_2_PLC_S4_Q1">Superstitious things</string>
     <string name="Reason_3_PLC_S4_Q1">Being banned from playing</string>
+
+
+    //Illness and Injury Concerns
+    //Questions
+    <string name="Question_1_IIC">1. Are you feeling afraid that you will get sick?</string>
+    <string name="Question_2_IIC">2. Are you feeling afraid that you will get injured?</string>
+    <string name="Question_3_IIC">3. Are you feeling afraid that you will get injured again?</string>
+    <string name="Question_4_IIC">4. Is your partner in pain?</string>
+    <string name="Question_5_IIC">5. Did your partner get an injury?</string>
+    <string name="Question_6_IIC">6. Are you having nightmare of getting injured?</string>
+    <string name="Question_7_IIC">7. Are you getting flashbacks of previous injuries?</string>
 </resources>
