@@ -210,4 +210,14 @@
     <string name="Question_5_IIC">5. Did your partner get an injury?</string>
     <string name="Question_6_IIC">6. Are you having nightmare of getting injured?</string>
     <string name="Question_7_IIC">7. Are you getting flashbacks of previous injuries?</string>
+
+
+
+    //Exercise Module
+    //Athlete Daily Steps Activity
+    <string name="GreetingsLbl">Hello</string>
+    <string name="YourStepsLbl">Your Steps for </string>
+    <string name="ViewWeekLbl">View Your Week For the Week</string>
+    <string name="StepsNameLbl">(NAME)</string>
+    <string name="DateLbl">(Date)</string>
 </resources>
