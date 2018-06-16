@@ -220,4 +220,45 @@
     <string name="ViewWeekLbl">View Your Week For the Week</string>
     <string name="StepsNameLbl">(NAME)</string>
     <string name="DateLbl">(Date)</string>
+
+
+    //Failure Issues UI
+    //Section 1
+    <string name="Failure_Section_1">Experiencing failure outcomes</string>
+
+    //Question 1
+    <string name="Question_1_FI_S1">1. Are you experiencing defeat?</string>
+    //Reason
+    <string name="Reason_1_FI_S1_Q1">You have trained but you lost</string>
+    <string name="Reason_2_FI_S1_Q1">Experiencing losing</string>
+    <string name="Reason_3_FI_S1_Q1">Experiencing losing to a lower rank player</string>
+    <string name="Reason_4_FI_S1_Q1">Experiencing several losses in a row</string>
+    <string name="Reason_5_FI_S1_Q1">Experiencing losing in a team game</string>
+    <string name="Reason_6_FI_S1_Q1">Losing in a major game</string>
+    <string name="Reason_7_FI_S1_Q1">Making too many unforced errors and losing</string>
+    <string name="Reason_8_FI_S1_Q1">Always experiencing defeat at the grand finals</string>
+
+    //Question 2
+    <string name="Question_2_FI_S1">2. Are you failing to reach target?</string>
+    //Reason
+    <string name="Reason_1_FI_S1_Q2">Playing badly</string>
+    <string name="Reason_2_FI_S1_Q2">Not getting a good result</string>
+    <string name="Reason_3_FI_S1_Q2">Cannot reach the target</string>
+    <string name="Reason_4_FI_S1_Q2">Not being selected for competition</string>
+
+    //Question 3
+    <string name="Question_3_FI_S1">3. Are you experiencing slump?</string>
+    //Reason
+    <string name="Reason_1_FI_S1_Q3">Your rank stuck in a slump</string>
+    <string name="Reason_2_FI_S1_Q3">Realising that it is not you playing in the final</string>
+
+    //Section 2
+    <string name="Failure_Section_2">Receiving Negative comments on losing</string>
+
+    //Question 1
+    <string name="Question_1_FI_S2">1. Are you afraid of receiving negative comments on losing?</string>
+    //Reason
+    <string name="Reason_1_FI_S2_Q1">Afraid of gossip as the effect of losing</string>
+    <string name="Reason_2_FI_S2_Q1">Having negative comments from people after losing</string>
+    <string name="Reason_3_FI_S2_Q1">Not getting understanding from others that you was sick</string>
 </resources>

@@ -43,4 +43,14 @@ public class questionnaire extends AppCompatActivity {
         }
 
     }
+
+    public void failureClicked(View view)
+    {
+        if (view.getId()==R.id.failure_btn)
+        {
+            Intent i= new Intent(this,FailureIssue.class);
+            startActivity(i);
+        }
+
+    }
 }
