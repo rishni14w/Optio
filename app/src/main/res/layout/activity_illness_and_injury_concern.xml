@@ -1,9 +1,251 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:scrollbarStyle="outsideInset"
     tools:context=".IllnessAndInjuryConcern">
 
-</android.support.constraint.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/Question_1_IIC_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Question_1_IIC"
+            android:textSize="20sp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="10dp"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButton1_Q1_IIC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/yes"
+                android:layout_marginLeft="20dp"/>
+
+            <RadioButton
+                android:id="@+id/radioButton2_Q1_IIC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/no"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/Question_2_IIC_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Question_2_IIC"
+            android:textSize="20sp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButton1_Q2_IIC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/yes"
+                android:layout_marginLeft="20dp"/>
+
+            <RadioButton
+                android:id="@+id/radioButton2_Q2_IIC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/no"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/Question_3_IIC_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Question_3_IIC"
+            android:textSize="20sp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButton1_Q3_IIC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/yes"
+                android:layout_marginLeft="20dp"/>
+
+            <RadioButton
+                android:id="@+id/radioButton2_Q3_IIC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/no"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/Question_4_IIC_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Question_4_IIC"
+            android:textSize="20sp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButton1_Q4_IIC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/yes"
+                android:layout_marginLeft="20dp"/>
+
+            <RadioButton
+                android:id="@+id/radioButton2_Q4_IIC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/no"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/Question_5_IIC_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Question_5_IIC"
+            android:textSize="20sp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButton1_Q5_IIC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/yes"
+                android:layout_marginLeft="20dp"/>
+
+            <RadioButton
+                android:id="@+id/radioButton2_Q5_IIC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/no"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/Question_6_IIC_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Question_6_IIC"
+            android:textSize="20sp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButton1_Q6_IIC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/yes"
+                android:layout_marginLeft="20dp"/>
+
+            <RadioButton
+                android:id="@+id/radioButton2_Q6_IIC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/no"/>
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/Question_7_IIC_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/Question_7_IIC"
+            android:textSize="20sp"
+            android:layout_marginLeft="5dp"
+            android:textColor="@android:color/black"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"/>
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radioButton1_Q7_IIC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/yes"
+                android:layout_marginLeft="20dp"/>
+
+            <RadioButton
+                android:id="@+id/radioButton2_Q7_IIC"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/no"/>
+        </RadioGroup>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/submit"
+            android:textSize="20sp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:background="@color/colorAccent"
+            android:textColor="@android:color/black"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+</ScrollView>

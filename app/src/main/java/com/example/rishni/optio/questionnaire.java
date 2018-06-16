@@ -33,4 +33,14 @@ public class questionnaire extends AppCompatActivity {
         }
 
     }
+
+    public void illnessInjuryClicked(View view)
+    {
+        if (view.getId()==R.id.illness_btn)
+        {
+            Intent i= new Intent(this,IllnessAndInjuryConcern.class);
+            startActivity(i);
+        }
+
+    }
 }
