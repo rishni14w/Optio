@@ -283,16 +283,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/no"
-                android:layout_marginLeft="5dp"
-                android:onClick="clicked_No__PD_S3_Q1"/>
+                android:layout_marginLeft="5dp"/>
 
             <RadioButton
                 android:id="@+id/radioButton2_Q1_PD_S3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/mild"
-                android:onClick="clicked_no__PD_S3_Q1"/>
+                android:text="@string/mild"/>
 
             <RadioButton
                 android:id="@+id/radioButton3_Q1_PD_S3"
@@ -300,16 +298,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/moderate"
-                android:layout_marginLeft="20dp"
-                android:onClick="clicked_yes__PD_S3_Q1"/>
+                android:layout_marginLeft="20dp"/>
 
             <RadioButton
                 android:id="@+id/radioButton4_Q1_PD_S3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/severe"
-                android:onClick="clicked_no__PD_S3_Q1"/>
+                android:text="@string/severe"/>
         </RadioGroup>
 
         <Button
