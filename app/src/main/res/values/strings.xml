@@ -308,4 +308,78 @@
 
     //Question 1
     <string name="Question_1_PD_S3">1. Are you feeling tired after today\'s training?</string>
+
+
+
+    //Social Relationship Problems UI
+    //Section 1
+    <string name="Social_Section_1">Partnership</string>
+
+    //Question 1
+    <string name="Question_1_SRP_S1">1. Do you have relationship problems with partner?</string>
+    //Reason
+    <string name="Reason_1_SRP_S1_Q1">Ignored by partner</string>
+    <string name="Reason_2_SRP_S1_Q1">Disturbed by partner</string>
+    <string name="Reason_3_SRP_S1_Q1">Have disagreement with partner</string>
+    <string name="Reason_4_SRP_S1_Q1">Blamed or told off by partner</string>
+
+    //Question 2
+    <string name="Question_2_SRP_S1">2. Do you have communication problems with partner?</string>
+    //Reason
+    <string name="Reason_1_SRP_S1_Q2">Not feeling comfortable to talk too much on the court</string>
+    <string name="Reason_2_SRP_S1_Q2">Cannot understand the partner\'s attitude</string>
+    <string name="Reason_3_SRP_S1_Q2">No understanding from partner</string>
+    <string name="Reason_4_SRP_S1_Q2">You did want to talk to partner but just didn\'t</string>
+
+    //Question 3
+    <string name="Question_3_SRP_S1">3. Do you have partnership problems?</string>
+    //Reason
+    <string name="Reason_1_SRP_S1_Q3">Telling the partner to do this and do that during a match</string>
+    <string name="Reason_2_SRP_S1_Q3">Partner has a problem</string>
+    <string name="Reason_3_SRP_S1_Q3">Being partnered with a very senior, well reputed player</string>
+
+    //Section 2
+    <string name="Social_Section_2">Relationship problems with coach</string>
+
+    //Question 1
+    <string name="Question_1_SRP_S2">1. Do you have relationship problems with coach?</string>
+    //Reason
+    <string name="Reason_1_SRP_S2_Q1">Fussy coach</string>
+    <string name="Reason_2_SRP_S2_Q1">Disagreement with coach</string>
+    <string name="Reason_3_SRP_S2_Q1">Not getting along with coach</string>
+    <string name="Reason_4_SRP_S2_Q1">Coach saying something unacceptable</string>
+    <string name="Reason_5_SRP_S2_Q1">Hard to deal with the coach during training</string>
+    <string name="Reason_6_SRP_S2_Q1">Not knowing what the coach wanted</string>
+
+    //Section 3
+    <string name="Social_Section_3">Relationship problems with management</string>
+
+    //Question 1
+    <string name="Question_1_SRP_S3">1. Do you have any problems with the management?</string>
+    //Reason
+    <string name="Reason_1_SRP_S3_Q1">Feeling of being treated unfairly by the management</string>
+    <string name="Reason_2_SRP_S3_Q1">Feeling of not being appreciated by the management</string>
+    <string name="Reason_3_SRP_S3_Q1">Being decided that one does not going to a tournament that was promised before</string>
+
+    //Section 4
+    <string name="Social_Section_4">Relationship problems with others</string>
+
+    //Question 1
+    <string name="Question_1_SRP_S4">1. Do you feel being disliked?</string>
+    //Reason
+    <string name="Reason_1_SRP_S4_Q1">Being criticised by public</string>
+    <string name="Reason_2_SRP_S4_Q1">Being accused of cheating about age</string>
+    <string name="Reason_3_SRP_S4_Q1">Feeling of hostility from others</string>
+    <string name="Reason_4_SRP_S4_Q1">Being disliked by peers</string>
+    <string name="Reason_5_SRP_S4_Q1">Not having friends</string>
+
+    //Section 5
+    <string name="Social_Section_5">Dealing with media</string>
+
+    //Question 1
+    <string name="Question_1_SRP_S5">1. Do you have negative media exposure?</string>
+    //Reason
+    <string name="Reason_1_SRP_S5_Q1">Media reported misleading comments about you</string>
+    <string name="Reason_2_SRP_S5_Q1">Media exposing negative reports</string>
+    <string name="Reason_3_SRP_S5_Q1">Reporters</string>
 </resources>
