@@ -11,6 +11,7 @@ public class SocialRelationshipProblems extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_social_relationship_problems);
+        setTitle(R.string.social_Title);
     }
 
     public void clicked_yes__SRP_S1_Q1(View view)

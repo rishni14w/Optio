@@ -34,6 +34,7 @@
         <activity android:name=".PsychologicalDemands" />
         <activity android:name=".SocialRelationshipProblems" />
         <activity android:name=".ViewProfile"></activity>
+        <activity android:name=".PreCompetition"></activity>
     </application>
 
 </manifest>

@@ -386,4 +386,77 @@
     <string name="Reason_1_SRP_S5_Q1">Media reported misleading comments about you</string>
     <string name="Reason_2_SRP_S5_Q1">Media exposing negative reports</string>
     <string name="Reason_3_SRP_S5_Q1">Reporters</string>
+
+
+    //Pre-Competition UI
+    //Section 1
+    <string name="Precompetition_Section_1">Prior to competition</string>
+
+    //Question 1
+    <string name="Question_1_PC_S1">1. Are you nervous when facing a tournament?</string>
+    //Question 2
+    <string name="Question_2_PC_S1">2. Are you continuously thinking about the coming game?</string>
+    //Question 3
+    <string name="Question_3_PC_S1">3. How do you feel on the eve of the match?</string>
+    //Question 4
+    <string name="Question_4_PC_S1">4. How do you feel before a match?</string>
+    //Question 5
+    <string name="Question_5_PC_S1">5. How do you feel entering the court?</string>
+    //Question 6
+    <string name="Question_6_PC_S1">6. How do you feel in the first set?</string>
+
+    //Section 2
+    <string name="Precompetition_Section_2">Facing particular types of opponents</string>
+
+    //Question 1
+    <string name="Question_1_PC_S2">1. Facing stronger or tough opponent?</string>
+    //Reason
+    <string name="Reason_1_PC_S2_Q1">Facing an opponent who has beaten you</string>
+    <string name="Reason_2_PC_S2_Q1">Facing a stronger or a dreaded opponent</string>
+    <string name="Reason_3_PC_S2_Q1">Acknowledging that the coming opponent is a good player</string>
+    <string name="Reason_4_PC_S2_Q1">Afraid of being toyed with and being fooled by the top player opponent</string>
+    <string name="Reason_5_PC_S2_Q1">Knowing one will play against a particular opponent</string>
+
+    //Question 2
+    <string name="Question_2_PC_S2">2. Facing lower rank or unknown opponent?</string>
+
+    //Question 2a
+    <string name="Question_2a_PC_S2">a. Are you feeling insecure about playing against a lower or unknown opponent?</string>
+
+    //Section 3
+    <string name="Precompetition_Section_3">Negative thoughts about upcoming match</string>
+
+    //Sub section 1
+    <string name="Precompetition_Sub_Section_1">1. Worrying about loosing</string>
+    //Question 1
+    <string name="Question_1_PC_SS1">a. Are you worrying about loosing?</string>
+    //Question 2
+    <string name="Question_2_PC_SS1">b. Are you worrying about loosing in first round?</string>
+
+    //Sub section 2
+    <string name="Precompetition_Sub_Section_2">2. Worrying thoughts about upcoming match</string>
+    /Question 1
+    <string name="Question_1_PC_SS2">a. Are you having worrying thoughts about upcoming match?</string>
+    //Reason
+    <string name="Reason_1_PC_SS2_Q1">Worrying about not meeting requirement to win</string>
+    <string name="Reason_2_PC_SS2_Q1">Afraid of playing badly, cannot perform well</string>
+    <string name="Reason_3_PC_SS2_Q1">Wondering whether you can play as well as the coach expected</string>
+    <string name="Reason_4_PC_SS2_Q1">Wondering if not being able to face the opponent</string>
+    <string name="Reason_5_PC_SS2_Q1">Thinking about winning</string>
+    <string name="Reason_6_PC_SS2_Q1">Afraid of making errors</string>
+    <string name="Reason_7_PC_SS2_Q1">Worrying about what will happen in the game</string>
+    <string name="Reason_8_PC_SS2_Q1">Wondering how well your opponent will play</string>
+
+    //Sub section 3
+    <string name="Precompetition_Sub_Section_3">3. Others\' negative comments before a game</string>
+    //Question 1
+    <string name="Question_1_PC_SS3">a. Are you receiving too  much input from others?</string>
+    //Question 2
+    <string name="Question_2_PC_SS3">b. Does someone talk to you in a rude way before a game?</string>
+
+    //radio button strings in pre-competition ui
+    <string name="excited">Excited</string>
+    <string name="happy">Happy</string>
+    <string name="neutral">Neutral</string>
+    <string name="nervous">Nervous</string>
 </resources>
