@@ -31,7 +31,8 @@
         <activity android:name=".IllnessAndInjuryConcern" />
         <activity android:name=".ExerciseSteps" />
         <activity android:name=".FailureIssue" />
-        <activity android:name=".PsychologicalDemands"></activity>
+        <activity android:name=".PsychologicalDemands" />
+        <activity android:name=".SocialRelationshipProblems"></activity>
     </application>
 
 </manifest>
