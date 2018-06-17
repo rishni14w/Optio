@@ -50,6 +50,11 @@
     <string name="yes">Yes</string>
     <string name="no">No</string>
 
+    //miild/moderate/severe radio button
+    <string name="mild">Mild</string>
+    <string name="moderate">Moderate</string>
+    <string name="severe">Severe</string>
+
     //Reason
     <string name="reason">Reason</string>
 
@@ -212,7 +217,6 @@
     <string name="Question_7_IIC">7. Are you getting flashbacks of previous injuries?</string>
 
 
-
     //Exercise Module
     //Athlete Daily Steps Activity
     <string name="GreetingsLbl">Hello</string>
@@ -261,4 +265,47 @@
     <string name="Reason_1_FI_S2_Q1">Afraid of gossip as the effect of losing</string>
     <string name="Reason_2_FI_S2_Q1">Having negative comments from people after losing</string>
     <string name="Reason_3_FI_S2_Q1">Not getting understanding from others that you was sick</string>
+
+    //Psychological Demands UI
+    //Section 1
+    <string name="Psychological_Section_1">Expectation of success</string>
+
+    //Question 1
+    <string name="Question_1_PD_S1">1. Expectation of being the best</string>
+    //Answer
+    <string name="Answer_1_PD_S1_Q1">Feeling of being burdened as number one</string>
+    <string name="Answer_2_PD_S1_Q1">Feeling of being required to reach the gold</string>
+    <string name="Answer_3_PD_S1_Q1">Being demanded by public and management to always win</string>
+
+    //Question 2
+    <string name="Question_2_PD_S1">2. Demands to win</string>
+    //Answer
+    <string name="Answer_1_PD_S1_Q2">Being expected to win in a team tournament</string>
+    <string name="Answer_2_PD_S1_Q2">Should not lose to a lower rank opponent</string>
+    <string name="Answer_3_PD_S1_Q2">Being given a target from the management</string>
+
+
+    //Section 2
+    <string name="Psychological_Section_2">Experiencing mental fatigue as being a badminton player</string>
+
+    //Question 1
+    <string name="Question_1_PD_S2">1. Bored with routine training and monotonous life?</string>
+    //Reason
+    <string name="Reason_1_PD_S2_Q1">Having unpleasant training program</string>
+    <string name="Reason_2_PD_S2_Q1">The gruelling physical conditioning</string>
+    <string name="Reason_3_PD_S2_Q1">Monotonous training</string>
+    <string name="Reason_4_PD_S2_Q1">Bored or get sick with routine training</string>
+    <string name="Reason_5_PD_S2_Q1">Training for months without any tournament</string>
+    <string name="Reason_6_PD_S2_Q1">Feeling sick and tired of the static, monotony of life</string>
+    <string name="Reason_7_PD_S2_Q1">Getting bored being in the room when playing overseas</string>
+    <string name="Reason_8_PD_S2_Q1">Experiencing very high boredom of winning all tournaments</string>
+    <string name="Reason_9_PD_S2_Q1">Feeling tired of badminton</string>
+    <string name="Reason_10_PD_S2_Q1">Feeling of not being able to develop yourself</string>
+    <string name="Reason_11_PD_S2_Q1">Feeling bored of having too many tournaments</string>
+
+    //Section 3
+    <string name="Psychological_Section_3">Fatigue</string>
+
+    //Question 1
+    <string name="Question_1_PD_S3">1. Are you feeling tired after today\'s training?</string>
 </resources>

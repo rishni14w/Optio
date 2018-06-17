@@ -44,11 +44,21 @@ public class questionnaire extends AppCompatActivity {
 
     }
 
-    public void failureClicked(View view)
+    public void FailureIssueClicked(View view)
     {
         if (view.getId()==R.id.failure_btn)
         {
             Intent i= new Intent(this,FailureIssue.class);
+            startActivity(i);
+        }
+
+    }
+
+    public void psychologicalClicked(View view)
+    {
+        if (view.getId()==R.id.psychologial_btn)
+        {
+            Intent i= new Intent(this,PsychologicalDemands.class);
             startActivity(i);
         }
 

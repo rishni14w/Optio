@@ -41,6 +41,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="30dp"
             android:layout_weight="1"
+            android:onClick="psychologicalClicked"
             android:text="@string/psychological_Q" />
 
         <Button
@@ -69,7 +70,7 @@
             android:layout_gravity="center"
             android:layout_marginBottom="30dp"
             android:layout_weight="1"
-            android:onClick="failureClicked"
+            android:onClick="FailureIssueClicked"
             android:text="@string/failure_Q" />
 
         <Button
