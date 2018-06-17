@@ -63,4 +63,14 @@ public class questionnaire extends AppCompatActivity {
         }
 
     }
+
+    public void socialClicked(View view)
+    {
+        if (view.getId()==R.id.social_btn)
+        {
+            Intent i= new Intent(this,SocialRelationshipProblems.class);
+            startActivity(i);
+        }
+
+    }
 }
