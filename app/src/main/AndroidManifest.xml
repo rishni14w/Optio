@@ -29,7 +29,9 @@
         <activity android:name=".Competition" />
         <activity android:name=".PersonalLifeConcern" />
         <activity android:name=".IllnessAndInjuryConcern" />
-        <activity android:name=".ExerciseSteps"></activity>
+        <activity android:name=".ExerciseSteps" />
+        <activity android:name=".FailureIssue" />
+        <activity android:name=".PsychologicalDemands"></activity>
     </application>
 
 </manifest>
