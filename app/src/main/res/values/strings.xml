@@ -226,6 +226,11 @@
     <string name="DateLbl">(Date)</string>
 
 
+    //Profile View
+    <string name="membershipAge">Player Since :</string>
+    <string name="currentWeight">Current Weight</string>
+    <string name="currentHeight">Current Height</string>
+
     //Failure Issues UI
     //Section 1
     <string name="Failure_Section_1">Experiencing failure outcomes</string>
@@ -308,7 +313,6 @@
 
     //Question 1
     <string name="Question_1_PD_S3">1. Are you feeling tired after today\'s training?</string>
-
 
 
     //Social Relationship Problems UI
