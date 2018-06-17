@@ -32,7 +32,8 @@
         <activity android:name=".ExerciseSteps" />
         <activity android:name=".FailureIssue" />
         <activity android:name=".PsychologicalDemands" />
-        <activity android:name=".SocialRelationshipProblems"></activity>
+        <activity android:name=".SocialRelationshipProblems" />
+        <activity android:name=".ViewProfile"></activity>
     </application>
 
 </manifest>
