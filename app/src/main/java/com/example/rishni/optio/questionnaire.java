@@ -73,4 +73,14 @@ public class questionnaire extends AppCompatActivity {
         }
 
     }
+
+    public void precompetitionClicked(View view)
+    {
+        if (view.getId()==R.id.precompetition_btn)
+        {
+            Intent i= new Intent(this,PreCompetition.class);
+            startActivity(i);
+        }
+
+    }
 }
