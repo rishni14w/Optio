@@ -225,7 +225,11 @@
     <string name="StepsNameLbl">(NAME)</string>
     <string name="DateLbl">(Date)</string>
 
-
+    //Weekly Activity
+    <string name="WeeklyGreetingLbl">Weekly Steps For</string>
+    <string name="ViewYourStepsLbl">View Your Steps On</string>
+    <string name="PickDate">Pick a Date</string>
+    <string name="MostActiveLbl">You were most active on </string>
     //Profile View
     <string name="membershipAge">Player Since :</string>
     <string name="currentWeight">Current Weight</string>
