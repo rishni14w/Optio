@@ -475,4 +475,14 @@
     <string name="cancel">Cancel</string>
     //save
     <string name="save">Save</string>
+
+    //Body composition UI
+    <string name="weight">Weight :</string>
+    <string name="waist_circumference">Waist Circumference :</string>
+    <string name="hip_circumference">Hip Circumference :</string>
+    <string name="placeholder_weight">Enter Weight</string>
+    <string name="placeholder_waist_circumference">Enter Waist Circumference</string>
+    <string name="placeholder_hip_circumference">Enter Hip Circumference</string>
+    <string name="kg">kg</string>
+    <string name="inches">inches</string>
 </resources>
