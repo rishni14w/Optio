@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -13,6 +14,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Button btnExercise = findViewById(R.id.buttonExercise);
+        btnExercise.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(MainActivity.this,WeeklySteps.class);
+                startActivity(i);
+            }
+        });
+
     }
 
     @Override
@@ -28,6 +38,9 @@ public class MainActivity extends AppCompatActivity {
         if (view.getId()==R.id.StressHealthbtn)
         {
             Intent i= new Intent(MainActivity.this,StressAndHealth.class);
+            startActivity(i);
+        }else if(view.getId()==R.id.buttonExercise){
+            Intent i = new Intent(MainActivity.this,WeeklySteps.class);
             startActivity(i);
         }
 
