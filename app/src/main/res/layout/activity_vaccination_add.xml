@@ -1,9 +1,84 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VaccinationAdd">
+    tools:context=".VaccinationAdd"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/vaccination_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/vaccination_name"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:layout_marginTop="5dp"/>
+
+    <EditText
+        android:id="@+id/vaccination_name_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="@string/placeholder_vaccination_name"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/vaccination_cause"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="80dp"
+        android:text="@string/vaccination_cause"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/vaccination_cause_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="110dp"
+        android:ems="10"
+        android:hint="@string/placeholder_vaccination_cause"
+        android:inputType="textPersonName" />
+
+    <TextView
+        android:id="@+id/date_given"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="160dp"
+        android:text="@string/date_given"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/date_given_txt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="190dp"
+        android:ems="10"
+        android:hint="@string/placeholder_date_given"
+        android:inputType="date" />
+
+
+</RelativeLayout>
