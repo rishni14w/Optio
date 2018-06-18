@@ -1,9 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HeartRate">
+    tools:context=".HeartRate"
+    android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+
+    <TextView
+        android:id="@+id/heart_rate_before"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="21dp"
+        android:layout_weight="1"
+        android:text="@string/heart_rate_before"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/heart_rate_before_placeholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="59dp"
+        android:layout_marginTop="61dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="@string/placeholder_heart_rate"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/heart_rate_before_bpm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/heart_rate_before_placeholder"
+        android:layout_toEndOf="@+id/heart_rate_before"
+        android:layout_weight="1"
+        android:text="@string/bpm"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/heart_rate_after"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="143dp"
+        android:layout_weight="1"
+        android:text="@string/heart_rate_after"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/heart_rate_after_placeholder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/heart_rate_before_placeholder"
+        android:layout_marginTop="184dp"
+        android:layout_weight="1"
+        android:ems="10"
+        android:hint="@string/placeholder_heart_rate"
+        android:inputType="number" />
+
+    <TextView
+        android:id="@+id/heart_rate_after_bpm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/heart_rate_after_placeholder"
+        android:layout_toEndOf="@+id/heart_rate_before"
+        android:layout_weight="1"
+        android:text="@string/bpm"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+
+</RelativeLayout>
