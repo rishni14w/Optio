@@ -33,8 +33,9 @@
         <activity android:name=".FailureIssue" />
         <activity android:name=".PsychologicalDemands" />
         <activity android:name=".SocialRelationshipProblems" />
-        <activity android:name=".ViewProfile"></activity>
-        <activity android:name=".PreCompetition"></activity>
+        <activity android:name=".ViewProfile" />
+        <activity android:name=".PreCompetition" />
+        <activity android:name=".WeeklySteps"></activity>
     </application>
 
 </manifest>
