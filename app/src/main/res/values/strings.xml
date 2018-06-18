@@ -463,4 +463,32 @@
     <string name="happy">Happy</string>
     <string name="neutral">Neutral</string>
     <string name="nervous">Nervous</string>
+
+
+    //Heartrate UI
+    <string name="heart_rate_before">Heart rate before Training session :</string>
+    <string name="heart_rate_after">Heart rate after Training session :</string>
+    <string name="placeholder_heart_rate">Enter heart rate</string>
+    <string name="bpm">bmp</string>
+
+    //cancel
+    <string name="cancel">Cancel</string>
+    //save
+    <string name="save">Save</string>
+
+    //Body composition UI
+    <string name="weight">Weight :</string>
+    <string name="waist_circumference">Waist Circumference :</string>
+    <string name="hip_circumference">Hip Circumference :</string>
+    <string name="placeholder_weight">Enter Weight</string>
+    <string name="placeholder_waist_circumference">Enter Waist Circumference</string>
+    <string name="placeholder_hip_circumference">Enter Hip Circumference</string>
+    <string name="kg">kg</string>
+    <string name="inches">inches</string>
+
+    //Sleep UI
+    <string name="sleep_duration">Sleep Duration :</string>
+    <string name="hour">hr</string>
+    <string name="minutes">min</string>
+    <string name="digit">00</string>
 </resources>
