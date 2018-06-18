@@ -13,14 +13,14 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="79dp"
-        android:text="@string/training"
-        android:layout_marginBottom="30dp"
-        android:layout_gravity="center"/>
+        <Button
+            android:id="@+id/buttonExercise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="79dp"
+            android:text="@string/training" />
 
     <Button
         android:id="@+id/button2"
