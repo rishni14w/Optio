@@ -491,4 +491,15 @@
     <string name="hour">hr</string>
     <string name="minutes">min</string>
     <string name="digit">00</string>
+
+    //add
+    <string name="add">Add</string>
+
+    //Add_Vaccination
+    <string name="vaccination_name">Vaccine Name :</string>
+    <string name="vaccination_cause">Cause :</string>
+    <string name="date_given">Date given :</string>
+    <string name="placeholder_vaccination_name">Enter Vaccine Name</string>
+    <string name="placeholder_vaccination_cause">Enter Cause</string>
+    <string name="placeholder_date_given">Enter Date given</string>
 </resources>
