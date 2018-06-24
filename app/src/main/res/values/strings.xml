@@ -46,6 +46,9 @@
     <string name="injuryAdd_Title">Add Injury</string>
     <string name="vaccinationAdd_Title">Add Vaccination</string>
 
+    <string name="injury_detail_Title">Injury Detail</string>
+    <string name="injury_edit_Title">Update Injury</string>
+
     //Yes/No radio button
     <string name="yes">Yes</string>
     <string name="no">No</string>
@@ -517,4 +520,17 @@
     <string name="placeholder_username">Enter Username</string>
     <string name="placeholder_pwd">Enter Password</string>
     <string name="login">Login</string>
+
+    //injury detail UI
+    <string name="type_detail">type</string>
+    <string name="date_detail">date</string>
+    <string name="recovery_detail">recovery</string>
+    <string name="details_detail">details</string>
+
+    //edit and delete
+    <string name="edit">edit</string>
+    <string name="delete">delete</string>
+
+    //update
+    <string name="update">update</string>
 </resources>
