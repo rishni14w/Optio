@@ -46,6 +46,9 @@
     <string name="injuryAdd_Title">Add Injury</string>
     <string name="vaccinationAdd_Title">Add Vaccination</string>
 
+    <string name="injury_detail_Title">Injury Detail</string>
+    <string name="injury_edit_Title">Update Injury</string>
+
     //Yes/No radio button
     <string name="yes">Yes</string>
     <string name="no">No</string>
@@ -491,4 +494,43 @@
     <string name="hour">hr</string>
     <string name="minutes">min</string>
     <string name="digit">00</string>
+
+    //add
+    <string name="add">Add</string>
+
+    //Add_Vaccination
+    <string name="vaccination_name">Vaccine Name :</string>
+    <string name="vaccination_cause">Cause :</string>
+    <string name="date_given">Date given :</string>
+    <string name="placeholder_vaccination_name">Enter Vaccine Name</string>
+    <string name="placeholder_vaccination_cause">Enter Cause</string>
+    <string name="placeholder_date_given">Enter Date given</string>
+
+    //Add_Injury
+    <string name="injury_type">Injury Type :</string>
+    <string name="date_of_injury">Date of injury :</string>
+    <string name="recovery_duration">Recovery Duration :</string>
+    <string name="details">Details :</string>
+    <string name="placeholder_injury_type">Enter Injury Type</string>
+    <string name="placeholder_date_of_injury">Enter Date of injury</string>
+    <string name="placeholder_recovery_duration">Enter Recovery Duration</string>
+    <string name="placeholder_details">Enter Details</string>
+
+    //login
+    <string name="placeholder_username">Enter Username</string>
+    <string name="placeholder_pwd">Enter Password</string>
+    <string name="login">Login</string>
+
+    //injury detail UI
+    <string name="type_detail">type</string>
+    <string name="date_detail">date</string>
+    <string name="recovery_detail">recovery</string>
+    <string name="details_detail">details</string>
+
+    //edit and delete
+    <string name="edit">edit</string>
+    <string name="delete">delete</string>
+
+    //update
+    <string name="update">update</string>
 </resources>
