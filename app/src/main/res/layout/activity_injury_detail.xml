@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Injury_detail">
+
+    <TextView
+        android:id="@+id/injury_type_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/injury_type"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"/>
+
+    <TextView
+        android:id="@+id/injury_type_txt_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:textSize="16sp"
+        android:text="@string/type_detail"
+        android:layout_marginLeft="5dp"/>
+
+    <TextView
+        android:id="@+id/date_of_injury_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="80dp"
+        android:text="@string/date_of_injury"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:layout_marginLeft="5dp"/>
+
+    <TextView
+        android:id="@+id/date_of_injury_txt_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="110dp"
+        android:textSize="16sp"
+        android:text="@string/date_detail"
+        android:layout_marginLeft="5dp"/>
+
+    <TextView
+        android:id="@+id/recovery_duration_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="160dp"
+        android:text="@string/recovery_duration"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:layout_marginLeft="5dp"/>
+
+    <TextView
+        android:id="@+id/recovery_duration_txt_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="190dp"
+        android:textSize="16sp"
+        android:text="@string/recovery_detail"
+        android:layout_marginLeft="5dp"/>
+
+    <TextView
+        android:id="@+id/details_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="240dp"
+        android:text="@string/details"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:layout_marginLeft="5dp"/>
+
+    <TextView
+        android:id="@+id/details_txt_detail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="270dp"
+        android:textSize="16sp"
+        android:text="@string/details_detail"
+        android:layout_marginLeft="5dp"/>
+</RelativeLayout>
