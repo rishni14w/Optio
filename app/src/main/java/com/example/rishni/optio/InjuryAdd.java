@@ -1,6 +1,7 @@
 package com.example.rishni.optio;
 
 import android.annotation.TargetApi;
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -9,7 +10,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.DatePicker;
 import android.widget.EditText;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Locale;
 
 public class InjuryAdd extends AppCompatActivity {
 
@@ -19,6 +26,9 @@ public class InjuryAdd extends AppCompatActivity {
     private EditText editText_Details;
 
     //ProgressBar mProgressBar;
+
+    Calendar calendar=Calendar.getInstance();
+    DatePickerDialog.OnDateSetListener date;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +41,24 @@ public class InjuryAdd extends AppCompatActivity {
         editText_Recovery=findViewById(R.id.recovery_duration_txt);
         editText_Details=findViewById(R.id.details_txt);
 
+        //datepicker
+        date=new DatePickerDialog.OnDateSetListener() {
+            @Override
+            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                calendar.set(Calendar.YEAR,year);
+                calendar.set(Calendar.MONTH,monthOfYear);
+                calendar.set(Calendar.DAY_OF_MONTH,dayOfMonth);
+                updateLabel();
+            }
+        };
+
+        editText_Date.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                new DatePickerDialog(InjuryAdd.this,date,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
+            }
+        });
+
     }
 
     @Override
@@ -38,6 +66,13 @@ public class InjuryAdd extends AppCompatActivity {
     {
         getMenuInflater().inflate(R.menu.menu_save,menu);
         return true;
+    }
+
+    public void updateLabel()
+    {
+        String format="dd/MM/yyyy";
+        SimpleDateFormat sdf=new SimpleDateFormat(format, Locale.US);
+        editText_Date.setText(sdf.format(calendar.getTime()));
     }
 
     @Override
