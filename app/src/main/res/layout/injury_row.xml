@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_margin="5dp"
+    android:background="@android:color/white">
+
+    <TextView
+        android:id="@+id/txt_injuryType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="input type"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:layout_marginLeft="5dp"/>
+
+    <TextView
+        android:id="@+id/txt_dateOfInjury"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/txt_injuryType"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:text="dateOfInjury"
+        android:textColor="@android:color/darker_gray"
+        android:textSize="16sp"
+        android:layout_marginRight="5dp"/>
+
+    <TextView
+        android:id="@+id/txt_recoveryDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="52dp"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="39dp"
+        android:text="recoveryDuration"
+        android:textColor="@android:color/black"
+        android:textSize="16sp" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignTop="@+id/txt_recoveryDuration"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:src="@drawable/ic_hourglass_empty_black_24dp"
+        android:layout_marginBottom="5dp"/>
+
+
+</RelativeLayout>
