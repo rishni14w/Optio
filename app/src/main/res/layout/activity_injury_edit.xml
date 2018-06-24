@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InjuryEdit">
+
+    <TextView
+        android:id="@+id/injury_type_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/injury_type"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"/>
+
+    <EditText
+        android:id="@+id/injury_type_txt_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:hint="@string/placeholder_injury_type"
+        android:inputType="textPersonName"
+        android:layout_marginLeft="5dp"/>
+
+    <TextView
+        android:id="@+id/date_of_injury_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="80dp"
+        android:text="@string/date_of_injury"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:layout_marginLeft="5dp"/>
+
+    <EditText
+        android:id="@+id/date_of_injury_txt_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="110dp"
+        android:ems="10"
+        android:hint="@string/placeholder_date_of_injury"
+        android:inputType="date"
+        android:layout_marginLeft="5dp"/>
+
+    <TextView
+        android:id="@+id/recovery_duration_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="160dp"
+        android:text="@string/recovery_duration"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:layout_marginLeft="5dp"/>
+
+    <EditText
+        android:id="@+id/recovery_duration_txt_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="190dp"
+        android:ems="10"
+        android:hint="@string/placeholder_recovery_duration"
+        android:inputType="textPersonName"
+        android:layout_marginLeft="5dp"/>
+
+    <TextView
+        android:id="@+id/details_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="240dp"
+        android:text="@string/details"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:layout_marginLeft="5dp"/>
+
+    <EditText
+        android:id="@+id/details_txt_edit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="270dp"
+        android:ems="10"
+        android:hint="@string/placeholder_details"
+        android:inputType="textPersonName"
+        android:layout_marginLeft="5dp"/>
+
+
+</RelativeLayout>
