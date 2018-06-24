@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InjuryAdd">
+    tools:context=".InjuryEdit">
 
     <TextView
-        android:id="@+id/injury_type"
+        android:id="@+id/injury_type_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -20,7 +20,7 @@
         android:layout_marginLeft="5dp"/>
 
     <EditText
-        android:id="@+id/injury_type_txt"
+        android:id="@+id/injury_type_txt_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -33,7 +33,7 @@
         android:layout_marginLeft="5dp"/>
 
     <TextView
-        android:id="@+id/date_of_injury"
+        android:id="@+id/date_of_injury_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -46,7 +46,7 @@
         android:layout_marginLeft="5dp"/>
 
     <EditText
-        android:id="@+id/date_of_injury_txt"
+        android:id="@+id/date_of_injury_txt_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -59,7 +59,7 @@
         android:layout_marginLeft="5dp"/>
 
     <TextView
-        android:id="@+id/recovery_duration"
+        android:id="@+id/recovery_duration_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -72,7 +72,7 @@
         android:layout_marginLeft="5dp"/>
 
     <EditText
-        android:id="@+id/recovery_duration_txt"
+        android:id="@+id/recovery_duration_txt_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -85,7 +85,7 @@
         android:layout_marginLeft="5dp"/>
 
     <TextView
-        android:id="@+id/details"
+        android:id="@+id/details_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -98,7 +98,7 @@
         android:layout_marginLeft="5dp"/>
 
     <EditText
-        android:id="@+id/details_txt"
+        android:id="@+id/details_txt_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"

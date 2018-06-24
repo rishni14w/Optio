@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InjuryAdd">
+    tools:context=".Injury_detail">
 
     <TextView
-        android:id="@+id/injury_type"
+        android:id="@+id/injury_type_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -19,21 +19,20 @@
         android:layout_marginTop="5dp"
         android:layout_marginLeft="5dp"/>
 
-    <EditText
-        android:id="@+id/injury_type_txt"
+    <TextView
+        android:id="@+id/injury_type_txt_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="30dp"
-        android:ems="10"
-        android:hint="@string/placeholder_injury_type"
-        android:inputType="textPersonName"
+        android:textSize="16sp"
+        android:text="@string/type_detail"
         android:layout_marginLeft="5dp"/>
 
     <TextView
-        android:id="@+id/date_of_injury"
+        android:id="@+id/date_of_injury_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -45,21 +44,20 @@
         android:textSize="18sp"
         android:layout_marginLeft="5dp"/>
 
-    <EditText
-        android:id="@+id/date_of_injury_txt"
+    <TextView
+        android:id="@+id/date_of_injury_txt_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="110dp"
-        android:ems="10"
-        android:hint="@string/placeholder_date_of_injury"
-        android:inputType="date"
+        android:textSize="16sp"
+        android:text="@string/date_detail"
         android:layout_marginLeft="5dp"/>
 
     <TextView
-        android:id="@+id/recovery_duration"
+        android:id="@+id/recovery_duration_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -71,21 +69,20 @@
         android:textSize="18sp"
         android:layout_marginLeft="5dp"/>
 
-    <EditText
-        android:id="@+id/recovery_duration_txt"
+    <TextView
+        android:id="@+id/recovery_duration_txt_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="190dp"
-        android:ems="10"
-        android:hint="@string/placeholder_recovery_duration"
-        android:inputType="textPersonName"
+        android:textSize="16sp"
+        android:text="@string/recovery_detail"
         android:layout_marginLeft="5dp"/>
 
     <TextView
-        android:id="@+id/details"
+        android:id="@+id/details_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -97,18 +94,15 @@
         android:textSize="18sp"
         android:layout_marginLeft="5dp"/>
 
-    <EditText
-        android:id="@+id/details_txt"
+    <TextView
+        android:id="@+id/details_txt_detail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginTop="270dp"
-        android:ems="10"
-        android:hint="@string/placeholder_details"
-        android:inputType="textPersonName"
+        android:textSize="16sp"
+        android:text="@string/details_detail"
         android:layout_marginLeft="5dp"/>
-
-
 </RelativeLayout>
