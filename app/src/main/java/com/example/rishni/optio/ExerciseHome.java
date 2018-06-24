@@ -16,6 +16,7 @@ public class ExerciseHome extends AppCompatActivity implements View.OnClickListe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise_home);
+        initView();
     }
 
     private void initView(){

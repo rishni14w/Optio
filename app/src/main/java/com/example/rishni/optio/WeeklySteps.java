@@ -1,6 +1,7 @@
 package com.example.rishni.optio;
 
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -35,7 +36,11 @@ public class WeeklySteps extends AppCompatActivity implements DatePickerDialog.O
     }
     private void setDate(final Calendar calendar){
         final DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM);
-        Toast.makeText(this,"Selected Date: "+dateFormat.format(calendar.getTime()),Toast.LENGTH_LONG).show();
+        //Toast.makeText(this,"Selected Date: "+dateFormat.format(calendar.getTime()),Toast.LENGTH_LONG).show();
+        Intent i = new Intent(this,ExerciseSteps.class);
+        String datePicked = dateFormat.format(calendar.getTime());
+        i.putExtra("Picked_Date",datePicked);
+        startActivity(i);
     }
     public void datePicker(View view){
 
