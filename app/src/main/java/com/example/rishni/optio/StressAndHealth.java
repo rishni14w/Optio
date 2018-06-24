@@ -38,7 +38,7 @@ public class StressAndHealth extends AppCompatActivity {
     {
         if (view.getId()==R.id.injury_btn)
         {
-            Intent i= new Intent(this,Injury.class);
+            Intent i= new Intent(this,Injury_View.class);
             startActivity(i);
         }
 
