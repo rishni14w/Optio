@@ -55,7 +55,8 @@
         android:layout_marginTop="110dp"
         android:ems="10"
         android:hint="@string/placeholder_date_of_injury"
-        android:inputType="date"
+        android:clickable="true"
+        android:focusable="false"
         android:layout_marginLeft="5dp"/>
 
     <TextView
