@@ -16,7 +16,7 @@ public class VaccinationAdd extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
-        getMenuInflater().inflate(R.menu.menu2,menu);
+        getMenuInflater().inflate(R.menu.menu_save,menu);
         return true;
     }
 }
