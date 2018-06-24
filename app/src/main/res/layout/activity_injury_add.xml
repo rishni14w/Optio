@@ -109,4 +109,6 @@
         android:hint="@string/placeholder_details"
         android:inputType="textPersonName"
         android:layout_marginLeft="5dp"/>
+
+
 </RelativeLayout>
