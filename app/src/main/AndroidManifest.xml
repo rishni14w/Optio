@@ -40,7 +40,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".Injury_detail" />
-        <activity android:name=".InjuryEdit"></activity>
+        <activity android:name=".InjuryEdit" />
+        <activity android:name=".ExerciseHome"></activity>
     </application>
 
 </manifest>
