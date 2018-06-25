@@ -19,42 +19,38 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class InjuryEdit extends AppCompatActivity {
-    String oid;
-    String type;
+public class VaccinationEdit extends AppCompatActivity {
 
-    private EditText editText_Type_edit;
+    String oid;
+    String name;
+
+    private EditText editText_Name_edit;
+    private EditText editText_Cause_edit;
     private EditText editText_Date_edit;
-    private EditText editText_Recovery_edit;
-    private EditText editText_Details_edit;
 
     Calendar calendar=Calendar.getInstance();
     DatePickerDialog.OnDateSetListener datep;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setTitle(R.string.injury_edit_Title);
-        setContentView(R.layout.activity_injury_edit);
+        setTitle(R.string.vaccination_edit_Title);
+        setContentView(R.layout.activity_vaccination_edit);
 
-        type= getIntent().getExtras().getString("type_d");
-        ((TextView)findViewById(R.id.injury_type_txt_edit)).setText(type);
+        name= getIntent().getExtras().getString("name_d");
+        ((TextView)findViewById(R.id.vaccination_name_txt_edit)).setText(name);
+
+        String cause= getIntent().getExtras().getString("cause_d");
+        ((TextView)findViewById(R.id.vaccination_cause_txt_edit)).setText(cause);
 
         String date= getIntent().getExtras().getString("date_d");
-        ((TextView)findViewById(R.id.date_of_injury_txt_edit)).setText(date);
+        ((TextView)findViewById(R.id.date_given_txt_edit)).setText(date);
 
-        String recovery= getIntent().getExtras().getString("recovery_d");
-        ((TextView)findViewById(R.id.recovery_duration_txt_edit)).setText(recovery);
-
-        String details= getIntent().getExtras().getString("details_d");
-        ((TextView)findViewById(R.id.details_txt_edit)).setText(details);
 
         oid= getIntent().getExtras().getString("oid");
 
-        editText_Type_edit=findViewById(R.id.injury_type_txt_edit);
-        editText_Date_edit=findViewById(R.id.date_of_injury_txt_edit);
-        editText_Recovery_edit=findViewById(R.id.recovery_duration_txt_edit);
-        editText_Details_edit=findViewById(R.id.details_txt_edit);
+        editText_Name_edit=findViewById(R.id.vaccination_name_txt_edit);
+        editText_Cause_edit=findViewById(R.id.vaccination_cause_txt_edit);
+        editText_Date_edit=findViewById(R.id.date_given_txt_edit);
 
         //datepicker
         datep=new DatePickerDialog.OnDateSetListener() {
@@ -70,7 +66,7 @@ public class InjuryEdit extends AppCompatActivity {
         editText_Date_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                new DatePickerDialog(InjuryEdit.this,datep,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
+                new DatePickerDialog(VaccinationEdit.this,datep,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
     }
@@ -93,37 +89,36 @@ public class InjuryEdit extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.update)
         {
-            String updateType=editText_Type_edit.getText().toString();
+            String updateName=editText_Name_edit.getText().toString();
+            String updateCause=editText_Cause_edit.getText().toString();
             String updateDate=editText_Date_edit.getText().toString();
-            String updateRecovery=editText_Recovery_edit.getText().toString();
-            String updateDetails=editText_Details_edit.getText().toString();
 
-            new PutData(updateType,updateDate,updateRecovery,updateDetails).execute(db.getAddressSingle_Injury(oid));
+            new PutData(updateName,updateCause,updateDate).execute(db.getAddressSingle_Vaccination(oid));
 
         }
 
         else
         {
-            Intent intent=new Intent(this,Injury_View.class);
+            Intent intent=new Intent(this,Vaccination_View.class);
             startActivity(intent);
+
         }
 
         return super.onOptionsItemSelected(item);
     }
 
-    //function to edit injury
+
+    //function to edit vaccination
     class PutData extends AsyncTask<String,String,String>
     {
-        String type;
+        String name;
+        String cause;
         String date;
-        String recovery;
-        String details;
 
-        public PutData(String type, String date, String recovery, String details) {
-            this.type = type;
+        public PutData(String name, String cause, String date) {
+            this.name = name;
+            this.cause = cause;
             this.date = date;
-            this.recovery = recovery;
-            this.details = details;
         }
 
         @Override
@@ -138,10 +133,9 @@ public class InjuryEdit extends AppCompatActivity {
             String urlString= params[0];
             HTTPDataHandler hh=new HTTPDataHandler();
             String json="{\n";
-            json+="\t\"type\":\""+type+"\",\n";
+            json+="\t\"name\":\""+name+"\",\n";
+            json+="\t\"cause\":\""+cause+"\",\n";
             json+="\t\"date\":\""+date+"\",\n";
-            json+="\t\"recovery\":\""+recovery+"\",\n";
-            json+="\t\"details\":\""+details+"\",\n";
             json+="}";
             hh.PutHTTPData(urlString,json);
             return "";
@@ -151,8 +145,9 @@ public class InjuryEdit extends AppCompatActivity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
 
-            Intent intent=new Intent(InjuryEdit.this,Injury_View.class);
+            Intent intent=new Intent(VaccinationEdit.this,Vaccination_View.class);
             startActivity(intent);
         }
     }
+
 }

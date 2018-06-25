@@ -19,7 +19,7 @@
         <activity android:name=".Sleep" />
         <activity android:name=".Injury_View" />
         <activity android:name=".InjuryAdd" />
-        <activity android:name=".Vaccination" />
+        <activity android:name=".Vaccination_View" />
         <activity android:name=".Recommendation" />
         <activity android:name=".VaccinationAdd" />
         <activity android:name=".Competition" />
@@ -41,7 +41,9 @@
         </activity>
         <activity android:name=".Injury_detail" />
         <activity android:name=".InjuryEdit" />
-        <activity android:name=".ExerciseHome"></activity>
+        <activity android:name=".ExerciseHome"/>
+        <activity android:name=".Vaccination_detail" />
+        <activity android:name=".VaccinationEdit"></activity>
     </application>
 
 </manifest>
