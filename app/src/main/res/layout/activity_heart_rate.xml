@@ -20,7 +20,7 @@
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/heart_rate_before_placeholder"
+        android:id="@+id/heart_rate_before_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -36,7 +36,7 @@
         android:id="@+id/heart_rate_before_bpm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/heart_rate_before_placeholder"
+        android:layout_alignBaseline="@+id/heart_rate_before_txt"
         android:layout_toEndOf="@+id/heart_rate_before"
         android:layout_weight="1"
         android:text="@string/bpm"
@@ -56,11 +56,11 @@
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/heart_rate_after_placeholder"
+        android:id="@+id/heart_rate_after_txt"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/heart_rate_before_placeholder"
+        android:layout_alignStart="@+id/heart_rate_before_txt"
         android:layout_marginTop="184dp"
         android:layout_weight="1"
         android:ems="10"
@@ -71,7 +71,7 @@
         android:id="@+id/heart_rate_after_bpm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/heart_rate_after_placeholder"
+        android:layout_alignBaseline="@+id/heart_rate_after_txt"
         android:layout_toEndOf="@+id/heart_rate_before"
         android:layout_weight="1"
         android:text="@string/bpm"
