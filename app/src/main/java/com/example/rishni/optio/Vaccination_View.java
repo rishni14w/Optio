@@ -58,7 +58,10 @@ public class Vaccination_View extends AppCompatActivity {
                 intent.putExtra("cause",cause_select);
                 intent.putExtra("date",date_select);
                 intent.putExtra("oid",oid);
+
+
                 startActivity(intent);
+
 
             }
         });
@@ -78,6 +81,15 @@ public class Vaccination_View extends AppCompatActivity {
 
             Intent intent=new Intent(this,VaccinationAdd.class);
             startActivity(intent);
+        }
+
+        if(item.getItemId()==R.id.arrow)
+        {
+
+            Intent intent=new Intent(this,StressAndHealth.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            finish();
         }
 
         return super.onOptionsItemSelected(item);
@@ -120,4 +132,5 @@ public class Vaccination_View extends AppCompatActivity {
             mProgressBar.setVisibility(View.GONE);
         }
     }
+
 }

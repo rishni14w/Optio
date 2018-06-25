@@ -86,7 +86,9 @@ public class VaccinationAdd extends AppCompatActivity {
         else
         {
             Intent intent=new Intent(this,Vaccination_View.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
+            finish();
         }
 
         return super.onOptionsItemSelected(item);
@@ -130,8 +132,9 @@ public class VaccinationAdd extends AppCompatActivity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             Intent intent = new Intent(VaccinationAdd.this, Vaccination_View.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
-
+            finish();
         }
     }
 
