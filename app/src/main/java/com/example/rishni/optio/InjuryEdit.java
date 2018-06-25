@@ -111,7 +111,7 @@ public class InjuryEdit extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    //function to edit user
+    //function to edit injury
     class PutData extends AsyncTask<String,String,String>
     {
         String type;
