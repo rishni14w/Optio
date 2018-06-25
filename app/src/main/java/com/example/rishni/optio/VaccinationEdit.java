@@ -100,7 +100,9 @@ public class VaccinationEdit extends AppCompatActivity {
         else
         {
             Intent intent=new Intent(this,Vaccination_View.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
+            finish();
 
         }
 
@@ -146,7 +148,9 @@ public class VaccinationEdit extends AppCompatActivity {
             super.onPostExecute(s);
 
             Intent intent=new Intent(VaccinationEdit.this,Vaccination_View.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
+            finish();
         }
     }
 
