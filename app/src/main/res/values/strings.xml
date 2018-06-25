@@ -49,6 +49,9 @@
     <string name="injury_detail_Title">Injury Detail</string>
     <string name="injury_edit_Title">Update Injury</string>
 
+    <string name="vaccination_detail_Title">Vaccination Detail</string>
+    <string name="vaccination_edit_Title">Update Vaccination</string>
+
     //Yes/No radio button
     <string name="yes">Yes</string>
     <string name="no">No</string>
@@ -533,4 +536,8 @@
 
     //update
     <string name="update">update</string>
+
+    //vaccination detail UI
+    <string name="name_detail">name</string>
+    <string name="cause_detail">cause</string>
 </resources>
