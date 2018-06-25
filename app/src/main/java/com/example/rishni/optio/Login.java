@@ -1,21 +1,11 @@
 package com.example.rishni.optio;
 
 import android.content.Intent;
-import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Toast;
-
-import com.example.rishni.optio.model.User;
-import com.google.gson.Gson;
-import com.google.gson.reflect.TypeToken;
-
-import java.lang.reflect.Type;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Login extends AppCompatActivity {
 
@@ -36,8 +26,7 @@ public class Login extends AppCompatActivity {
         EditText pwd_edt=(EditText)findViewById(R.id.pwd_et);
         String password=pwd_edt.getText().toString();
 
-        toastMessage("username is "+username);
-        toastMessage("pwd is "+password);
+
 
         if (view.getId()==R.id.login_btn)
         {
