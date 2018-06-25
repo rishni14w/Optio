@@ -108,7 +108,9 @@ public class Vaccination_detail extends AppCompatActivity {
             super.onPostExecute(s);
 
             Intent intent=new Intent(Vaccination_detail.this,Vaccination_View.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
+            finish();
         }
     }
 }
