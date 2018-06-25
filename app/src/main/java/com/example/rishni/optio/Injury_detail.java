@@ -91,7 +91,7 @@ public class Injury_detail extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    //function to delete user
+    //function to delete injury
     class DeleteData extends AsyncTask<String,String,String>
     {
         String injury_type;
