@@ -78,7 +78,9 @@
         android:layout_marginTop="190dp"
         android:ems="10"
         android:hint="@string/placeholder_date_given"
-        android:inputType="date" />
+        android:inputType="textPersonName"
+        android:clickable="true"
+        android:focusable="false"/>
 
 
 </RelativeLayout>
