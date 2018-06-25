@@ -41,6 +41,7 @@
         </activity>
         <activity android:name=".Injury_detail" />
         <activity android:name=".InjuryEdit" />
+        <activity android:name=".ExerciseHome"/>
         <activity android:name=".Vaccination_detail" />
         <activity android:name=".VaccinationEdit"></activity>
     </application>
