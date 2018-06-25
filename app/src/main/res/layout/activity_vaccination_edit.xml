@@ -4,12 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VaccinationAdd"
-    android:orientation="vertical">
-
+    tools:context=".VaccinationEdit">
 
     <TextView
-        android:id="@+id/vaccination_name"
+        android:id="@+id/vaccination_name_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -21,7 +19,7 @@
         android:layout_marginTop="5dp"/>
 
     <EditText
-        android:id="@+id/vaccination_name_txt"
+        android:id="@+id/vaccination_name_txt_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -33,7 +31,7 @@
         android:inputType="textPersonName" />
 
     <TextView
-        android:id="@+id/vaccination_cause"
+        android:id="@+id/vaccination_cause_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -45,7 +43,7 @@
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/vaccination_cause_txt"
+        android:id="@+id/vaccination_cause_txt_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -57,7 +55,7 @@
         android:inputType="textPersonName" />
 
     <TextView
-        android:id="@+id/date_given"
+        android:id="@+id/date_given_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -69,7 +67,7 @@
         android:textSize="18sp" />
 
     <EditText
-        android:id="@+id/date_given_txt"
+        android:id="@+id/date_given_txt_edit"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
@@ -81,6 +79,4 @@
         android:inputType="textPersonName"
         android:clickable="true"
         android:focusable="false"/>
-
-
 </RelativeLayout>
