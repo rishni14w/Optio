@@ -48,7 +48,7 @@ public class StressAndHealth extends AppCompatActivity {
     {
         if (view.getId()==R.id.vaccination_btn)
         {
-            Intent i= new Intent(this,Vaccination.class);
+            Intent i= new Intent(this,Vaccination_View.class);
             startActivity(i);
         }
 
