@@ -8,7 +8,6 @@ import android.widget.BaseAdapter;
 import android.widget.TextView;
 
 import com.example.rishni.optio.model.Injury;
-import com.example.rishni.optio.model.User;
 
 import java.util.List;
 
