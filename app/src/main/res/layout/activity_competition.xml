@@ -101,28 +101,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Answer_1_CS1_Q2"
-            android:layout_marginLeft="25dp"/>
+            android:layout_marginLeft="25dp"
+            android:onClick="checkboxClicked_CS1_Q2"/>
 
         <CheckBox
             android:id="@+id/Answer_2_CS1_Q2_checkBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Answer_2_CS1_Q2"
-            android:layout_marginLeft="25dp"/>
+            android:layout_marginLeft="25dp"
+            android:onClick="checkboxClicked_CS1_Q2"/>
 
         <CheckBox
             android:id="@+id/Answer_3_CS1_Q2_checkBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Answer_3_CS1_Q2"
-            android:layout_marginLeft="25dp"/>
+            android:layout_marginLeft="25dp"
+            android:onClick="checkboxClicked_CS1_Q2"/>
 
         <CheckBox
             android:id="@+id/Answer_4_CS1_Q2_checkBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/none"
-            android:layout_marginLeft="25dp"/>
+            android:layout_marginLeft="25dp"
+            android:onClick="noneClicked_CS1_Q2"/>
 
             <!-- QUESTION 3 -->
 
@@ -141,21 +145,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Answer_1_CS1_Q3"
-            android:layout_marginLeft="25dp"/>
+            android:layout_marginLeft="25dp"
+            android:onClick="checkboxClicked_CS1_Q3"/>
 
         <CheckBox
             android:id="@+id/Answer_2_CS1_Q3_checkBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Answer_2_CS1_Q3"
-            android:layout_marginLeft="25dp"/>
+            android:layout_marginLeft="25dp"
+            android:onClick="checkboxClicked_CS1_Q3"/>
 
         <CheckBox
             android:id="@+id/Answer_3_CS1_Q3_checkBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/none"
-            android:layout_marginLeft="25dp"/>
+            android:layout_marginLeft="25dp"
+            android:onClick="noneClicked_CS1_Q3"/>
 
 
             <!-- QUESTION 4 -->
@@ -175,49 +182,56 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Answer_1_CS1_Q4"
-            android:layout_marginLeft="25dp"/>
+            android:layout_marginLeft="25dp"
+            android:onClick="checkboxClicked_CS1_Q4"/>
 
         <CheckBox
             android:id="@+id/Answer_2_CS1_Q4_checkBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Answer_2_CS1_Q4"
-            android:layout_marginLeft="25dp"/>
+            android:layout_marginLeft="25dp"
+            android:onClick="checkboxClicked_CS1_Q4"/>
 
         <CheckBox
             android:id="@+id/Answer_3_CS1_Q4_checkBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Answer_3_CS1_Q4"
-            android:layout_marginLeft="25dp"/>
+            android:layout_marginLeft="25dp"
+            android:onClick="checkboxClicked_CS1_Q4"/>
 
         <CheckBox
             android:id="@+id/Answer_4_CS1_Q4_checkBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Answer_4_CS1_Q4"
-            android:layout_marginLeft="25dp"/>
+            android:layout_marginLeft="25dp"
+            android:onClick="checkboxClicked_CS1_Q4"/>
 
         <CheckBox
             android:id="@+id/Answer_5_CS1_Q4_checkBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Answer_5_CS1_Q4"
-            android:layout_marginLeft="25dp"/>
+            android:layout_marginLeft="25dp"
+            android:onClick="checkboxClicked_CS1_Q4"/>
 
         <CheckBox
             android:id="@+id/Answer_6_CS1_Q4_checkBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Answer_6_CS1_Q4"
-            android:layout_marginLeft="25dp"/>
+            android:layout_marginLeft="25dp"
+            android:onClick="checkboxClicked_CS1_Q4"/>
 
         <CheckBox
             android:id="@+id/Answer_7_CS1_Q4_checkBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/none"
-            android:layout_marginLeft="25dp"/>
+            android:layout_marginLeft="25dp"
+            android:onClick="noneClicked_CS1_Q4"/>
 
         <!-- SECTION 2 -->
 
@@ -246,35 +260,40 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Answer_1_CS2_Q1"
-            android:layout_marginLeft="25dp"/>
+            android:layout_marginLeft="25dp"
+            android:onClick="checkboxClicked_CS2_Q1"/>
 
         <CheckBox
             android:id="@+id/Answer_2_CS2_Q1_checkBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Answer_2_CS2_Q1"
-            android:layout_marginLeft="25dp"/>
+            android:layout_marginLeft="25dp"
+            android:onClick="checkboxClicked_CS2_Q1"/>
 
         <CheckBox
             android:id="@+id/Answer_3_CS2_Q1_checkBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Answer_3_CS2_Q1"
-            android:layout_marginLeft="25dp"/>
+            android:layout_marginLeft="25dp"
+            android:onClick="checkboxClicked_CS2_Q1"/>
 
         <CheckBox
             android:id="@+id/Answer_4_CS2_Q1_checkBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Answer_4_CS2_Q1"
-            android:layout_marginLeft="25dp"/>
+            android:layout_marginLeft="25dp"
+            android:onClick="checkboxClicked_CS2_Q1"/>
 
         <CheckBox
             android:id="@+id/Answer_5_CS2_Q1_checkBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/none"
-            android:layout_marginLeft="25dp"/>
+            android:layout_marginLeft="25dp"
+            android:onClick="noneClicked_CS2_Q1"/>
 
             <!-- QUESTION 2 -->
 
@@ -293,35 +312,40 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Answer_1_CS2_Q2"
-            android:layout_marginLeft="25dp"/>
+            android:layout_marginLeft="25dp"
+            android:onClick="checkboxClicked_CS2_Q2"/>
 
         <CheckBox
             android:id="@+id/Answer_2_CS2_Q2_checkBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Answer_2_CS2_Q2"
-            android:layout_marginLeft="25dp"/>
+            android:layout_marginLeft="25dp"
+            android:onClick="checkboxClicked_CS2_Q2"/>
 
         <CheckBox
             android:id="@+id/Answer_3_CS2_Q2_checkBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Answer_3_CS2_Q2"
-            android:layout_marginLeft="25dp"/>
+            android:layout_marginLeft="25dp"
+            android:onClick="checkboxClicked_CS2_Q2"/>
 
         <CheckBox
             android:id="@+id/Answer_4_CS2_Q2_checkBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Answer_4_CS2_Q2"
-            android:layout_marginLeft="25dp"/>
+            android:layout_marginLeft="25dp"
+            android:onClick="checkboxClicked_CS2_Q2"/>
 
         <CheckBox
             android:id="@+id/Answer_5_CS2_Q2_checkBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/none"
-            android:layout_marginLeft="25dp"/>
+            android:layout_marginLeft="25dp"
+            android:onClick="noneClicked_CS2_Q2"/>
 
             <!-- QUESTION 3 -->
 
@@ -373,7 +397,8 @@
             android:layout_height="wrap_content"
             android:text="@string/Answer_1_CS2_Q3"
             android:layout_marginLeft="25dp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:onClick="checkboxClicked_CS2_Q3"/>
 
         <CheckBox
             android:id="@+id/Answer_2_CS2_Q3_checkBox"
@@ -381,7 +406,8 @@
             android:layout_height="wrap_content"
             android:text="@string/Answer_2_CS2_Q3"
             android:layout_marginLeft="25dp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:onClick="checkboxClicked_CS2_Q3"/>
 
         <CheckBox
             android:id="@+id/Answer_3_CS2_Q3_checkBox"
@@ -389,7 +415,8 @@
             android:layout_height="wrap_content"
             android:text="@string/Answer_3_CS2_Q3"
             android:layout_marginLeft="25dp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:onClick="checkboxClicked_CS2_Q3"/>
 
         <CheckBox
             android:id="@+id/Answer_4_CS2_Q3_checkBox"
@@ -397,7 +424,8 @@
             android:layout_height="wrap_content"
             android:text="@string/none"
             android:layout_marginLeft="25dp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:onClick="noneClicked_CS2_Q3"/>
 
         <!-- SECTION 3 -->
 
@@ -566,7 +594,8 @@
             android:layout_height="wrap_content"
             android:text="@string/Reason_1_CS3_Q2"
             android:layout_marginLeft="25dp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:onClick="checkboxClicked_CS3_Q2"/>
 
         <CheckBox
             android:id="@+id/Reason_2_CS3_Q2_checkBox"
@@ -574,7 +603,8 @@
             android:layout_height="wrap_content"
             android:text="@string/Reason_2_CS3_Q2"
             android:layout_marginLeft="25dp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:onClick="checkboxClicked_CS3_Q2"/>
 
         <CheckBox
             android:id="@+id/Reason_3_CS3_Q2_checkBox"
@@ -582,7 +612,8 @@
             android:layout_height="wrap_content"
             android:text="@string/Reason_3_CS3_Q2"
             android:layout_marginLeft="25dp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:onClick="checkboxClicked_CS3_Q2"/>
 
         <CheckBox
             android:id="@+id/Reason_4_CS3_Q2_checkBox"
@@ -590,7 +621,8 @@
             android:layout_height="wrap_content"
             android:text="@string/none"
             android:layout_marginLeft="25dp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:onClick="noneClicked_CS3_Q2"/>
 
             <!-- QUESTION 3 -->
         <TextView

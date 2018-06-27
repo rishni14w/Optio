@@ -73,7 +73,8 @@
             android:layout_height="wrap_content"
             android:text="@string/Reason_1_FI_S1_Q1"
             android:layout_marginLeft="25dp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:onClick="checkboxClicked_FI_S1_Q1"/>
 
         <CheckBox
             android:id="@+id/Reason_2_FI_S1_Q1_checkBox"
@@ -81,7 +82,8 @@
             android:layout_height="wrap_content"
             android:text="@string/Reason_2_FI_S1_Q1"
             android:layout_marginLeft="25dp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:onClick="checkboxClicked_FI_S1_Q1"/>
 
         <CheckBox
             android:id="@+id/Reason_3_FI_S1_Q1_checkBox"
@@ -89,7 +91,8 @@
             android:layout_height="wrap_content"
             android:text="@string/Reason_3_FI_S1_Q1"
             android:layout_marginLeft="25dp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:onClick="checkboxClicked_FI_S1_Q1"/>
 
         <CheckBox
             android:id="@+id/Reason_4_FI_S1_Q1_checkBox"
@@ -97,7 +100,8 @@
             android:layout_height="wrap_content"
             android:text="@string/Reason_4_FI_S1_Q1"
             android:layout_marginLeft="25dp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:onClick="checkboxClicked_FI_S1_Q1"/>
 
         <CheckBox
             android:id="@+id/Reason_5_FI_S1_Q1_checkBox"
@@ -105,7 +109,8 @@
             android:layout_height="wrap_content"
             android:text="@string/Reason_5_FI_S1_Q1"
             android:layout_marginLeft="25dp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:onClick="checkboxClicked_FI_S1_Q1"/>
 
         <CheckBox
             android:id="@+id/Reason_6_FI_S1_Q1_checkBox"
@@ -113,7 +118,8 @@
             android:layout_height="wrap_content"
             android:text="@string/Reason_6_FI_S1_Q1"
             android:layout_marginLeft="25dp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:onClick="checkboxClicked_FI_S1_Q1"/>
 
         <CheckBox
             android:id="@+id/Reason_7_FI_S1_Q1_checkBox"
@@ -121,7 +127,8 @@
             android:layout_height="wrap_content"
             android:text="@string/Reason_7_FI_S1_Q1"
             android:layout_marginLeft="25dp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:onClick="checkboxClicked_FI_S1_Q1"/>
 
         <CheckBox
             android:id="@+id/Reason_8_FI_S1_Q1_checkBox"
@@ -129,14 +136,16 @@
             android:layout_height="wrap_content"
             android:text="@string/Reason_8_FI_S1_Q1"
             android:layout_marginLeft="25dp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:onClick="checkboxClicked_FI_S1_Q1"/>
         <CheckBox
             android:id="@+id/Reason_9_FI_S1_Q1_checkBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/none"
             android:layout_marginLeft="25dp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:onClick="noneClicked_FI_S1_Q1"/>
 
         <!-- QUESTION 2 -->
 

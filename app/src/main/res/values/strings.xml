@@ -125,7 +125,7 @@
     //Question 3
     <string name="Question_3_CS2">3. Are you facing Negative Spectators?</string>
     //Answers
-    <string name="Answer_1_CS2_Q3">MWorrying of being booed by the audience</string>
+    <string name="Answer_1_CS2_Q3">Worrying of being booed by the audience</string>
     <string name="Answer_2_CS2_Q3">Facing noisy, brutal, abusive, wild spectators</string>
     <string name="Answer_3_CS2_Q3">Spectators at the team competition</string>
 
@@ -198,7 +198,7 @@
     <string name="Question_2_PLC_S3">2. Are you doubting about life after retired?</string>
     //Reasons
     <string name="Reason_1_PLC_S3_Q2">Not certain whether you will get a job after retired</string>
-    <string name="Reason_2_PLC_S3_Q2">Realising that one day you will stop playing</string>
+    <string name="Reason_2_PLC_S3_Q2">Realizing that one day you will stop playing</string>
     <string name="Reason_3_PLC_S3_Q2">Worrying about not having a happy life</string>
 
     //section 4
@@ -269,7 +269,7 @@
     <string name="Question_3_FI_S1">3. Are you experiencing slump?</string>
     //Reason
     <string name="Reason_1_FI_S1_Q3">Your rank stuck in a slump</string>
-    <string name="Reason_2_FI_S1_Q3">Realising that it is not you playing in the final</string>
+    <string name="Reason_2_FI_S1_Q3">Realizing that it is not you playing in the final</string>
 
     //Section 2
     <string name="Failure_Section_2">Receiving Negative comments on losing</string>
