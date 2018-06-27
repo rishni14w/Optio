@@ -1,6 +1,7 @@
 package com.example.rishni.optio;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -22,6 +23,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences("AthletePref",0);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("AthleteName","John Doe");
+        editor.putString("AthleteNic","906541226V");
+        editor.putString("AthleteHeight","180 cm");
+        editor.putString("AthleteWeight","75 kg");
+        editor.putString("AthletePlayedSince","2009");
+        editor.commit();
 
     }
 
