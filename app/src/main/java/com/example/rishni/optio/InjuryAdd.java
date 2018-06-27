@@ -90,7 +90,9 @@ public class InjuryAdd extends AppCompatActivity {
         else
         {
             Intent intent=new Intent(this,Injury_View.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
+            finish();
         }
 
         return super.onOptionsItemSelected(item);
@@ -138,7 +140,9 @@ public class InjuryAdd extends AppCompatActivity {
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
             Intent intent=new Intent(InjuryAdd.this,Injury_View.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
+            finish();
 
         }
     }
