@@ -10,6 +10,7 @@ public class db {
     private static String COLLECTION_NAME_VACCINATION="vaccination";
     private static String COLLECTION_NAME_SLEEP="sleep";
     private static String COLLECTION_NAME_HEARTRATE="heartrate";
+    private static String COLLECTION_NAME_ILLNESSINJURY="illnessinjury";
 
     public static String API_KEY="CoT0fJmLYRgJtCu2DpPG25PzvQVCtDks";
 
@@ -70,6 +71,15 @@ public class db {
     public static String getAddressAPI_BodyComposition()
     {
         String baseUrl=String.format("https://api.mlab.com/api/1/databases/%s/collections/%s",DB_NAME,COLLECTION_NAME_BODYCOMPOSITION);
+        StringBuilder stringBuilder=new StringBuilder(baseUrl);
+        stringBuilder.append("?apiKey="+API_KEY);
+        return stringBuilder.toString();
+    }
+
+    //illness and injury
+    public static String getAddressAPI_IllnessInjury()
+    {
+        String baseUrl=String.format("https://api.mlab.com/api/1/databases/%s/collections/%s",DB_NAME,COLLECTION_NAME_ILLNESSINJURY);
         StringBuilder stringBuilder=new StringBuilder(baseUrl);
         stringBuilder.append("?apiKey="+API_KEY);
         return stringBuilder.toString();
