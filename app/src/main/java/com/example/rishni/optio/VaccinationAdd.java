@@ -94,7 +94,7 @@ public class VaccinationAdd extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    //function to add new user
+    //function to add new vaccination
     class PostData extends AsyncTask<String,String,String> {
         String name;
         String cause;
