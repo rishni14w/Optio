@@ -82,6 +82,15 @@ public class Injury_View extends AppCompatActivity {
             startActivity(intent);
         }
 
+        if(item.getItemId()==R.id.arrow)
+        {
+
+            Intent intent=new Intent(this,StressAndHealth.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            finish();
+        }
+
         return super.onOptionsItemSelected(item);
     }
 

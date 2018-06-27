@@ -121,7 +121,9 @@ public class Injury_detail extends AppCompatActivity {
             super.onPostExecute(s);
 
             Intent intent=new Intent(Injury_detail.this,Injury_View.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
+            finish();
         }
     }
 }
