@@ -22,29 +22,23 @@
             android:layout_marginTop="79dp"
             android:text="@string/training" />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/diet"
-        android:layout_marginBottom="30dp"
-        android:layout_gravity="center"/>
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/diet"
+            android:layout_marginBottom="30dp"
+            android:layout_gravity="center"/>
 
-    <Button
-        android:id="@+id/StressHealthbtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="30dp"
-        android:layout_gravity="center"
-        android:text="@string/stress"
-        android:onClick="clickedstressandhealth"/>
+        <Button
+            android:id="@+id/StressHealthbtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="30dp"
+            android:layout_gravity="center"
+            android:text="@string/stress"
+            android:onClick="clickedstressandhealth"/>
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/decision"
-        android:layout_marginBottom="10dp"
-        android:layout_gravity="center"/>
-    </LinearLayout>
+
+        </LinearLayout>
 </ScrollView>
