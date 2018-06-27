@@ -540,4 +540,7 @@
     //vaccination detail UI
     <string name="name_detail">name</string>
     <string name="cause_detail">cause</string>
+
+    //arrow
+    <string name="arrow">arrow</string>
 </resources>

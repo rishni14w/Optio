@@ -3,9 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
+        android:id="@+id/arrow"
+        android:title="@string/arrow"
+        app:showAsAction="always"
+        android:icon="@drawable/ic_arrow_back_black_24dp"
+        android:orderInCategory="1" />
+
+    <item
         android:id="@+id/add"
         android:title="@string/add"
         app:showAsAction="always"
         android:icon="@drawable/ic_add_black_24dp"
-        android:orderInCategory="1"/>
+        android:orderInCategory="8"/>
+
+
+
 </menu>
