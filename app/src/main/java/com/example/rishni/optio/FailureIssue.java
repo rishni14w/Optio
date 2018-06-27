@@ -3,6 +3,7 @@ package com.example.rishni.optio;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.TextView;
 
 public class FailureIssue extends AppCompatActivity {
@@ -157,6 +158,56 @@ public class FailureIssue extends AppCompatActivity {
             reason_1_FI_S2_Q1.setVisibility(View.GONE);
             reason_2_FI_S2_Q1.setVisibility(View.GONE);
             reason_3_FI_S2_Q1.setVisibility(View.GONE);
+        }
+    }
+
+
+
+    public void noneClicked_FI_S1_Q1(View view)
+    {
+        if(view.getId()==R.id.Reason_9_FI_S1_Q1_checkBox) {
+            CheckBox chk1,chk2,chk3,chk4,chk5,chk6,chk7,chk8,chk9;
+            chk1=(CheckBox)findViewById(R.id.Reason_1_FI_S1_Q1_checkBox);
+            chk2=(CheckBox)findViewById(R.id.Reason_2_FI_S1_Q1_checkBox);
+            chk3=(CheckBox)findViewById(R.id.Reason_3_FI_S1_Q1_checkBox);
+            chk4=(CheckBox)findViewById(R.id.Reason_4_FI_S1_Q1_checkBox);
+            chk5=(CheckBox)findViewById(R.id.Reason_5_FI_S1_Q1_checkBox);
+            chk6=(CheckBox)findViewById(R.id.Reason_6_FI_S1_Q1_checkBox);
+            chk7=(CheckBox)findViewById(R.id.Reason_7_FI_S1_Q1_checkBox);
+            chk8=(CheckBox)findViewById(R.id.Reason_8_FI_S1_Q1_checkBox);
+            chk9=(CheckBox)findViewById(R.id.Reason_9_FI_S1_Q1_checkBox);
+            if(chk9.isChecked())
+            {
+                chk1.setChecked(false);
+                chk2.setChecked(false);
+                chk3.setChecked(false);
+                chk4.setChecked(false);
+                chk5.setChecked(false);
+                chk6.setChecked(false);
+                chk7.setChecked(false);
+                chk8.setChecked(false);
+            }
+        }
+    }
+
+    public void checkboxClicked_FI_S1_Q1(View view)
+    {
+        if((view.getId()==R.id.Reason_1_FI_S1_Q1_checkBox)||(view.getId()==R.id.Reason_2_FI_S1_Q1_checkBox)||(view.getId()==R.id.Reason_3_FI_S1_Q1_checkBox)||(view.getId()==R.id.Reason_4_FI_S1_Q1_checkBox)||(view.getId()==R.id.Reason_5_FI_S1_Q1_checkBox)||(view.getId()==R.id.Reason_6_FI_S1_Q1_checkBox)||(view.getId()==R.id.Reason_7_FI_S1_Q1_checkBox)||(view.getId()==R.id.Reason_8_FI_S1_Q1_checkBox)) {
+            CheckBox chk1,chk2,chk3,chk4,chk5,chk6,chk7,chk8,chk9;
+            chk1=(CheckBox)findViewById(R.id.Reason_1_FI_S1_Q1_checkBox);
+            chk2=(CheckBox)findViewById(R.id.Reason_2_FI_S1_Q1_checkBox);
+            chk3=(CheckBox)findViewById(R.id.Reason_3_FI_S1_Q1_checkBox);
+            chk4=(CheckBox)findViewById(R.id.Reason_4_FI_S1_Q1_checkBox);
+            chk5=(CheckBox)findViewById(R.id.Reason_5_FI_S1_Q1_checkBox);
+            chk6=(CheckBox)findViewById(R.id.Reason_6_FI_S1_Q1_checkBox);
+            chk7=(CheckBox)findViewById(R.id.Reason_7_FI_S1_Q1_checkBox);
+            chk8=(CheckBox)findViewById(R.id.Reason_8_FI_S1_Q1_checkBox);
+            chk9=(CheckBox)findViewById(R.id.Reason_9_FI_S1_Q1_checkBox);
+
+            if(chk1.isChecked()||chk2.isChecked()||chk3.isChecked()||chk4.isChecked()||chk5.isChecked()||chk6.isChecked()||chk7.isChecked()||chk8.isChecked())
+            {
+                chk9.setChecked(false);
+            }
         }
     }
 
