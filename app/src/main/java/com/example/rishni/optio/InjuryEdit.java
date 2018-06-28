@@ -1,7 +1,9 @@
 package com.example.rishni.optio;
 
 import android.annotation.TargetApi;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -31,6 +33,7 @@ public class InjuryEdit extends AppCompatActivity {
     Calendar calendar=Calendar.getInstance();
     DatePickerDialog.OnDateSetListener datep;
 
+    Validation validation=new Validation();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -98,7 +101,24 @@ public class InjuryEdit extends AppCompatActivity {
             String updateRecovery=editText_Recovery_edit.getText().toString();
             String updateDetails=editText_Details_edit.getText().toString();
 
-            new PutData(updateType,updateDate,updateRecovery,updateDetails).execute(db.getAddressSingle_Injury(oid));
+            Boolean result=validation.isEmpty(updateType,updateDate);
+            if(result.equals(false))
+            {
+                new PutData(updateType,updateDate,updateRecovery,updateDetails).execute(db.getAddressSingle_Injury(oid));
+            }
+            else
+            {
+                AlertDialog dialog=new AlertDialog.Builder(this).setTitle("Error").setMessage("Both injury type and date of injury are required").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Intent intent=new Intent(VaccinationAdd.this,Vaccination_View.class);
+                        //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        //startActivity(intent);
+                        //finish();
+                    }
+                }).create();
+                dialog.show();
+            }
 
         }
 
