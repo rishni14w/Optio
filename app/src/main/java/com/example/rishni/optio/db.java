@@ -12,6 +12,7 @@ public class db {
     private static String COLLECTION_NAME_HEARTRATE="heartrate";
     private static String COLLECTION_NAME_ILLNESSINJURY="illnessinjury";
     private static String COLLECTION_NAME_PERSONAL="personal";
+    private static String COLLECTION_NAME_COMPETITION="competition";
 
     public static String API_KEY="CoT0fJmLYRgJtCu2DpPG25PzvQVCtDks";
 
@@ -90,6 +91,15 @@ public class db {
     public static String getAddressAPI_Personal()
     {
         String baseUrl=String.format("https://api.mlab.com/api/1/databases/%s/collections/%s",DB_NAME,COLLECTION_NAME_PERSONAL);
+        StringBuilder stringBuilder=new StringBuilder(baseUrl);
+        stringBuilder.append("?apiKey="+API_KEY);
+        return stringBuilder.toString();
+    }
+
+    //competition
+    public static String getAddressAPI_Competition()
+    {
+        String baseUrl=String.format("https://api.mlab.com/api/1/databases/%s/collections/%s",DB_NAME,COLLECTION_NAME_COMPETITION);
         StringBuilder stringBuilder=new StringBuilder(baseUrl);
         stringBuilder.append("?apiKey="+API_KEY);
         return stringBuilder.toString();
