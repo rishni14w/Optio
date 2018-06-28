@@ -21,7 +21,8 @@
             android:layout_height="wrap_content"
             android:text="@string/Precompetition_Section_1"
             android:textSize="24sp"
-            android:textColor="@color/colorAccent"/>
+            android:textColor="@color/colorAccent"
+            android:layout_marginBottom="10dp"/>
 
         <!-- QUESTION 1 -->
 
@@ -37,7 +38,8 @@
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
 
             <RadioButton
                 android:id="@+id/radioButton1_Q1_PC_S1"
@@ -69,7 +71,8 @@
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
 
             <RadioButton
                 android:id="@+id/radioButton1_Q2_PC_S1"
@@ -101,7 +104,8 @@
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
 
             <RadioButton
                 android:id="@+id/radioButton1_Q3_PC_S1"
@@ -147,7 +151,8 @@
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
 
             <RadioButton
                 android:id="@+id/radioButton1_Q4_PC_S1"
@@ -193,7 +198,8 @@
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
 
             <RadioButton
                 android:id="@+id/radioButton1_Q5_PC_S1"
@@ -239,7 +245,8 @@
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
 
             <RadioButton
                 android:id="@+id/radioButton1_Q6_PC_S1"
@@ -279,7 +286,8 @@
             android:layout_height="wrap_content"
             android:text="@string/Precompetition_Section_2"
             android:textSize="24sp"
-            android:textColor="@color/colorAccent"/>
+            android:textColor="@color/colorAccent"
+            android:layout_marginBottom="10dp"/>
 
         <!-- QUESTION 1 -->
 
@@ -295,7 +303,8 @@
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
 
             <RadioButton
                 android:id="@+id/radioButton1_Q1_PC_S2"
@@ -360,7 +369,8 @@
             android:layout_height="wrap_content"
             android:text="@string/Reason_5_PC_S2_Q1"
             android:layout_marginLeft="25dp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:layout_marginBottom="10dp"/>
 
         <!-- QUESTION 2 -->
 
@@ -376,7 +386,8 @@
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
 
             <RadioButton
                 android:id="@+id/radioButton1_Q2_PC_S2"
@@ -408,7 +419,8 @@
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
 
             <RadioButton
                 android:id="@+id/radioButton1_Q2a_PC_S2"
@@ -435,7 +447,8 @@
             android:layout_height="wrap_content"
             android:text="@string/Precompetition_Section_3"
             android:textSize="24sp"
-            android:textColor="@color/colorAccent"/>
+            android:textColor="@color/colorAccent"
+            android:layout_marginBottom="10dp"/>
 
         <!-- SUB SECTION 1 -->
 
@@ -446,7 +459,8 @@
             android:text="@string/Precompetition_Sub_Section_1"
             android:textSize="24sp"
             android:layout_marginLeft="5dp"
-            android:textColor="@android:color/black"/>
+            android:textColor="@android:color/black"
+            android:layout_marginBottom="10dp"/>
 
 
         <!-- QUESTION 1 -->
@@ -463,7 +477,8 @@
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
 
             <RadioButton
                 android:id="@+id/radioButton1_Q1_PC_SS1"
@@ -495,7 +510,8 @@
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
 
             <RadioButton
                 android:id="@+id/radioButton1_Q2_PC_SS1"
@@ -522,7 +538,8 @@
             android:text="@string/Precompetition_Sub_Section_2"
             android:textSize="24sp"
             android:textColor="@android:color/black"
-            android:layout_marginLeft="5dp"/>
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="10dp"/>
 
 
         <!-- QUESTION 1 -->
@@ -539,7 +556,8 @@
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
 
             <RadioButton
                 android:id="@+id/radioButton1_Q1_PC_SS2"
@@ -628,7 +646,8 @@
             android:layout_height="wrap_content"
             android:text="@string/Reason_8_PC_SS2_Q1"
             android:layout_marginLeft="25dp"
-            android:visibility="gone"/>
+            android:visibility="gone"
+            android:layout_marginBottom="10dp"/>
 
         <!-- SUB SECTION 3 -->
 
@@ -639,7 +658,8 @@
             android:text="@string/Precompetition_Sub_Section_3"
             android:textSize="24sp"
             android:textColor="@android:color/black"
-            android:layout_marginLeft="5dp"/>
+            android:layout_marginLeft="5dp"
+            android:layout_marginBottom="10dp"/>
 
 
         <!-- QUESTION 1 -->
@@ -656,7 +676,8 @@
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
 
             <RadioButton
                 android:id="@+id/radioButton1_Q1_PC_SS3"
@@ -688,7 +709,8 @@
         <RadioGroup
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginBottom="10dp">
 
             <RadioButton
                 android:id="@+id/radioButton1_Q2_PC_SS3"
@@ -715,7 +737,7 @@
             android:layout_marginTop="15dp"
             android:layout_marginBottom="10dp"
             android:background="@color/colorAccent"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/white"
             android:layout_gravity="center"
             android:onClick="submit_precompetition"/>
 
