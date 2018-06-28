@@ -48,16 +48,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/yes"
-                android:layout_marginLeft="20dp"
-                android:onClick="clicked_yes__PLC_S1_Q1"/>
+                android:layout_marginLeft="20dp"/>
 
             <RadioButton
                 android:id="@+id/radioButton2_Q1_PLC_S1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/no"
-                android:onClick="clicked_no__PLC_S11_Q1"/>
+                android:text="@string/no"/>
         </RadioGroup>
 
        <!-- QUESTION 2 -->
@@ -84,16 +82,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/yes"
-                android:layout_marginLeft="20dp"
-                android:onClick="clicked_yes__PLC_S1_Q2"/>
+                android:layout_marginLeft="20dp"/>
 
             <RadioButton
                 android:id="@+id/radioButton2_Q2_PLC_S1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/no"
-                android:onClick="clicked_no__PLC_S1_Q2"/>
+                android:text="@string/no"/>
         </RadioGroup>
 
         <TextView
@@ -165,16 +161,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/yes"
-                android:layout_marginLeft="20dp"
-                android:onClick="clicked_yes__PLC_S2_Q1"/>
+                android:layout_marginLeft="20dp"/>
 
             <RadioButton
                 android:id="@+id/radioButton2_Q1_PLC_S2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/no"
-                android:onClick="clicked_no__PLC_S2_Q1"/>
+                android:text="@string/no"/>
         </RadioGroup>
 
         <TextView
@@ -238,16 +232,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/yes"
-                android:layout_marginLeft="25dp"
-                android:onClick="clicked_yes__PLC_S3_Q1"/>
+                android:layout_marginLeft="25dp"/>
 
             <RadioButton
                 android:id="@+id/radioButton2_Q1_PLC_S3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/no"
-                android:onClick="clicked_no__PLC_S3_Q1"/>
+                android:text="@string/no"/>
         </RadioGroup>
 
         <TextView
@@ -297,16 +289,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/yes"
-                android:layout_marginLeft="25dp"
-                android:onClick="clicked_yes__PLC_S3_Q2"/>
+                android:layout_marginLeft="25dp"/>
 
             <RadioButton
                 android:id="@+id/radioButton2_Q2_PLC_S3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/no"
-                android:onClick="clicked_no__PLC_S3_Q2"/>
+                android:text="@string/no"/>
         </RadioGroup>
 
         <TextView
@@ -379,16 +369,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/yes"
-                android:layout_marginLeft="25dp"
-                android:onClick="clicked_yes__PLC_S4_Q1"/>
+                android:layout_marginLeft="25dp"/>
 
             <RadioButton
                 android:id="@+id/radioButton2_Q1_PLC_S4"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/no"
-                android:onClick="clicked_no__PLC_S4_Q1"/>
+                android:text="@string/no"/>
         </RadioGroup>
 
         <TextView
@@ -425,6 +413,7 @@
             android:visibility="gone"/>
 
         <Button
+            android:id="@+id/submit_personal_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/submit"
@@ -433,7 +422,8 @@
             android:layout_marginBottom="10dp"
             android:background="@color/colorAccent"
             android:textColor="@android:color/black"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:onClick="submit_personal"/>
     </LinearLayout>
 </ScrollView>
 
