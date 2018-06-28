@@ -16,74 +16,88 @@
 
         <Button
             android:id="@+id/questionnaire_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/questionnaire_SH"
             android:layout_marginBottom="30dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
-            android:onClick="questionnaireClicked"/>
+            android:onClick="questionnaireClicked"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"/>
 
         <Button
             android:id="@+id/recommendation_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/recommendation_SH"
             android:layout_marginBottom="30dp"
             android:layout_gravity="center"
-            android:onClick="recommendation_clicked"/>
+            android:onClick="recommendation_clicked"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"/>
 
         <Button
             android:id="@+id/injury_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/injury_SH"
             android:layout_marginBottom="30dp"
             android:layout_gravity="center"
-            android:onClick="injury_clicked"/>
+            android:onClick="injury_clicked"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"/>
 
         <Button
             android:id="@+id/vaccination_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/vaccination_SH"
             android:layout_marginBottom="30dp"
             android:layout_gravity="center"
-            android:onClick="vaccination_clicked"/>
+            android:onClick="vaccination_clicked"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"/>
 
         <Button
             android:id="@+id/heartrate_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/heartrate_SH"
             android:layout_marginBottom="30dp"
             android:layout_gravity="center"
-            android:onClick="heartRate_clicked"/>
+            android:onClick="heartRate_clicked"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"/>
 
         <Button
             android:id="@+id/bodycomposition_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/bodycomposition_SH"
             android:layout_marginBottom="30dp"
             android:layout_gravity="center"
-            android:onClick="bodycomposition_clicked"/>
+            android:onClick="bodycomposition_clicked"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"/>
 
         <Button
             android:id="@+id/sleep_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/sleep_SH"
             android:layout_gravity="center"
             android:layout_marginBottom="15dp"
-            android:onClick="sleep_clicked"/>
+            android:onClick="sleep_clicked"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"/>
     </LinearLayout>
 
 
