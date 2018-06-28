@@ -303,16 +303,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/yes"
-                android:layout_marginLeft="20dp"
-                android:onClick="clicked_yes__PC_S2_Q1"/>
+                android:layout_marginLeft="20dp"/>
 
             <RadioButton
                 android:id="@+id/radioButton2_Q1_PC_S2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/no"
-                android:onClick="clicked_no__PC_S2_Q1"/>
+                android:text="@string/no"/>
         </RadioGroup>
 
         <TextView
@@ -549,16 +547,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="@string/yes"
-                android:layout_marginLeft="20dp"
-                android:onClick="clicked_yes__PC_SS2_Q1"/>
+                android:layout_marginLeft="20dp"/>
 
             <RadioButton
                 android:id="@+id/radioButton2_Q1_PC_SS2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:text="@string/no"
-                android:onClick="clicked_no__PC_SS2_Q1"/>
+                android:text="@string/no"/>
         </RadioGroup>
 
         <TextView
@@ -711,6 +707,7 @@
         </RadioGroup>
 
         <Button
+            android:id="@+id/submit_precompetition_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/submit"
@@ -719,7 +716,8 @@
             android:layout_marginBottom="10dp"
             android:background="@color/colorAccent"
             android:textColor="@android:color/black"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:onClick="submit_precompetition"/>
 
     </LinearLayout>
 </ScrollView>
