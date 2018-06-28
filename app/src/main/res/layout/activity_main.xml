@@ -15,29 +15,35 @@
 
         <Button
             android:id="@+id/buttonExercise"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="30dp"
             android:layout_marginTop="79dp"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
             android:text="@string/training" />
 
         <Button
             android:id="@+id/button2"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/diet"
             android:layout_marginBottom="30dp"
-            android:layout_gravity="center"/>
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"/>
 
         <Button
             android:id="@+id/StressHealthbtn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginBottom="30dp"
             android:layout_gravity="center"
             android:text="@string/stress"
-            android:onClick="clickedstressandhealth"/>
+            android:onClick="clickedstressandhealth"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"/>
 
 
         </LinearLayout>

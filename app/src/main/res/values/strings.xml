@@ -505,17 +505,17 @@
     <string name="vaccination_name">Vaccine Name :</string>
     <string name="vaccination_cause">Cause :</string>
     <string name="date_given">Date given :</string>
-    <string name="placeholder_vaccination_name">Enter Vaccine Name</string>
-    <string name="placeholder_vaccination_cause">Enter Cause</string>
-    <string name="placeholder_date_given">Enter Date given</string>
+    <string name="placeholder_vaccination_name">Enter Vaccine Name  (required)</string>
+    <string name="placeholder_vaccination_cause">Enter Cause  (required)</string>
+    <string name="placeholder_date_given">Enter Date given  (required)</string>
 
     //Add_Injury
     <string name="injury_type">Injury Type :</string>
     <string name="date_of_injury">Date of injury :</string>
     <string name="recovery_duration">Recovery Duration :</string>
     <string name="details">Details :</string>
-    <string name="placeholder_injury_type">Enter Injury Type</string>
-    <string name="placeholder_date_of_injury">Enter Date of injury</string>
+    <string name="placeholder_injury_type">Enter Injury Type (required)</string>
+    <string name="placeholder_date_of_injury">Enter Date of injury  (required)</string>
     <string name="placeholder_recovery_duration">Enter Recovery Duration</string>
     <string name="placeholder_details">Enter Details</string>
 

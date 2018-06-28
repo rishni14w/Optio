@@ -1,7 +1,9 @@
 package com.example.rishni.optio;
 
 import android.annotation.TargetApi;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -28,6 +30,8 @@ public class VaccinationAdd extends AppCompatActivity {
 
     Calendar calendar=Calendar.getInstance();
     DatePickerDialog.OnDateSetListener date;
+
+    Validation validation=new Validation();
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -80,7 +84,25 @@ public class VaccinationAdd extends AppCompatActivity {
             String newCause=editText_Cause.getText().toString();
             String newDate=editText_Date.getText().toString();
 
-            new PostData(newName,newCause,newDate).execute(db.getAddressAPI_Vaccination());
+            Boolean result=validation.isEmpty(newName,newCause,newDate);
+            if(result.equals(false))
+            {
+                new PostData(newName,newCause,newDate).execute(db.getAddressAPI_Vaccination());
+            }
+            else
+            {
+                AlertDialog dialog=new AlertDialog.Builder(this).setTitle("Error").setMessage("Cannot keep fields empty").setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        //Intent intent=new Intent(VaccinationAdd.this,Vaccination_View.class);
+                        //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        //startActivity(intent);
+                        //finish();
+                    }
+                }).create();
+                dialog.show();
+            }
+
 
         }
         else
