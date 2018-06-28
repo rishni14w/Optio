@@ -43,8 +43,8 @@ public class CustomAdapter_Vaccination extends BaseAdapter {
         TextView txtName=(TextView)view.findViewById(R.id.txt_vaccinationName);
         txtName.setText(lstVaccination.get(position).getName());
 
-        TextView txtCause=(TextView)view.findViewById(R.id.txt_vaccinationCause);
-        txtCause.setText(lstVaccination.get(position).getCause());
+        //TextView txtCause=(TextView)view.findViewById(R.id.txt_vaccinationCause);
+        //txtCause.setText(lstVaccination.get(position).getCause());
 
         TextView txtDate=(TextView)view.findViewById(R.id.txt_vaccinationDate);
         txtDate.setText(lstVaccination.get(position).getDate());
