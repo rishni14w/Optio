@@ -1145,7 +1145,6 @@ public class Competition extends AppCompatActivity {
             json += "\t\"cold_reason\": [\"" + Cold_reason1_s + "\",\""+Cold_reason2_s+ "\",\""+Cold_reason3_s+ "\",\""+Cold_reason4_s+"\"],\n";
             json += "\t\"away\":\"" + Away + "\",\n";
             json += "\t\"away_reason\": [\"" + Away_reason1_s + "\",\""+Away_reason2_s+ "\",\""+Away_reason3_s+ "\",\""+Away_reason4_s+"\"],\n";
-
             json += "}";
             hh.PostHTTPData(urlString, json);
             return "";
