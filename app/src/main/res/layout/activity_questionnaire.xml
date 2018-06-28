@@ -16,73 +16,87 @@
 
         <Button
             android:id="@+id/competition_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="30dp"
             android:layout_marginTop="10dp"
             android:layout_weight="1"
             android:onClick="competitionClicked"
-            android:text="@string/competition_Q" />
+            android:text="@string/competition_Q"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"/>
 
         <Button
             android:id="@+id/precompetition_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="30dp"
             android:layout_weight="1"
             android:onClick="precompetitionClicked"
-            android:text="@string/precompetition_Q" />
+            android:text="@string/precompetition_Q"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"/>
 
         <Button
             android:id="@+id/psychologial_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="30dp"
             android:layout_weight="1"
             android:onClick="psychologicalClicked"
-            android:text="@string/psychological_Q" />
+            android:text="@string/psychological_Q"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"/>
 
         <Button
             android:id="@+id/social_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="30dp"
             android:layout_weight="1"
             android:onClick="socialClicked"
-            android:text="@string/social_Q" />
+            android:text="@string/social_Q"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"/>
 
         <Button
             android:id="@+id/illness_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="30dp"
             android:layout_weight="1"
             android:onClick="illnessInjuryClicked"
-            android:text="@string/illness_Q" />
+            android:text="@string/illness_Q"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"/>
 
         <Button
             android:id="@+id/failure_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="30dp"
             android:layout_weight="1"
             android:onClick="FailureIssueClicked"
-            android:text="@string/failure_Q" />
+            android:text="@string/failure_Q"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"/>
 
         <Button
             android:id="@+id/personal_btn"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:layout_marginBottom="15dp"
             android:layout_weight="1"
             android:onClick="personalConcernClicked"
-            android:text="@string/personal_Q" />
+            android:text="@string/personal_Q"
+            android:layout_marginLeft="70dp"
+            android:layout_marginRight="70dp"/>
     </LinearLayout>
 </ScrollView>
