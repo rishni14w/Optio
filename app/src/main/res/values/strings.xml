@@ -543,4 +543,13 @@
 
     //arrow
     <string name="arrow">arrow</string>
+
+
+    //ProfileInitialize
+    <string name="pi_name">Athlete Name</string>
+    <string name="pi_dob">Date of Birth</string>
+    <string name="pi_joinned">Joined Date</string>
+    <string name="pi_nic">NIC Number</string>
+    <string name="pi_addbtn">Save</string>
+    <string name="pi_trainerID">Trainer\'s ID</string>
 </resources>
