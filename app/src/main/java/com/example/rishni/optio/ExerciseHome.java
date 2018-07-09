@@ -41,6 +41,11 @@ public class ExerciseHome extends AppCompatActivity implements View.OnClickListe
                 startActivity(i);
                 break;
             }
+            case R.id.buttonSchedule:{
+                Intent i = new Intent(this,ProfileInitialize.class);
+                startActivity(i);
+                break;
+            }
         }
 
     }
