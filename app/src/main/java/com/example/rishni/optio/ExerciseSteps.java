@@ -1,8 +1,11 @@
 package com.example.rishni.optio;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
 import android.content.IntentSender;
-import android.icu.util.Calendar;
+import java.util.Calendar;
 import android.os.AsyncTask;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -45,6 +48,8 @@ public class ExerciseSteps extends AppCompatActivity implements OnDataPointListe
     private static final String AUTH_PENDING = "auth_state_pending";
     private boolean authInProgress = false;
     private GoogleApiClient mApiClient;
+    AlarmManager alarmManager;
+    PendingIntent pendingIntent;
 
     TextView steps;
     @Override
@@ -89,12 +94,34 @@ public class ExerciseSteps extends AppCompatActivity implements OnDataPointListe
                 dataTask.execute();
             }
         });
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTimeInMillis(System.currentTimeMillis());
+        calendar.set(Calendar.HOUR_OF_DAY, 14);
+        Intent intent = new Intent(this, AlarmReciever.class);
+        intent.putExtra("key","value");
+        intent.setAction("com.example.rishni.optio.ACTION");
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this,
+                0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+       alarmManager = (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
+        alarmManager.cancel(pendingIntent);
+
+       /* alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);*/
+        long currentTime = System.currentTimeMillis();
+        long oneMinute = 60 * 1000;
+        alarmManager.setRepeating(
+                AlarmManager.RTC_WAKEUP,
+                currentTime + oneMinute,
+                oneMinute,
+                pendingIntent);
+
     }
     private void showData(){
         Date currentDate = new Date();
         DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM);
         String formattedDate = dateFormat.format(currentDate);
         datePicked.setText(formattedDate);
+
+       // AlarmManager alarmManager =
     }
 
     @Override

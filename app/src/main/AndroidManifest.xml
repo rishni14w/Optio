@@ -39,12 +39,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity android:name=".Injury_detail" />
         <activity android:name=".InjuryEdit" />
         <activity android:name=".ExerciseHome" />
         <activity android:name=".Vaccination_detail" />
         <activity android:name=".VaccinationEdit" />
         <activity android:name=".ProfileInitialize"></activity>
+        <receiver android:name=".AlarmReciever">
+            <intent-filter>
+                <action android:name="com.example.rishni.optio.ACTION"/>
+                <action android:name="com.example.rishni.optio.ACTION2"/>
+            </intent-filter>
+        </receiver>
+
     </application>
 
 </manifest>
