@@ -96,16 +96,18 @@ public class ExerciseSteps extends AppCompatActivity implements OnDataPointListe
         });
         Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
-        calendar.set(Calendar.HOUR_OF_DAY, 14);
+        calendar.set(Calendar.HOUR_OF_DAY, 13);
+        calendar.set(Calendar.MINUTE,19);
         Intent intent = new Intent(this, AlarmReciever.class);
         intent.putExtra("key","value");
+
         intent.setAction("com.example.rishni.optio.ACTION");
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this,
                 0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
        alarmManager = (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
         alarmManager.cancel(pendingIntent);
 
-       /* alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);*/
+        //alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
         long currentTime = System.currentTimeMillis();
         long oneMinute = 60 * 1000;
         alarmManager.setRepeating(
