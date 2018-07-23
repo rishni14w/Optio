@@ -2,7 +2,10 @@ package com.example.rishni.optio;
 
 import android.app.PendingIntent;
 import android.app.Service;
+import android.app.job.JobInfo;
+import android.app.job.JobScheduler;
 import android.content.BroadcastReceiver;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
@@ -55,10 +58,17 @@ public class AlarmReciever extends BroadcastReceiver {
             Log.d(TAG,t);
         }
         Toast.makeText(context, "Alarm, Alarm, Alarm!", Toast.LENGTH_LONG).show(); // For example
-        Intent intent1 = new Intent(context, StepService.class);
+        //Intent intent1 = new Intent(context, StepService.class);
         //ExerciseSteps exerciseSteps = new ExerciseSteps();
 
-        context.startService(intent1);
+        //context.startService(intent1);
+        ComponentName componentName = new ComponentName(context,StepService.class);
+        JobInfo.Builder builder = new JobInfo.Builder(0, componentName)
+                .setMinimumLatency(6000)
+                .setRequiredNetworkType(JobInfo.NETWORK_TYPE_ANY);
+                //.setPersisted(true);
+        JobScheduler jobScheduler =  (JobScheduler)context.getSystemService( Context.JOB_SCHEDULER_SERVICE );
+        jobScheduler.schedule(builder.build());
 
     }
 

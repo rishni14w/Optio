@@ -1,5 +1,6 @@
 package com.example.rishni.optio;
 
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -47,6 +48,11 @@ public class ProfileInitialize extends AppCompatActivity {
         joinedDate = (EditText)findViewById(R.id.editTextJDate);
         trainerId = (EditText)findViewById(R.id.editTextTID);
         btnSave = (Button)findViewById(R.id.btnSave);
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences("AthletePref",0);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("AthleteName",name.getText().toString());
+        editor.putString("AthleteNic",nic.getText().toString());
+        editor.apply();
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override

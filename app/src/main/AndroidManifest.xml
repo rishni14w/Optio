@@ -52,8 +52,8 @@
                 <action android:name="com.example.rishni.optio.ACTION2"/>
             </intent-filter>
         </receiver>
-        <service android:name=".ExerciseSteps$ExerciseService"></service>
-        <service android:name=".StepService"></service>
+
+        <service android:name=".StepService" android:permission="android.permission.BIND_JOB_SERVICE"></service>
     </application>
 
 </manifest>
