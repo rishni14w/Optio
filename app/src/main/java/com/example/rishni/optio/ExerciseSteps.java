@@ -2,11 +2,15 @@ package com.example.rishni.optio;
 
 import android.app.AlarmManager;
 import android.app.PendingIntent;
+import android.app.Service;
+import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.IntentSender;
 import java.util.Calendar;
 import android.os.AsyncTask;
+import android.os.IBinder;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -39,10 +43,13 @@ import com.google.android.gms.fitness.result.DataSourcesResult;
 
 import java.text.DateFormat;
 import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 import java.util.concurrent.TimeUnit;
 
 public class ExerciseSteps extends AppCompatActivity implements OnDataPointListener,GoogleApiClient.ConnectionCallbacks,GoogleApiClient.OnConnectionFailedListener{
 
+    public static long staticTotal = -100;
     TextView datePicked;
     private static final int REQUEST_OAUTH = 1;
     private static final String AUTH_PENDING = "auth_state_pending";
@@ -69,6 +76,8 @@ public class ExerciseSteps extends AppCompatActivity implements OnDataPointListe
                 .addConnectionCallbacks(this)
                 .addOnConnectionFailedListener(this)
                 .build();
+
+
         Button weeklyStepsView = (Button)findViewById(R.id.buttonWeekView);
         datePicked = (TextView) findViewById(R.id.textViewSDate);
         weeklyStepsView.setOnClickListener(new View.OnClickListener() {
@@ -94,27 +103,42 @@ public class ExerciseSteps extends AppCompatActivity implements OnDataPointListe
                 dataTask.execute();
             }
         });
-        Calendar calendar = Calendar.getInstance();
+        final Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
-        calendar.set(Calendar.HOUR_OF_DAY, 13);
-        calendar.set(Calendar.MINUTE,19);
+        calendar.set(Calendar.HOUR_OF_DAY, 16);
+        calendar.set(Calendar.MINUTE,50);
         Intent intent = new Intent(this, AlarmReciever.class);
         intent.putExtra("key","value");
 
+        intent.putExtra("Steps",total);
+        intent.putExtra("Time",calendar.getTime().toString());
         intent.setAction("com.example.rishni.optio.ACTION");
-        PendingIntent pendingIntent = PendingIntent.getBroadcast(this,
-                0, intent, PendingIntent.FLAG_CANCEL_CURRENT);
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this,0,intent,0);
+       // PendingIntent pendingIntent = PendingIntent.getService(this,0,intent,0);
+        Date alarmTime = calendar.getTime();
+        VerifyDataTask dataTask = new VerifyDataTask();
+        dataTask.execute();
+        Timer _timer = new Timer();
+        _timer.schedule(new TimerTask() {
+            @Override
+            public void run() {
+                callAsyncTask();
+                Date currentTime = Calendar.getInstance().getTime();
+                System.out.println(currentTime);
+            }
+        }, alarmTime ,TimeUnit.MILLISECONDS.convert(1, TimeUnit.DAYS));
+
        alarmManager = (AlarmManager) getApplicationContext().getSystemService(Context.ALARM_SERVICE);
         alarmManager.cancel(pendingIntent);
 
-        //alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
+        alarmManager.setRepeating(AlarmManager.RTC_WAKEUP, calendar.getTimeInMillis(), AlarmManager.INTERVAL_DAY, pendingIntent);
         long currentTime = System.currentTimeMillis();
         long oneMinute = 60 * 1000;
-        alarmManager.setRepeating(
+        /*alarmManager.setRepeating(
                 AlarmManager.RTC_WAKEUP,
                 currentTime + oneMinute,
                 oneMinute,
-                pendingIntent);
+                pendingIntent);*/
 
     }
     private void showData(){
@@ -130,6 +154,8 @@ public class ExerciseSteps extends AppCompatActivity implements OnDataPointListe
     protected void onStart() {
         super.onStart();
         mApiClient.connect();
+        MyGoogleApiClient_Singleton googleApiClient_singleton = MyGoogleApiClient_Singleton.getInstance(mApiClient);
+
     }
 
     @Override
@@ -194,7 +220,7 @@ public class ExerciseSteps extends AppCompatActivity implements OnDataPointListe
     @Override
     public void onDataPoint(DataPoint dataPoint) {
         //currently shows the realtime step count so comment it out in the future after testing
-        for(final Field field:dataPoint.getDataType().getFields()){
+        /*for(final Field field:dataPoint.getDataType().getFields()){
             final Value value = dataPoint.getValue(field);
             runOnUiThread(new Runnable() {
                 @Override
@@ -202,7 +228,7 @@ public class ExerciseSteps extends AppCompatActivity implements OnDataPointListe
                     Toast.makeText(getApplicationContext(),"field "+field.getName()+" value "+value,Toast.LENGTH_SHORT).show();
                 }
             });
-        }
+        }*/
 
     }
 
@@ -255,6 +281,7 @@ public class ExerciseSteps extends AppCompatActivity implements OnDataPointListe
             if(totalResult.getStatus().isSuccess()){
                 DataSet totalSet = totalResult.getTotal();
                 total = totalSet.isEmpty()?0:totalSet.getDataPoints().get(0).getValue(Field.FIELD_STEPS).asInt();
+                staticTotal = total;
             }else{
                 runOnUiThread(new Runnable() {
                     @Override
@@ -274,4 +301,9 @@ public class ExerciseSteps extends AppCompatActivity implements OnDataPointListe
             return null;
         }
     }
+    public void callAsyncTask(){
+        VerifyDataTask verifyDataTask = new VerifyDataTask();
+        verifyDataTask.execute();
+    }
+
 }
