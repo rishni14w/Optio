@@ -48,11 +48,6 @@ public class ProfileInitialize extends AppCompatActivity {
         joinedDate = (EditText)findViewById(R.id.editTextJDate);
         trainerId = (EditText)findViewById(R.id.editTextTID);
         btnSave = (Button)findViewById(R.id.btnSave);
-        SharedPreferences preferences = getApplicationContext().getSharedPreferences("AthletePref",0);
-        SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("AthleteName",name.getText().toString());
-        editor.putString("AthleteNic",nic.getText().toString());
-        editor.apply();
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -62,11 +57,22 @@ public class ProfileInitialize extends AppCompatActivity {
                 p_nic = nic.getText().toString();
                 p_joinedDate = joinedDate.getText().toString();
                 p_trainerId = trainerId.getText().toString();
+                updateSharedPreference();
                 new SendData().execute();
 
 
             }
         });
+    }
+    public void updateSharedPreference(){
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences("AthletePref",0);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("AthleteName",name.getText().toString());
+        editor.putString("AthleteNic",nic.getText().toString());
+        editor.putString("AthleteJoinedDate",joinedDate.getText().toString());
+        editor.putString("AthleteDob",dob.getText().toString());
+        editor.putString("AthleteTrainerId",trainerId.getText().toString());
+        editor.apply();
     }
     class SendData extends AsyncTask{
 
