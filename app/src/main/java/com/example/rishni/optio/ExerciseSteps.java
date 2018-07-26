@@ -9,6 +9,8 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.IntentSender;
 import java.util.Calendar;
+
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.IBinder;
 import android.support.annotation.NonNull;
@@ -57,7 +59,7 @@ public class ExerciseSteps extends AppCompatActivity implements OnDataPointListe
     private GoogleApiClient mApiClient;
     AlarmManager alarmManager;
     PendingIntent pendingIntent;
-
+    TextView athleteName;
     TextView steps;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,7 +69,8 @@ public class ExerciseSteps extends AppCompatActivity implements OnDataPointListe
             authInProgress = savedInstanceState.getBoolean(AUTH_PENDING);
 
         }
-
+        athleteName = (TextView)findViewById(R.id.textViewSName);
+        setName();
         mApiClient = new GoogleApiClient.Builder(this)
                 .addApi(Fitness.SENSORS_API)
                 .addApi(Fitness.HISTORY_API)
@@ -105,8 +108,8 @@ public class ExerciseSteps extends AppCompatActivity implements OnDataPointListe
         });
         final Calendar calendar = Calendar.getInstance();
         calendar.setTimeInMillis(System.currentTimeMillis());
-        calendar.set(Calendar.HOUR_OF_DAY, 16);
-        calendar.set(Calendar.MINUTE,50);
+        calendar.set(Calendar.HOUR_OF_DAY, 23);
+        calendar.set(Calendar.MINUTE,30);
         Intent intent = new Intent(this, AlarmReciever.class);
         intent.putExtra("key","value");
 
@@ -148,6 +151,16 @@ public class ExerciseSteps extends AppCompatActivity implements OnDataPointListe
         datePicked.setText(formattedDate);
 
        // AlarmManager alarmManager =
+    }
+    private void setName(){
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences("AthletePref",0);
+        String sharedPrefAthleteName = preferences.getString("AthleteName",null);
+        if(sharedPrefAthleteName!=null || !sharedPrefAthleteName.isEmpty()){
+            athleteName.setText(sharedPrefAthleteName);
+        }
+        else {
+            athleteName.setText("John Noname");
+        }
     }
 
     @Override

@@ -2,8 +2,11 @@ package com.example.rishni.optio;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.JsonReader;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
@@ -16,7 +19,15 @@ import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 
+import org.json.JSONArray;
+
+import java.io.BufferedReader;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.lang.reflect.Array;
+import java.net.HttpURLConnection;
+import java.net.ProtocolException;
+import java.net.URL;
 import java.text.DateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,6 +40,7 @@ import java.util.List;
 
 public class WeeklySteps extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
+    String ServerURL = "http://10.0.2.2:8080/steps";
     TextView maximumSteps;
     TextView thisWeek;
     private LineChart lineChart;
@@ -55,6 +67,7 @@ public class WeeklySteps extends AppCompatActivity implements DatePickerDialog.O
         valArr[5]=400;
         valArr[6]=390;
 
+        new WeeklyStepsAsyncTasK().execute();
         //Collections.min(Arrays.asList(valArr));
         maximum = maxValue(valArr);
 
@@ -141,5 +154,47 @@ public class WeeklySteps extends AppCompatActivity implements DatePickerDialog.O
         }
         return Collections.max(list);
 
+    }
+
+    private class WeeklyStepsAsyncTasK extends AsyncTask <Void,Void,Void>{
+
+        @Override
+        protected Void doInBackground(Void... voids) {
+            doGet();
+            return null;
+        }
+        protected void doGet(){
+
+            try {
+                 //TODO: Append Athlete's nic and the date of  7 days ago to the URL
+                URL url = new URL(ServerURL);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setRequestMethod("GET");
+                conn.setRequestProperty("Content-Type", "application/json");
+                conn.setRequestProperty("Accept","application/json");
+                if(conn.getResponseCode()==200){
+                    Log.d("WeeklySteps","response code 200");
+                }else{
+                    Log.e("WeeklySteps",conn.getResponseMessage());
+                }
+                InputStream responseBody = conn.getInputStream();
+                InputStreamReader responseBodyReader = new InputStreamReader(responseBody,"UTF-8");
+                JsonReader jsonReader = new JsonReader(responseBodyReader);
+                jsonReader.beginArray();
+                //jsonReader.nextName();
+                jsonReader.beginObject();
+                while (jsonReader.hasNext()){
+                    String name = jsonReader.nextName();
+                    Log.d("WeeklySteps",name); // id nic count date
+                    jsonReader.skipValue();
+                }
+
+                jsonReader.close();
+
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
     }
 }
