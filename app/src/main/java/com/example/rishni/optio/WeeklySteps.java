@@ -2,6 +2,7 @@ package com.example.rishni.optio;
 
 import android.app.DatePickerDialog;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -29,6 +30,7 @@ import java.net.HttpURLConnection;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
@@ -46,6 +48,9 @@ public class WeeklySteps extends AppCompatActivity implements DatePickerDialog.O
     private LineChart lineChart;
     private LineData lineData;
     int[] valArr = new int[7];
+    String WeekBefore;
+    String nic;
+    Date sevenDaysAgo;
     int maximum;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,18 +71,20 @@ public class WeeklySteps extends AppCompatActivity implements DatePickerDialog.O
         valArr[4]=500;
         valArr[5]=400;
         valArr[6]=390;
+        readNic();
 
-        new WeeklyStepsAsyncTasK().execute();
         //Collections.min(Arrays.asList(valArr));
         maximum = maxValue(valArr);
 
         Calendar cal = Calendar.getInstance();
         DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM);
         cal.add(Calendar.DATE, -7);
-        Date sevenDaysAgo = cal.getTime();
-        String WeekBefore= dateFormat.format(sevenDaysAgo);
+        sevenDaysAgo = cal.getTime();
+        WeekBefore= dateFormat.format(sevenDaysAgo);
         Date currentDate = new Date();
         String formattedDate = dateFormat.format(currentDate);
+
+        new WeeklyStepsAsyncTasK().execute();
        // System.out.println("Date = "+ cal.getTime());
 
         thisWeek = (TextView)findViewById(R.id.textViewWeek);
@@ -91,6 +98,14 @@ public class WeeklySteps extends AppCompatActivity implements DatePickerDialog.O
         lineData = new LineData(getXValues(),getLineDataValue());
         lineChart.setData(lineData);
 
+    }
+    private void readNic(){
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences("AthletePref",0);
+        if(preferences.contains("AthleteNic")){
+            nic = preferences.getString("AthleteNic",null);
+        }else{
+            nic = "958013587V";
+        }
     }
 //TODO : Once the database is working replace the lables with the last seven days
     private ArrayList<String> getXValues() {
@@ -160,7 +175,12 @@ public class WeeklySteps extends AppCompatActivity implements DatePickerDialog.O
 
         @Override
         protected Void doInBackground(Void... voids) {
+            SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+            WeekBefore = simpleDateFormat.format(sevenDaysAgo);
+            ServerURL = ServerURL+"/"+nic+"/"+WeekBefore;
+
             doGet();
+            Log.d("WeeklySteps",ServerURL);
             return null;
         }
         protected void doGet(){
