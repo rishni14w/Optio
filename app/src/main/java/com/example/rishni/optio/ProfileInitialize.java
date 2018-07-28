@@ -25,7 +25,8 @@ import java.net.URLEncoder;
 //Any details that change such as weight etc should go on a different activity to preserve clarity.
 public class ProfileInitialize extends AppCompatActivity {
 
-    String ServerURL = "http://10.0.2.2:8080/athleteInit";
+    //String ServerURL = "http://10.0.2.2:8080/athleteInit";
+    String ServerURL = "https://murmuring-cove-69371.herokuapp.com/athleteInit";
     EditText name;
     EditText nic;
     EditText dob;

@@ -42,7 +42,7 @@ import java.util.List;
 
 public class WeeklySteps extends AppCompatActivity implements DatePickerDialog.OnDateSetListener {
 
-    String ServerURL = "http://10.0.2.2:8080/steps";
+    String ServerURL = "https://murmuring-cove-69371.herokuapp.com/steps";
     TextView maximumSteps;
     TextView thisWeek;
     private LineChart lineChart;
