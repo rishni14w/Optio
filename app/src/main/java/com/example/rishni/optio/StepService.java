@@ -37,7 +37,7 @@ import java.util.concurrent.TimeUnit;
 
 public class StepService extends JobService {
     GoogleApiClient mApiClient;
-    String ServerURL = "http://10.0.2.2:8080/steps";
+    String ServerURL = "https://murmuring-cove-69371.herokuapp.com/steps";
     String nic;
     String count;
     String cdate;
