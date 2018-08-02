@@ -27,8 +27,8 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class BodyComposition extends AppCompatActivity {
-    String ServerURL = "http://10.0.2.2:8080/bodycomposition";
-
+    //String ServerURL = "http://10.0.2.2:8080/bodycomposition";
+    String ServerURL = "https://murmuring-cove-69371.herokuapp.com/bodycomposition";
     private EditText editText_weight;
     private EditText editText_waist;
     private EditText editText_hip;
@@ -71,9 +71,8 @@ public class BodyComposition extends AppCompatActivity {
             date=currentTime.toString();
             //toastMessage("date = "+currentTime);
             //new PostData(newWeight,newWaist,newHip,date).execute(db.getAddressAPI_BodyComposition());
-            toastMessage("nic= "+nic);
+            //toastMessage("nic= "+nic);
             new SendData().execute();
-
         }
         else
         {
@@ -142,7 +141,8 @@ public class BodyComposition extends AppCompatActivity {
             return null;
         }
 
-        protected void doPost(){
+        protected void doPost()
+        {
             try{
                 URL url = new URL(ServerURL);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -157,15 +157,24 @@ public class BodyComposition extends AppCompatActivity {
                 jsonParam.put("weight",newWeight);
                 jsonParam.put("waist",newWaist);
                 jsonParam.put("hip",newHip);
-                jsonParam.put("date",date);
                 jsonParam.put("nic",nic);
 
-                toastMessage("nic= "+nic+" ,wieght="+newWeight+" ,waist="+newWaist+" ,hip="+newHip);
-                DataOutputStream os = new DataOutputStream(conn.getOutputStream());
-                os.writeBytes(jsonParam.toString());
+                conn.getOutputStream();
+                try
+                {
+                    DataOutputStream os = new DataOutputStream(conn.getOutputStream());
+                    os.writeBytes(jsonParam.toString());
 
-                os.flush();
-                os.close();
+                    os.flush();
+                    os.close();
+                }catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (ProtocolException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
 
                 Log.i("STATUS", String.valueOf(conn.getResponseCode()));
                 Log.i("MSG" , conn.getResponseMessage());
@@ -183,14 +192,16 @@ public class BodyComposition extends AppCompatActivity {
             }
         }
 
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
+        protected void onPostExecute(Object object) {
+            super.onPostExecute(object);
             toastMessage("Successfully saved");
             Intent intent = new Intent(BodyComposition.this, StressAndHealth.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             finish();
         }
+
+
     }
 
     private void toastMessage(String message)
