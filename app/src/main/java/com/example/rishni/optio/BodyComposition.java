@@ -2,23 +2,42 @@ package com.example.rishni.optio;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
 import java.util.Calendar;
 import java.util.Date;
 
 public class BodyComposition extends AppCompatActivity {
+    //String ServerURL = "http://10.0.2.2:8080/bodycomposition";
+    String ServerURL = "https://murmuring-cove-69371.herokuapp.com/bodycomposition";
     private EditText editText_weight;
     private EditText editText_waist;
     private EditText editText_hip;
+
+    String newWeight;
+    String newWaist;
+    String newHip;
+    String date;
+    String nic;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,6 +47,9 @@ public class BodyComposition extends AppCompatActivity {
         editText_weight=findViewById(R.id.weight_txt);
         editText_waist=findViewById(R.id.waist_circumference_txt);
         editText_hip=findViewById(R.id.hip_circumference_txt);
+
+        SharedPreferences sharedPref=getApplicationContext().getSharedPreferences("AthletePref",0);
+        nic=sharedPref.getString("AthleteNic","");
     }
 
     @Override
@@ -41,15 +63,16 @@ public class BodyComposition extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.save)
         {
-            String newWeight=editText_weight.getText().toString();
-            String newWaist=editText_waist.getText().toString();
-            String newHip=editText_hip.getText().toString();
+            newWeight=editText_weight.getText().toString();
+            newWaist=editText_waist.getText().toString();
+            newHip=editText_hip.getText().toString();
 
             Date currentTime= Calendar.getInstance().getTime();
-            String date=currentTime.toString();
+            date=currentTime.toString();
             //toastMessage("date = "+currentTime);
-            new PostData(newWeight,newWaist,newHip,date).execute(db.getAddressAPI_BodyComposition());
-
+            //new PostData(newWeight,newWaist,newHip,date).execute(db.getAddressAPI_BodyComposition());
+            //toastMessage("nic= "+nic);
+            new SendData().execute();
         }
         else
         {
@@ -63,7 +86,7 @@ public class BodyComposition extends AppCompatActivity {
     }
 
     //function to add new user
-    class PostData extends AsyncTask<String,String,String> {
+    /**class PostData extends AsyncTask<String,String,String> {
         String weight;
         String waist;
         String hip;
@@ -108,6 +131,77 @@ public class BodyComposition extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
+    }**/
+
+    class SendData extends AsyncTask{
+
+        @Override
+        protected Object doInBackground(Object[] objects) {
+            doPost();
+            return null;
+        }
+
+        protected void doPost()
+        {
+            try{
+                URL url = new URL(ServerURL);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setRequestMethod("POST");
+                conn.setRequestProperty("Content-Type", "application/json");
+                conn.setRequestProperty("Accept","application/json");
+                conn.setDoOutput(true);
+                conn.setDoInput(true);
+                conn.connect();
+
+                JSONObject jsonParam = new JSONObject();
+                jsonParam.put("weight",newWeight);
+                jsonParam.put("waist",newWaist);
+                jsonParam.put("hip",newHip);
+                jsonParam.put("nic",nic);
+
+                conn.getOutputStream();
+                try
+                {
+                    DataOutputStream os = new DataOutputStream(conn.getOutputStream());
+                    os.writeBytes(jsonParam.toString());
+
+                    os.flush();
+                    os.close();
+                }catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (ProtocolException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
+                Log.i("STATUS", String.valueOf(conn.getResponseCode()));
+                Log.i("MSG" , conn.getResponseMessage());
+
+                conn.disconnect();
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        protected void onPostExecute(Object object) {
+            super.onPostExecute(object);
+            toastMessage("Successfully saved");
+            Intent intent = new Intent(BodyComposition.this, StressAndHealth.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            finish();
+        }
+
+
     }
 
     private void toastMessage(String message)

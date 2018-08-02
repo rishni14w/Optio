@@ -484,13 +484,18 @@
 
     //Body composition UI
     <string name="weight">Weight :</string>
+    <string name="height">Height :</string>
+    <string name="activitylevel">Activity Level :</string>
     <string name="waist_circumference">Waist Circumference :</string>
     <string name="hip_circumference">Hip Circumference :</string>
     <string name="placeholder_weight">Enter Weight</string>
     <string name="placeholder_waist_circumference">Enter Waist Circumference</string>
     <string name="placeholder_hip_circumference">Enter Hip Circumference</string>
+    <string name="placeholder_height">Enter Height</string>
+    <string name="placeholder_activitylevel">Enter Activity level</string>
     <string name="kg">kg</string>
     <string name="inches">inches</string>
+    <string name="cm">cm</string>
 
     //Sleep UI
     <string name="sleep_duration">Sleep Duration :</string>
