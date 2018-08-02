@@ -68,7 +68,7 @@ public class StressAndHealth extends AppCompatActivity {
     {
         if (view.getId()==R.id.bodycomposition_btn)
         {
-            Intent i= new Intent(this,BodyComposition.class);
+            Intent i= new Intent(this,BodyComposition_View.class);
             startActivity(i);
         }
 
