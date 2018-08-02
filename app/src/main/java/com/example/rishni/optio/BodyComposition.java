@@ -32,10 +32,14 @@ public class BodyComposition extends AppCompatActivity {
     private EditText editText_weight;
     private EditText editText_waist;
     private EditText editText_hip;
+    private EditText editText_height;
+    private EditText editText_activitylevel;
 
     String newWeight;
     String newWaist;
     String newHip;
+    String newHeight;
+    String newActivityLevel;
     String date;
     String nic;
     @Override
@@ -47,6 +51,8 @@ public class BodyComposition extends AppCompatActivity {
         editText_weight=findViewById(R.id.weight_txt);
         editText_waist=findViewById(R.id.waist_circumference_txt);
         editText_hip=findViewById(R.id.hip_circumference_txt);
+        editText_height=findViewById(R.id.height_txt);
+        editText_activitylevel=findViewById(R.id.activitylevel_txt);
 
         SharedPreferences sharedPref=getApplicationContext().getSharedPreferences("AthletePref",0);
         nic=sharedPref.getString("AthleteNic","");
@@ -66,6 +72,8 @@ public class BodyComposition extends AppCompatActivity {
             newWeight=editText_weight.getText().toString();
             newWaist=editText_waist.getText().toString();
             newHip=editText_hip.getText().toString();
+            newHeight=editText_height.getText().toString();
+            newActivityLevel=editText_activitylevel.getText().toString();
 
             Date currentTime= Calendar.getInstance().getTime();
             date=currentTime.toString();
@@ -154,10 +162,13 @@ public class BodyComposition extends AppCompatActivity {
                 conn.connect();
 
                 JSONObject jsonParam = new JSONObject();
+                jsonParam.put("nic",nic);
+                jsonParam.put("date",date);
                 jsonParam.put("weight",newWeight);
                 jsonParam.put("waist",newWaist);
                 jsonParam.put("hip",newHip);
-                jsonParam.put("nic",nic);
+                jsonParam.put("height",newHeight);
+                jsonParam.put("activitylevel",newActivityLevel);
 
                 conn.getOutputStream();
                 try
