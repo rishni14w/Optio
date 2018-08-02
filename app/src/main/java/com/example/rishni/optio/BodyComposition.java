@@ -42,6 +42,14 @@ public class BodyComposition extends AppCompatActivity {
     String newActivityLevel;
     String date;
     String nic;
+    String id_received;
+    String nic_received;
+    String date_received;
+    String Weight_received;
+    String Waist_received;
+    String Hip_received;
+    String Height_received;
+    String ActivityLevel_received;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -54,6 +62,29 @@ public class BodyComposition extends AppCompatActivity {
         editText_height=findViewById(R.id.height_txt);
         editText_activitylevel=findViewById(R.id.activitylevel_txt);
 
+        id_received= getIntent().getExtras().getString("id");
+
+        nic_received= getIntent().getExtras().getString("nic");
+
+        date_received= getIntent().getExtras().getString("date");
+
+        Weight_received= getIntent().getExtras().getString("weight");
+        editText_weight.setText(Weight_received);
+
+        Waist_received= getIntent().getExtras().getString("waist");
+        editText_waist.setText(Waist_received);
+
+        Hip_received= getIntent().getExtras().getString("hip");
+        editText_hip.setText(Hip_received);
+
+        Height_received= getIntent().getExtras().getString("height");
+        editText_height.setText(Height_received);
+
+        ActivityLevel_received= getIntent().getExtras().getString("activitylevel");
+        editText_activitylevel.setText(ActivityLevel_received);
+
+
+
         SharedPreferences sharedPref=getApplicationContext().getSharedPreferences("AthletePref",0);
         nic=sharedPref.getString("AthleteNic","");
     }
@@ -61,13 +92,13 @@ public class BodyComposition extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu)
     {
-        getMenuInflater().inflate(R.menu.menu_save,menu);
+        getMenuInflater().inflate(R.menu.menu_update,menu);
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        if(item.getItemId()==R.id.save)
+        if(item.getItemId()==R.id.update)
         {
             newWeight=editText_weight.getText().toString();
             newWaist=editText_waist.getText().toString();
