@@ -36,6 +36,7 @@ public class BodyComposition_View extends AppCompatActivity {
     String ActivityLevel;
     String date;
     String nic;
+    String id;
 
     ProgressBar mProgressBar;
     @Override
@@ -81,9 +82,18 @@ public class BodyComposition_View extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.edit)
         {
+            Intent intent= new Intent(this,BodyComposition.class);
 
-                Intent i= new Intent(this,BodyComposition.class);
-                startActivity(i);
+            intent.putExtra("id",id);
+            intent.putExtra("nic",nic);
+            intent.putExtra("date",date);
+            intent.putExtra("weight",Weight);
+            intent.putExtra("waist",Waist);
+            intent.putExtra("hip",Hip);
+            intent.putExtra("height",Height);
+            intent.putExtra("activitylevel",ActivityLevel);
+            startActivity(intent);
+
 
         }
         else
@@ -127,11 +137,11 @@ public class BodyComposition_View extends AppCompatActivity {
                 jsonReader.beginObject();
                 while (jsonReader.hasNext()){
                     String idName = jsonReader.nextName();
-                    String id = jsonReader.nextString();
+                    id = jsonReader.nextString();
                     String nicName = jsonReader.nextName();
                     String nicString = jsonReader.nextString();
                     String dateName = jsonReader.nextName();
-                    String dateString = jsonReader.nextString();
+                    date = jsonReader.nextString();
                     String WeightName = jsonReader.nextName();
                     Weight = jsonReader.nextString();
                     String WaistName = jsonReader.nextName();
