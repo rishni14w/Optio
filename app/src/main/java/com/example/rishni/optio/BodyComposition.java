@@ -111,11 +111,11 @@ public class BodyComposition extends AppCompatActivity {
             //toastMessage("date = "+currentTime);
             //new PostData(newWeight,newWaist,newHip,date).execute(db.getAddressAPI_BodyComposition());
             //toastMessage("nic= "+nic);
-            new SendData().execute();
+            new PutData().execute();
         }
         else
         {
-            Intent intent=new Intent(this,StressAndHealth.class);
+            Intent intent=new Intent(this,BodyComposition_View.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             finish();
@@ -124,7 +124,7 @@ public class BodyComposition extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    //function to add new user
+    //function to add new body comp
     /**class PostData extends AsyncTask<String,String,String> {
         String weight;
         String waist;
@@ -172,7 +172,9 @@ public class BodyComposition extends AppCompatActivity {
         }
     }**/
 
-    class SendData extends AsyncTask{
+
+    //post body comp
+    /**class SendData extends AsyncTask{
 
         @Override
         protected Object doInBackground(Object[] objects) {
@@ -242,9 +244,82 @@ public class BodyComposition extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
+**/
+
+        class PutData extends AsyncTask{
+
+            @Override
+            protected Object doInBackground(Object[] objects) {
+                ServerURL = ServerURL+"/"+id_received;
+                doPut();
+                return null;
+            }
+
+            protected void doPut()
+            {
+                try{
+                    URL url = new URL(ServerURL);
+                    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                    conn.setRequestMethod("PUT");
+                    conn.setRequestProperty("Content-Type", "application/json");
+                    conn.setRequestProperty("Accept","application/json");
+                    conn.setDoOutput(true);
+                    conn.setDoInput(true);
+                    conn.connect();
+
+                    JSONObject jsonParam = new JSONObject();
+                    jsonParam.put("nic",nic);
+                    jsonParam.put("date",date);
+                    jsonParam.put("weight",newWeight);
+                    jsonParam.put("waist",newWaist);
+                    jsonParam.put("hip",newHip);
+                    jsonParam.put("height",newHeight);
+                    jsonParam.put("activitylevel",newActivityLevel);
+
+                    conn.getOutputStream();
+                    try
+                    {
+                        DataOutputStream os = new DataOutputStream(conn.getOutputStream());
+                        os.writeBytes(jsonParam.toString());
+
+                        os.flush();
+                        os.close();
+                    }catch (MalformedURLException e) {
+                        e.printStackTrace();
+                    } catch (ProtocolException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
 
 
-    }
+                    Log.i("STATUS", String.valueOf(conn.getResponseCode()));
+                    Log.i("MSG" , conn.getResponseMessage());
+
+                    conn.disconnect();
+
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (ProtocolException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+
+            protected void onPostExecute(Object object) {
+                super.onPostExecute(object);
+                toastMessage("Successfully updated");
+                Intent intent = new Intent(BodyComposition.this, BodyComposition_View.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+                finish();
+            }
+
+
+        }
 
     private void toastMessage(String message)
     {
