@@ -57,9 +57,9 @@
         android:layout_marginEnd="145dp"
         android:layout_marginRight="145dp"
         android:ems="10"
-        android:hint="@string/digit"
         android:inputType="number"
-        android:maxLength="2" />
+        android:maxLength="2"
+        android:text="@string/digit" />
 
     <TextView
         android:id="@+id/textView"
