@@ -475,7 +475,7 @@
     <string name="heart_rate_before">Heart rate before Training session :</string>
     <string name="heart_rate_after">Heart rate after Training session :</string>
     <string name="placeholder_heart_rate">Enter heart rate</string>
-    <string name="bpm">bmp</string>
+    <string name="bpm">bpm</string>
 
     //cancel
     <string name="cancel">Cancel</string>
