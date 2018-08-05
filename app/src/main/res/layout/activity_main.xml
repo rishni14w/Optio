@@ -22,7 +22,6 @@
             android:layout_marginTop="79dp"
             android:layout_marginLeft="30dp"
             android:layout_marginRight="30dp"
-            android:onClick="clickedstressandhealth"
             android:text="@string/training" />
 
         <Button
@@ -33,9 +32,7 @@
             android:layout_marginBottom="30dp"
             android:layout_gravity="center"
             android:layout_marginLeft="30dp"
-            android:onClick="clickedstressandhealth"
-            android:layout_marginRight="30dp"
-             />
+            android:layout_marginRight="30dp"/>
 
         <Button
             android:id="@+id/StressHealthbtn"
