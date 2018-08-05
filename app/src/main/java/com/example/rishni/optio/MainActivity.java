@@ -15,14 +15,16 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Button btnExercise = findViewById(R.id.buttonExercise);
-        btnExercise.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent i = new Intent(MainActivity.this,ExerciseHome.class);
-                startActivity(i);
-            }
-        });
+//        Button btnExercise = findViewById(R.id.buttonExercise);
+//        Button btn1 = findViewById(R.id.button2);
+//        btnExercise.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent i = new Intent(MainActivity.this,ExerciseHome.class);
+//                startActivity(i);
+//            }
+//        });
+
         SharedPreferences preferences = getApplicationContext().getSharedPreferences("AthletePref",0);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("AthleteName","John Doe");
@@ -49,9 +51,15 @@ public class MainActivity extends AppCompatActivity {
             Intent i= new Intent(MainActivity.this,StressAndHealth.class);
             startActivity(i);
         }else if(view.getId()==R.id.buttonExercise){
-            Intent i = new Intent(MainActivity.this,WeeklySteps.class);
+            Intent i = new Intent(MainActivity.this,ExerciseHome.class);
             startActivity(i);
         }
+        else if(view.getId() == R.id.button2){
+            Intent i = new Intent(MainActivity.this,ResultActivity.class);
+            startActivity(i);
+        }
+
+
 
     }
 }
