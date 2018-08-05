@@ -2,18 +2,41 @@ package com.example.rishni.optio;
 
 import android.annotation.TargetApi;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
+
 public class Competition extends AppCompatActivity {
+
+    String ServerURL = "https://murmuring-cove-69371.herokuapp.com/competition";
+
+    String date;
+    String nic;
+
+    int responseCode;
     private RadioButton stroke_radio1,stroke_radio2,spectator_radio1,spectator_radio2,env_radio1,env_radio2,cold_radio1,cold_radio2,away_radio1,away_radio2;
     private String stroke,spectator,env,cold,away;
 
@@ -47,13 +70,38 @@ public class Competition extends AppCompatActivity {
     private CheckBox away_reason1,away_reason2,away_reason3,away_reason4;
     private String away_reason1_s,away_reason2_s,away_reason3_s,away_reason4_s;
 
+    //arraylists
+    private ArrayList<String> stroke_reason_Arr;
+    private ArrayList<String> difficulties_Arr;
+    private ArrayList<String> gamePlan_Arr;
+    private ArrayList<String> score_Arr;
+    private ArrayList<String> opponent_Arr;
+    private ArrayList<String> referee_Arr;
+    private ArrayList<String> spectator_reason_Arr;
+    private ArrayList<String> env_reason_Arr;
+    private ArrayList<String> cold_reason_Arr;
+    private ArrayList<String> away_reason_Arr;
 
+    //jsonArray
+    JSONArray jsonArray_stroke_reason;
+    JSONArray jsonArray_difficulties;
+    JSONArray jsonArray_gamePlan;
+    JSONArray jsonArray_score;
+    JSONArray jsonArray_opponent;
+    JSONArray jsonArray_referee;
+    JSONArray jsonArray_spectator_reason;
+    JSONArray jsonArray_env_reason;
+    JSONArray jsonArray_cold_reason;
+    JSONArray jsonArray_away_reason;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_competition);
         setTitle(R.string.competition_Title);
+
+        SharedPreferences sharedPref=getApplicationContext().getSharedPreferences("AthletePref",0);
+        nic=sharedPref.getString("AthleteNic","");
 
         //radio button
         stroke_radio1=(RadioButton)findViewById(R.id.radioButton1_Q1_CS1);
@@ -1045,14 +1093,105 @@ public class Competition extends AppCompatActivity {
     {
         if (view.getId()==R.id.submit_competition_btn)
         {
-            new PostData(stroke,stroke_reason1_s,stroke_reason2_s,difficulties_reason1_s,difficulties_reason2_s,difficulties_reason3_s,difficulties_reason4_s,gamePlan_reason1_s,gamePlan_reason2_s,gamePlan_reason3_s,score_reason1_s,score_reason2_s,score_reason3_s,score_reason4_s,score_reason5_s,score_reason6_s,score_reason7_s,opponent_reason1_s,opponent_reason2_s,opponent_reason3_s,opponent_reason4_s,opponent_reason5_s,referee_reason1_s,referee_reason2_s,referee_reason3_s,referee_reason4_s,referee_reason5_s,spectator,spectator_reason1_s,spectator_reason2_s,spectator_reason3_s,spectator_reason4_s,env,env_reason1_s,env_reason2_s,env_reason3_s,env_reason4_s,env_reason5_s,env_reason6_s,env_reason7_s,env_reason8_s,cold,cold_reason1_s,cold_reason2_s,cold_reason3_s,cold_reason4_s,away,away_reason1_s,away_reason2_s,away_reason3_s,away_reason4_s).execute(db.getAddressAPI_Competition());
+            //adding values to stroke_reason_Arr
+            stroke_reason_Arr=new ArrayList<String>();
+            stroke_reason_Arr.add(stroke_reason1_s);
+            stroke_reason_Arr.add(stroke_reason2_s);
+
+            //adding values to difficulties_Arr
+            difficulties_Arr=new ArrayList<String>();
+            difficulties_Arr.add(difficulties_reason1_s);
+            difficulties_Arr.add(difficulties_reason2_s);
+            difficulties_Arr.add(difficulties_reason3_s);
+            difficulties_Arr.add(difficulties_reason4_s);
+
+            //adding values to gamePlan_Arr
+            gamePlan_Arr=new ArrayList<String>();
+            gamePlan_Arr.add(gamePlan_reason1_s);
+            gamePlan_Arr.add(gamePlan_reason2_s);
+            gamePlan_Arr.add(gamePlan_reason3_s);
+
+            //adding values to score_Arr
+            score_Arr=new ArrayList<String>();
+            score_Arr.add(score_reason1_s);
+            score_Arr.add(score_reason2_s);
+            score_Arr.add(score_reason3_s);
+            score_Arr.add(score_reason4_s);
+            score_Arr.add(score_reason5_s);
+            score_Arr.add(score_reason6_s);
+            score_Arr.add(score_reason7_s);
+
+            //adding values to opponent_Arr
+            opponent_Arr=new ArrayList<String>();
+            opponent_Arr.add(opponent_reason1_s);
+            opponent_Arr.add(opponent_reason2_s);
+            opponent_Arr.add(opponent_reason3_s);
+            opponent_Arr.add(opponent_reason4_s);
+            opponent_Arr.add(opponent_reason5_s);
+
+            //adding values to referee_Arr
+            referee_Arr=new ArrayList<String>();
+            referee_Arr.add(referee_reason1_s);
+            referee_Arr.add(referee_reason2_s);
+            referee_Arr.add(referee_reason3_s);
+            referee_Arr.add(referee_reason4_s);
+            referee_Arr.add(referee_reason5_s);
+
+            //adding values to spectator_reason_Arr
+            spectator_reason_Arr=new ArrayList<String>();
+            spectator_reason_Arr.add(spectator_reason1_s);
+            spectator_reason_Arr.add(spectator_reason2_s);
+            spectator_reason_Arr.add(spectator_reason3_s);
+            spectator_reason_Arr.add(spectator_reason4_s);
+
+            //adding values to env_reason_Arr
+            env_reason_Arr=new ArrayList<String>();
+            env_reason_Arr.add(env_reason1_s);
+            env_reason_Arr.add(env_reason2_s);
+            env_reason_Arr.add(env_reason3_s);
+            env_reason_Arr.add(env_reason4_s);
+            env_reason_Arr.add(env_reason5_s);
+            env_reason_Arr.add(env_reason6_s);
+            env_reason_Arr.add(env_reason7_s);
+            env_reason_Arr.add(env_reason8_s);
+
+            //adding values to cold_reason_Arr
+            cold_reason_Arr=new ArrayList<String>();
+            cold_reason_Arr.add(cold_reason1_s);
+            cold_reason_Arr.add(cold_reason2_s);
+            cold_reason_Arr.add(cold_reason3_s);
+            cold_reason_Arr.add(cold_reason4_s);
+
+            //adding values to away_reason_Arr
+            away_reason_Arr=new ArrayList<String>();
+            away_reason_Arr.add(away_reason1_s);
+            away_reason_Arr.add(away_reason2_s);
+            away_reason_Arr.add(away_reason3_s);
+            away_reason_Arr.add(away_reason4_s);
+
+            jsonArray_stroke_reason=new JSONArray(stroke_reason_Arr);
+            jsonArray_difficulties=new JSONArray(difficulties_Arr);
+            jsonArray_gamePlan=new JSONArray(gamePlan_Arr);
+            jsonArray_score=new JSONArray(score_Arr);
+            jsonArray_opponent=new JSONArray(opponent_Arr);
+            jsonArray_referee=new JSONArray(referee_Arr);
+            jsonArray_spectator_reason=new JSONArray(spectator_reason_Arr);
+            jsonArray_env_reason=new JSONArray(env_reason_Arr);
+            jsonArray_cold_reason=new JSONArray(cold_reason_Arr);
+            jsonArray_away_reason=new JSONArray(away_reason_Arr);
+
+           // new PostData(stroke,stroke_reason1_s,stroke_reason2_s,difficulties_reason1_s,difficulties_reason2_s,difficulties_reason3_s,difficulties_reason4_s,gamePlan_reason1_s,gamePlan_reason2_s,gamePlan_reason3_s,score_reason1_s,score_reason2_s,score_reason3_s,score_reason4_s,score_reason5_s,score_reason6_s,score_reason7_s,opponent_reason1_s,opponent_reason2_s,opponent_reason3_s,opponent_reason4_s,opponent_reason5_s,referee_reason1_s,referee_reason2_s,referee_reason3_s,referee_reason4_s,referee_reason5_s,spectator,spectator_reason1_s,spectator_reason2_s,spectator_reason3_s,spectator_reason4_s,env,env_reason1_s,env_reason2_s,env_reason3_s,env_reason4_s,env_reason5_s,env_reason6_s,env_reason7_s,env_reason8_s,cold,cold_reason1_s,cold_reason2_s,cold_reason3_s,cold_reason4_s,away,away_reason1_s,away_reason2_s,away_reason3_s,away_reason4_s).execute(db.getAddressAPI_Competition());
+            Date currentTime= Calendar.getInstance().getTime();
+            date=currentTime.toString();
+
+            new SendData().execute();
         }
 
     }
 
 
-    //function to add new personal
-    class PostData extends AsyncTask<String,String,String> {
+    //function to add new competition
+    /**class PostData extends AsyncTask<String,String,String> {
         private String Stroke,Stroke_reason1_s,Stroke_reason2_s,Difficulties_reason1_s,Difficulties_reason2_s,Difficulties_reason3_s,Difficulties_reason4_s;
         private String GamePlan_reason1_s,GamePlan_reason2_s,GamePlan_reason3_s,Score_reason1_s,Score_reason2_s;
         private String Score_reason3_s,Score_reason4_s,Score_reason5_s,Score_reason6_s,Score_reason7_s,Opponent_reason1_s;
@@ -1158,7 +1297,97 @@ public class Competition extends AppCompatActivity {
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             finish();
+        }**/
+
+    class SendData extends AsyncTask{
+
+        @Override
+        protected Object doInBackground(Object[] objects) {
+            doPost();
+            return null;
         }
+
+        protected void doPost()
+        {
+            try{
+                URL url = new URL(ServerURL);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setRequestMethod("POST");
+                conn.setRequestProperty("Content-Type", "application/json");
+                conn.setRequestProperty("Accept","application/json");
+                conn.setDoOutput(true);
+                conn.setDoInput(true);
+                conn.connect();
+
+                JSONObject jsonParam = new JSONObject();
+                jsonParam.put("nic",nic);
+                jsonParam.put("date",date);
+                jsonParam.put("stroke",stroke);
+                jsonParam.put("stroke_reason",jsonArray_stroke_reason);
+                jsonParam.put("difficulties",jsonArray_difficulties);
+                jsonParam.put("gamePlan",jsonArray_gamePlan);
+                jsonParam.put("score",jsonArray_score);
+                jsonParam.put("opponent",jsonArray_opponent);
+                jsonParam.put("referee",jsonArray_referee);
+                jsonParam.put("spectator",spectator);
+                jsonParam.put("spectator_reason",jsonArray_spectator_reason);
+                jsonParam.put("env",env);
+                jsonParam.put("env_reason",jsonArray_env_reason);
+                jsonParam.put("cold",cold);
+                jsonParam.put("cold_reason",jsonArray_cold_reason);
+                jsonParam.put("away",away);
+                jsonParam.put("away_reason",jsonArray_away_reason);
+
+                conn.getOutputStream();
+                try
+                {
+                    DataOutputStream os = new DataOutputStream(conn.getOutputStream());
+                    os.writeBytes(jsonParam.toString());
+
+                    os.flush();
+                    os.close();
+                }catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (ProtocolException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
+                Log.i("STATUS", String.valueOf(conn.getResponseCode()));
+                Log.i("MSG" , conn.getResponseMessage());
+
+                responseCode=conn.getResponseCode();
+                conn.disconnect();
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        protected void onPostExecute(Object object) {
+            super.onPostExecute(object);
+            if(responseCode==200)
+            {
+                toastMessage("Successfully saved");
+            }
+            else {
+                toastMessage("Unsuccessfull");
+            }
+
+            Intent intent = new Intent(Competition.this, StressAndHealth.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            finish();
+        }
+
     }
 
     private void toastMessage(String message)
