@@ -177,7 +177,9 @@ public class WeeklySteps extends AppCompatActivity implements DatePickerDialog.O
         protected Void doInBackground(Void... voids) {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
             WeekBefore = simpleDateFormat.format(sevenDaysAgo);
-            ServerURL = ServerURL+"/"+nic+"/"+WeekBefore;
+           // ServerURL = ServerURL+"/"+nic+"/"+WeekBefore;
+            //TODO:Uncomment above after testing;
+            ServerURL=ServerURL+"/941232147V/2018-07-17";
 
             doGet();
             Log.d("WeeklySteps",ServerURL);
@@ -202,11 +204,36 @@ public class WeeklySteps extends AppCompatActivity implements DatePickerDialog.O
                 JsonReader jsonReader = new JsonReader(responseBodyReader);
                 jsonReader.beginArray();
                 //jsonReader.nextName();
-                jsonReader.beginObject();
-                while (jsonReader.hasNext()){
-                    String name = jsonReader.nextName();
-                    Log.d("WeeklySteps",name); // id nic count date
-                    jsonReader.skipValue();
+                while(jsonReader.hasNext()) {
+                    int count = 0;
+                    jsonReader.beginObject();
+                    while (jsonReader.hasNext()) {
+                        String name = jsonReader.nextName();
+                        Log.d("WeeklySteps", name); // id nic count date
+                        if (name.equals("id")) {
+                            String value = jsonReader.nextString();
+                            System.out.println(name + " " + value);
+                            continue;
+                        } else if (name.equals("nic")) {
+                            String value = jsonReader.nextString();
+                            System.out.println(name + " " + value);
+                            continue;
+                        } else if (name.equals("count")) {
+                            String value = jsonReader.nextString();
+                            System.out.println(name + " " + value);
+                            continue;
+                        } else if (name.equals("date")) {
+                            String value = jsonReader.nextString();
+                            System.out.println(name + " " + value);
+                            continue;
+                        }/*else{
+                        jsonReader.skipValue();
+
+                    }*/
+                    }
+                    jsonReader.endObject();
+                    count++;
+                    System.out.println("count: " + count);
                 }
 
                 jsonReader.close();
