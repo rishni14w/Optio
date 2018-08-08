@@ -30,6 +30,7 @@ import java.net.HttpURLConnection;
 import java.net.ProtocolException;
 import java.net.URL;
 import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -48,10 +49,13 @@ public class WeeklySteps extends AppCompatActivity implements DatePickerDialog.O
     private LineChart lineChart;
     private LineData lineData;
     int[] valArr = new int[7];
+    ArrayList<Integer> countArray;
     String WeekBefore;
     String nic;
     Date sevenDaysAgo;
     int maximum;
+    ArrayList<String> xValues;
+    ArrayList<String> daysList;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,18 +67,21 @@ public class WeeklySteps extends AppCompatActivity implements DatePickerDialog.O
                 datePicker(view);
             }
         });
-
-        valArr[0]=400;
+        xValues = new ArrayList<>();
+        daysList = new ArrayList<>();
+        countArray = new ArrayList<>();
+       /* valArr[0]=400;
         valArr[1]=429;
         valArr[2]=345;
         valArr[3]=158;
         valArr[4]=500;
         valArr[5]=400;
-        valArr[6]=390;
+        valArr[6]=390;*/
         readNic();
 
         //Collections.min(Arrays.asList(valArr));
-        maximum = maxValue(valArr);
+
+
 
         Calendar cal = Calendar.getInstance();
         DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.MEDIUM);
@@ -85,18 +92,19 @@ public class WeeklySteps extends AppCompatActivity implements DatePickerDialog.O
         String formattedDate = dateFormat.format(currentDate);
 
         new WeeklyStepsAsyncTasK().execute();
+
+
        // System.out.println("Date = "+ cal.getTime());
 
         thisWeek = (TextView)findViewById(R.id.textViewWeek);
         maximumSteps = (TextView)findViewById(R.id.textViewMostActiveValue);
 
         thisWeek.setText(WeekBefore+" to "+formattedDate);
-        maximumSteps.setText("Friday");
 
-        lineChart = (com.github.mikephil.charting.charts.LineChart) findViewById(R.id.lineChart);
 
-        lineData = new LineData(getXValues(),getLineDataValue());
-        lineChart.setData(lineData);
+
+
+
 
     }
     private void readNic(){
@@ -109,22 +117,41 @@ public class WeeklySteps extends AppCompatActivity implements DatePickerDialog.O
     }
 //TODO : Once the database is working replace the lables with the last seven days
     private ArrayList<String> getXValues() {
-        ArrayList<String> xValues = new ArrayList<>();
-        xValues.add("Mon");
+
+        /*xValues.add("Mon");
         xValues.add("Tue");
         xValues.add("Wed");
         xValues.add("Thur");
         xValues.add("Fri");
         xValues.add("Sat");
-        xValues.add("Sun");
+        xValues.add("Sun");*/
+        SimpleDateFormat format1=new SimpleDateFormat("yyyy-MM-dd");
+        Date dt1= null;
+        System.out.println("daysList size "+ daysList);
+        for (int i= 0; i<daysList.size();i++){
+
+            try {
+                dt1 = format1.parse(daysList.get(i));
+                DateFormat format2=new SimpleDateFormat("EEEE");
+                String finalDay=format2.format(dt1);
+                xValues.add(finalDay);
+            } catch (ParseException e) {
+                e.printStackTrace();
+            }
+
+        }
         return xValues;
     }
     //TODO : Get the data from the database and set it to the y axis values
     private List<ILineDataSet> getLineDataValue() {
         ArrayList<ILineDataSet> lineDataSets = null;
         ArrayList<Entry> entryArrayList = new ArrayList<>();
-
-        Entry e1 = new Entry(valArr[0],0);
+        System.out.println("countArray size : "+countArray.size());
+        for(int i=0; i<countArray.size(); i++){
+            Entry e =new Entry(countArray.get(i),i);
+            entryArrayList.add(e);
+        }
+       /* Entry e1 = new Entry(valArr[0],0);
         Entry e2 = new Entry(valArr[1],1);
         Entry e3 = new Entry(valArr[2],2);
         Entry e4 = new Entry(valArr[3],3);
@@ -137,7 +164,7 @@ public class WeeklySteps extends AppCompatActivity implements DatePickerDialog.O
         entryArrayList.add(e4);
         entryArrayList.add(e5);
         entryArrayList.add(e6);
-        entryArrayList.add(e7);
+        entryArrayList.add(e7);*/
         LineDataSet lineDataSet = new LineDataSet(entryArrayList,"Steps");
         lineDataSets = new ArrayList<>();
         lineDataSets.add(lineDataSet);
@@ -162,12 +189,20 @@ public class WeeklySteps extends AppCompatActivity implements DatePickerDialog.O
         DatePickerFragment fragment = new DatePickerFragment();
         fragment.show(getFragmentManager(),"datePicker");
     }
-    public int maxValue(int array[]){
-        List<Integer> list = new ArrayList<Integer>();
+    public void setData(List<ILineDataSet> l1,ArrayList<String>L2){
+        lineChart = (com.github.mikephil.charting.charts.LineChart) findViewById(R.id.lineChart);
+        lineData = new LineData(L2,l1);
+        System.out.println("l2 size"+L2.size());
+        System.out.println("l1 size"+l1.size());
+        lineChart.setData(lineData);
+        lineChart.invalidate();
+    }
+    public int maxValue(){
+        /*List<Integer> list = new ArrayList<Integer>();
         for (int i = 0; i < array.length; i++) {
             list.add(array[i]);
-        }
-        return Collections.max(list);
+        }*/
+        return Collections.max(countArray);
 
     }
 
@@ -183,6 +218,21 @@ public class WeeklySteps extends AppCompatActivity implements DatePickerDialog.O
 
             doGet();
             Log.d("WeeklySteps",ServerURL);
+            final ArrayList<String> xValues = getXValues();
+            final List<ILineDataSet> yValues= getLineDataValue();
+            System.out.println("xValues size"+xValues);
+            System.out.println("yValues size"+yValues);
+            setData(yValues,xValues);
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    maximum = maxValue();
+                    maximumSteps.setText("Friday");
+
+
+                }
+            });
+
             return null;
         }
         protected void doGet(){
@@ -221,10 +271,12 @@ public class WeeklySteps extends AppCompatActivity implements DatePickerDialog.O
                         } else if (name.equals("count")) {
                             String value = jsonReader.nextString();
                             System.out.println(name + " " + value);
+                            countArray.add(Integer.parseInt(value));
                             continue;
                         } else if (name.equals("date")) {
                             String value = jsonReader.nextString();
                             System.out.println(name + " " + value);
+                            daysList.add(value);
                             continue;
                         }/*else{
                         jsonReader.skipValue();
