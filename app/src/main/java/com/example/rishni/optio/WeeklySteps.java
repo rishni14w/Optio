@@ -115,7 +115,7 @@ public class WeeklySteps extends AppCompatActivity implements DatePickerDialog.O
             nic = "958013587V";
         }
     }
-//TODO : Once the database is working replace the lables with the last seven days
+
     private ArrayList<String> getXValues() {
 
         /*xValues.add("Mon");
@@ -142,7 +142,7 @@ public class WeeklySteps extends AppCompatActivity implements DatePickerDialog.O
         }
         return xValues;
     }
-    //TODO : Get the data from the database and set it to the y axis values
+
     private List<ILineDataSet> getLineDataValue() {
         ArrayList<ILineDataSet> lineDataSets = null;
         ArrayList<Entry> entryArrayList = new ArrayList<>();
@@ -227,6 +227,7 @@ public class WeeklySteps extends AppCompatActivity implements DatePickerDialog.O
                 @Override
                 public void run() {
                     maximum = maxValue();
+                    //TODO: Set the correct date according to the maximum value
                     maximumSteps.setText("Friday");
 
 
