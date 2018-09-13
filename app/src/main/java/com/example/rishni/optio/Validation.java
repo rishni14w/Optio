@@ -31,6 +31,7 @@ public class Validation {
         return false;
     }
 
+
     public boolean heartrateRange(String value1,String value2)
     {
         int int1=Integer.parseInt(value1);
