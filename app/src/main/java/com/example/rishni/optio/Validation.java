@@ -30,4 +30,18 @@ public class Validation {
         }
         return false;
     }
+
+
+    public boolean heartrateRange(String value1,String value2)
+    {
+        int int1=Integer.parseInt(value1);
+        int int2=Integer.parseInt(value2);
+
+        if(((int1>=40)&&(int1<220))&& (((int2>=40)&&(int2<220))))
+        {
+            return true;
+        }
+        return false;
+    }
+
 }
