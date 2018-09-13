@@ -702,6 +702,7 @@
             android:layout_gravity="center"
             android:onClick="submit_competition"/>
     </LinearLayout>
+
 </ScrollView>
 
 
