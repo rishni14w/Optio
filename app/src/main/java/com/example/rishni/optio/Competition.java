@@ -1180,7 +1180,7 @@ public class Competition extends AppCompatActivity {
             jsonArray_cold_reason=new JSONArray(cold_reason_Arr);
             jsonArray_away_reason=new JSONArray(away_reason_Arr);
 
-           // new PostData(stroke,stroke_reason1_s,stroke_reason2_s,difficulties_reason1_s,difficulties_reason2_s,difficulties_reason3_s,difficulties_reason4_s,gamePlan_reason1_s,gamePlan_reason2_s,gamePlan_reason3_s,score_reason1_s,score_reason2_s,score_reason3_s,score_reason4_s,score_reason5_s,score_reason6_s,score_reason7_s,opponent_reason1_s,opponent_reason2_s,opponent_reason3_s,opponent_reason4_s,opponent_reason5_s,referee_reason1_s,referee_reason2_s,referee_reason3_s,referee_reason4_s,referee_reason5_s,spectator,spectator_reason1_s,spectator_reason2_s,spectator_reason3_s,spectator_reason4_s,env,env_reason1_s,env_reason2_s,env_reason3_s,env_reason4_s,env_reason5_s,env_reason6_s,env_reason7_s,env_reason8_s,cold,cold_reason1_s,cold_reason2_s,cold_reason3_s,cold_reason4_s,away,away_reason1_s,away_reason2_s,away_reason3_s,away_reason4_s).execute(db.getAddressAPI_Competition());
+            // new PostData(stroke,stroke_reason1_s,stroke_reason2_s,difficulties_reason1_s,difficulties_reason2_s,difficulties_reason3_s,difficulties_reason4_s,gamePlan_reason1_s,gamePlan_reason2_s,gamePlan_reason3_s,score_reason1_s,score_reason2_s,score_reason3_s,score_reason4_s,score_reason5_s,score_reason6_s,score_reason7_s,opponent_reason1_s,opponent_reason2_s,opponent_reason3_s,opponent_reason4_s,opponent_reason5_s,referee_reason1_s,referee_reason2_s,referee_reason3_s,referee_reason4_s,referee_reason5_s,spectator,spectator_reason1_s,spectator_reason2_s,spectator_reason3_s,spectator_reason4_s,env,env_reason1_s,env_reason2_s,env_reason3_s,env_reason4_s,env_reason5_s,env_reason6_s,env_reason7_s,env_reason8_s,cold,cold_reason1_s,cold_reason2_s,cold_reason3_s,cold_reason4_s,away,away_reason1_s,away_reason2_s,away_reason3_s,away_reason4_s).execute(db.getAddressAPI_Competition());
             Date currentTime= Calendar.getInstance().getTime();
             date=currentTime.toString();
 
@@ -1192,112 +1192,112 @@ public class Competition extends AppCompatActivity {
 
     //function to add new competition
     /**class PostData extends AsyncTask<String,String,String> {
-        private String Stroke,Stroke_reason1_s,Stroke_reason2_s,Difficulties_reason1_s,Difficulties_reason2_s,Difficulties_reason3_s,Difficulties_reason4_s;
-        private String GamePlan_reason1_s,GamePlan_reason2_s,GamePlan_reason3_s,Score_reason1_s,Score_reason2_s;
-        private String Score_reason3_s,Score_reason4_s,Score_reason5_s,Score_reason6_s,Score_reason7_s,Opponent_reason1_s;
-        private String Opponent_reason2_s,Opponent_reason3_s,Opponent_reason4_s,Opponent_reason5_s,Referee_reason1_s;
-        private String Referee_reason2_s,Referee_reason3_s,Referee_reason4_s,Referee_reason5_s,Spectator,Spectator_reason1_s;
-        private String Spectator_reason2_s,Spectator_reason3_s,Spectator_reason4_s,Env,Env_reason1_s,Env_reason2_s,Env_reason3_s;
-        private String Env_reason4_s,Env_reason5_s,Env_reason6_s,Env_reason7_s,Env_reason8_s,Cold,Cold_reason1_s,Cold_reason2_s;
-        private String Cold_reason3_s,Cold_reason4_s,Away,Away_reason1_s,Away_reason2_s,Away_reason3_s,Away_reason4_s;
+     private String Stroke,Stroke_reason1_s,Stroke_reason2_s,Difficulties_reason1_s,Difficulties_reason2_s,Difficulties_reason3_s,Difficulties_reason4_s;
+     private String GamePlan_reason1_s,GamePlan_reason2_s,GamePlan_reason3_s,Score_reason1_s,Score_reason2_s;
+     private String Score_reason3_s,Score_reason4_s,Score_reason5_s,Score_reason6_s,Score_reason7_s,Opponent_reason1_s;
+     private String Opponent_reason2_s,Opponent_reason3_s,Opponent_reason4_s,Opponent_reason5_s,Referee_reason1_s;
+     private String Referee_reason2_s,Referee_reason3_s,Referee_reason4_s,Referee_reason5_s,Spectator,Spectator_reason1_s;
+     private String Spectator_reason2_s,Spectator_reason3_s,Spectator_reason4_s,Env,Env_reason1_s,Env_reason2_s,Env_reason3_s;
+     private String Env_reason4_s,Env_reason5_s,Env_reason6_s,Env_reason7_s,Env_reason8_s,Cold,Cold_reason1_s,Cold_reason2_s;
+     private String Cold_reason3_s,Cold_reason4_s,Away,Away_reason1_s,Away_reason2_s,Away_reason3_s,Away_reason4_s;
 
-        public PostData(String stroke, String stroke_reason1_s, String stroke_reason2_s, String difficulties_reason1_s, String difficulties_reason2_s, String difficulties_reason3_s, String difficulties_reason4_s, String gamePlan_reason1_s, String gamePlan_reason2_s, String gamePlan_reason3_s, String score_reason1_s, String score_reason2_s, String score_reason3_s, String score_reason4_s, String score_reason5_s, String score_reason6_s, String score_reason7_s, String opponent_reason1_s, String opponent_reason2_s, String opponent_reason3_s, String opponent_reason4_s, String opponent_reason5_s, String referee_reason1_s, String referee_reason2_s, String referee_reason3_s, String referee_reason4_s, String referee_reason5_s, String spectator, String spectator_reason1_s, String spectator_reason2_s, String spectator_reason3_s, String spectator_reason4_s, String env, String env_reason1_s, String env_reason2_s, String env_reason3_s, String env_reason4_s, String env_reason5_s, String env_reason6_s, String env_reason7_s, String env_reason8_s, String cold, String cold_reason1_s, String cold_reason2_s, String cold_reason3_s, String cold_reason4_s, String away, String away_reason1_s, String away_reason2_s, String away_reason3_s, String away_reason4_s) {
-            Stroke = stroke;
-            Stroke_reason1_s = stroke_reason1_s;
-            Stroke_reason2_s = stroke_reason2_s;
-            Difficulties_reason1_s = difficulties_reason1_s;
-            Difficulties_reason2_s = difficulties_reason2_s;
-            Difficulties_reason3_s = difficulties_reason3_s;
-            Difficulties_reason4_s = difficulties_reason4_s;
-            GamePlan_reason1_s = gamePlan_reason1_s;
-            GamePlan_reason2_s = gamePlan_reason2_s;
-            GamePlan_reason3_s = gamePlan_reason3_s;
-            Score_reason1_s = score_reason1_s;
-            Score_reason2_s = score_reason2_s;
-            Score_reason3_s = score_reason3_s;
-            Score_reason4_s = score_reason4_s;
-            Score_reason5_s = score_reason5_s;
-            Score_reason6_s = score_reason6_s;
-            Score_reason7_s = score_reason7_s;
-            Opponent_reason1_s = opponent_reason1_s;
-            Opponent_reason2_s = opponent_reason2_s;
-            Opponent_reason3_s = opponent_reason3_s;
-            Opponent_reason4_s = opponent_reason4_s;
-            Opponent_reason5_s = opponent_reason5_s;
-            Referee_reason1_s = referee_reason1_s;
-            Referee_reason2_s = referee_reason2_s;
-            Referee_reason3_s = referee_reason3_s;
-            Referee_reason4_s = referee_reason4_s;
-            Referee_reason5_s = referee_reason5_s;
-            Spectator = spectator;
-            Spectator_reason1_s = spectator_reason1_s;
-            Spectator_reason2_s = spectator_reason2_s;
-            Spectator_reason3_s = spectator_reason3_s;
-            Spectator_reason4_s = spectator_reason4_s;
-            Env = env;
-            Env_reason1_s = env_reason1_s;
-            Env_reason2_s = env_reason2_s;
-            Env_reason3_s = env_reason3_s;
-            Env_reason4_s = env_reason4_s;
-            Env_reason5_s = env_reason5_s;
-            Env_reason6_s = env_reason6_s;
-            Env_reason7_s = env_reason7_s;
-            Env_reason8_s = env_reason8_s;
-            Cold = cold;
-            Cold_reason1_s = cold_reason1_s;
-            Cold_reason2_s = cold_reason2_s;
-            Cold_reason3_s = cold_reason3_s;
-            Cold_reason4_s = cold_reason4_s;
-            Away = away;
-            Away_reason1_s = away_reason1_s;
-            Away_reason2_s = away_reason2_s;
-            Away_reason3_s = away_reason3_s;
-            Away_reason4_s = away_reason4_s;
-        }
+     public PostData(String stroke, String stroke_reason1_s, String stroke_reason2_s, String difficulties_reason1_s, String difficulties_reason2_s, String difficulties_reason3_s, String difficulties_reason4_s, String gamePlan_reason1_s, String gamePlan_reason2_s, String gamePlan_reason3_s, String score_reason1_s, String score_reason2_s, String score_reason3_s, String score_reason4_s, String score_reason5_s, String score_reason6_s, String score_reason7_s, String opponent_reason1_s, String opponent_reason2_s, String opponent_reason3_s, String opponent_reason4_s, String opponent_reason5_s, String referee_reason1_s, String referee_reason2_s, String referee_reason3_s, String referee_reason4_s, String referee_reason5_s, String spectator, String spectator_reason1_s, String spectator_reason2_s, String spectator_reason3_s, String spectator_reason4_s, String env, String env_reason1_s, String env_reason2_s, String env_reason3_s, String env_reason4_s, String env_reason5_s, String env_reason6_s, String env_reason7_s, String env_reason8_s, String cold, String cold_reason1_s, String cold_reason2_s, String cold_reason3_s, String cold_reason4_s, String away, String away_reason1_s, String away_reason2_s, String away_reason3_s, String away_reason4_s) {
+     Stroke = stroke;
+     Stroke_reason1_s = stroke_reason1_s;
+     Stroke_reason2_s = stroke_reason2_s;
+     Difficulties_reason1_s = difficulties_reason1_s;
+     Difficulties_reason2_s = difficulties_reason2_s;
+     Difficulties_reason3_s = difficulties_reason3_s;
+     Difficulties_reason4_s = difficulties_reason4_s;
+     GamePlan_reason1_s = gamePlan_reason1_s;
+     GamePlan_reason2_s = gamePlan_reason2_s;
+     GamePlan_reason3_s = gamePlan_reason3_s;
+     Score_reason1_s = score_reason1_s;
+     Score_reason2_s = score_reason2_s;
+     Score_reason3_s = score_reason3_s;
+     Score_reason4_s = score_reason4_s;
+     Score_reason5_s = score_reason5_s;
+     Score_reason6_s = score_reason6_s;
+     Score_reason7_s = score_reason7_s;
+     Opponent_reason1_s = opponent_reason1_s;
+     Opponent_reason2_s = opponent_reason2_s;
+     Opponent_reason3_s = opponent_reason3_s;
+     Opponent_reason4_s = opponent_reason4_s;
+     Opponent_reason5_s = opponent_reason5_s;
+     Referee_reason1_s = referee_reason1_s;
+     Referee_reason2_s = referee_reason2_s;
+     Referee_reason3_s = referee_reason3_s;
+     Referee_reason4_s = referee_reason4_s;
+     Referee_reason5_s = referee_reason5_s;
+     Spectator = spectator;
+     Spectator_reason1_s = spectator_reason1_s;
+     Spectator_reason2_s = spectator_reason2_s;
+     Spectator_reason3_s = spectator_reason3_s;
+     Spectator_reason4_s = spectator_reason4_s;
+     Env = env;
+     Env_reason1_s = env_reason1_s;
+     Env_reason2_s = env_reason2_s;
+     Env_reason3_s = env_reason3_s;
+     Env_reason4_s = env_reason4_s;
+     Env_reason5_s = env_reason5_s;
+     Env_reason6_s = env_reason6_s;
+     Env_reason7_s = env_reason7_s;
+     Env_reason8_s = env_reason8_s;
+     Cold = cold;
+     Cold_reason1_s = cold_reason1_s;
+     Cold_reason2_s = cold_reason2_s;
+     Cold_reason3_s = cold_reason3_s;
+     Cold_reason4_s = cold_reason4_s;
+     Away = away;
+     Away_reason1_s = away_reason1_s;
+     Away_reason2_s = away_reason2_s;
+     Away_reason3_s = away_reason3_s;
+     Away_reason4_s = away_reason4_s;
+     }
 
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
+     @Override
+     protected void onPreExecute() {
+     super.onPreExecute();
+     }
 
-        @TargetApi(Build.VERSION_CODES.KITKAT)
-        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-        @Override
-        protected String doInBackground(String... params) {
-            //android.os.Debug.waitForDebugger();
-            String urlString = params[0];
-            HTTPDataHandler hh = new HTTPDataHandler();
+     @TargetApi(Build.VERSION_CODES.KITKAT)
+     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+     @Override
+     protected String doInBackground(String... params) {
+     //android.os.Debug.waitForDebugger();
+     String urlString = params[0];
+     HTTPDataHandler hh = new HTTPDataHandler();
 
-            String json = "{\n";
-            json += "\t\"stroke\":\"" + Stroke + "\",\n";
-            json += "\t\"stroke_reason\": [\"" + Stroke_reason1_s + "\",\""+Stroke_reason2_s+"\"],\n";
-            json += "\t\"difficulties\": [\"" + Difficulties_reason1_s + "\",\""+Difficulties_reason2_s+ "\",\""+Difficulties_reason3_s+ "\",\""+Difficulties_reason4_s+"\"],\n";
-            json += "\t\"gamePlan\": [\"" + GamePlan_reason1_s + "\",\""+GamePlan_reason2_s+ "\",\""+GamePlan_reason3_s+ "\"],\n";
-            json += "\t\"score\": [\"" + Score_reason1_s + "\",\""+Score_reason2_s+ "\",\""+Score_reason3_s+ "\",\""+Score_reason4_s+ "\",\""+Score_reason5_s+ "\",\""+Score_reason6_s+ "\",\""+Score_reason7_s+"\"],\n";
-            json += "\t\"opponent\": [\"" + Opponent_reason1_s + "\",\""+Opponent_reason2_s+ "\",\""+Opponent_reason3_s+ "\",\""+Opponent_reason4_s+ "\",\""+Opponent_reason5_s+"\"],\n";
-            json += "\t\"referee\": [\"" + Referee_reason1_s + "\",\""+Referee_reason2_s+ "\",\""+Referee_reason3_s+ "\",\""+Referee_reason4_s+ "\",\""+Referee_reason5_s+"\"],\n";
-            json += "\t\"spectator\":\"" + Spectator + "\",\n";
-            json += "\t\"spectator_reason\": [\"" + Spectator_reason1_s + "\",\""+Spectator_reason2_s+ "\",\""+Spectator_reason3_s+ "\",\""+Spectator_reason4_s+"\"],\n";
-            json += "\t\"env\":\"" + Env + "\",\n";
-            json += "\t\"env_reason\": [\"" + Env_reason1_s + "\",\""+Env_reason2_s+ "\",\""+Env_reason3_s+ "\",\""+Env_reason4_s+ "\",\""+Env_reason5_s+ "\",\""+Env_reason6_s+ "\",\""+Env_reason7_s+ "\",\""+Env_reason8_s+"\"],\n";
-            json += "\t\"cold\":\"" + Cold + "\",\n";
-            json += "\t\"cold_reason\": [\"" + Cold_reason1_s + "\",\""+Cold_reason2_s+ "\",\""+Cold_reason3_s+ "\",\""+Cold_reason4_s+"\"],\n";
-            json += "\t\"away\":\"" + Away + "\",\n";
-            json += "\t\"away_reason\": [\"" + Away_reason1_s + "\",\""+Away_reason2_s+ "\",\""+Away_reason3_s+ "\",\""+Away_reason4_s+"\"],\n";
-            json += "}";
-            hh.PostHTTPData(urlString, json);
-            return "";
-        }
+     String json = "{\n";
+     json += "\t\"stroke\":\"" + Stroke + "\",\n";
+     json += "\t\"stroke_reason\": [\"" + Stroke_reason1_s + "\",\""+Stroke_reason2_s+"\"],\n";
+     json += "\t\"difficulties\": [\"" + Difficulties_reason1_s + "\",\""+Difficulties_reason2_s+ "\",\""+Difficulties_reason3_s+ "\",\""+Difficulties_reason4_s+"\"],\n";
+     json += "\t\"gamePlan\": [\"" + GamePlan_reason1_s + "\",\""+GamePlan_reason2_s+ "\",\""+GamePlan_reason3_s+ "\"],\n";
+     json += "\t\"score\": [\"" + Score_reason1_s + "\",\""+Score_reason2_s+ "\",\""+Score_reason3_s+ "\",\""+Score_reason4_s+ "\",\""+Score_reason5_s+ "\",\""+Score_reason6_s+ "\",\""+Score_reason7_s+"\"],\n";
+     json += "\t\"opponent\": [\"" + Opponent_reason1_s + "\",\""+Opponent_reason2_s+ "\",\""+Opponent_reason3_s+ "\",\""+Opponent_reason4_s+ "\",\""+Opponent_reason5_s+"\"],\n";
+     json += "\t\"referee\": [\"" + Referee_reason1_s + "\",\""+Referee_reason2_s+ "\",\""+Referee_reason3_s+ "\",\""+Referee_reason4_s+ "\",\""+Referee_reason5_s+"\"],\n";
+     json += "\t\"spectator\":\"" + Spectator + "\",\n";
+     json += "\t\"spectator_reason\": [\"" + Spectator_reason1_s + "\",\""+Spectator_reason2_s+ "\",\""+Spectator_reason3_s+ "\",\""+Spectator_reason4_s+"\"],\n";
+     json += "\t\"env\":\"" + Env + "\",\n";
+     json += "\t\"env_reason\": [\"" + Env_reason1_s + "\",\""+Env_reason2_s+ "\",\""+Env_reason3_s+ "\",\""+Env_reason4_s+ "\",\""+Env_reason5_s+ "\",\""+Env_reason6_s+ "\",\""+Env_reason7_s+ "\",\""+Env_reason8_s+"\"],\n";
+     json += "\t\"cold\":\"" + Cold + "\",\n";
+     json += "\t\"cold_reason\": [\"" + Cold_reason1_s + "\",\""+Cold_reason2_s+ "\",\""+Cold_reason3_s+ "\",\""+Cold_reason4_s+"\"],\n";
+     json += "\t\"away\":\"" + Away + "\",\n";
+     json += "\t\"away_reason\": [\"" + Away_reason1_s + "\",\""+Away_reason2_s+ "\",\""+Away_reason3_s+ "\",\""+Away_reason4_s+"\"],\n";
+     json += "}";
+     hh.PostHTTPData(urlString, json);
+     return "";
+     }
 
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            toastMessage("Successfully submitted");
-            Intent intent = new Intent(Competition.this, questionnaire.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
-            finish();
-        }**/
+     @Override
+     protected void onPostExecute(String s) {
+     super.onPostExecute(s);
+     toastMessage("Successfully submitted");
+     Intent intent = new Intent(Competition.this, questionnaire.class);
+     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+     startActivity(intent);
+     finish();
+     }**/
 
     class SendData extends AsyncTask{
 
