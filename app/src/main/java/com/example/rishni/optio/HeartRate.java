@@ -53,6 +53,109 @@ public class HeartRate extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+<<<<<<< HEAD
+    //function to add new heartrate
+    /**class PostData extends AsyncTask<String,String,String> {
+     String before;
+     String after;
+
+     public PostData(String before, String after) {
+     this.before = before;
+     this.after = after;
+     }
+
+     @Override
+     protected void onPreExecute() {
+     super.onPreExecute();
+     }
+
+     @TargetApi(Build.VERSION_CODES.KITKAT)
+     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+     @Override
+     protected String doInBackground(String... params) {
+     //android.os.Debug.waitForDebugger();
+     String urlString = params[0];
+     HTTPDataHandler hh = new HTTPDataHandler();
+
+     String json = "{\n";
+     json += "\t\"before\":\"" + before + "\",\n";
+     json += "\t\"after\":\"" + after + "\",\n";
+     json += "}";
+     hh.PostHTTPData(urlString, json);
+     return "";
+     }
+
+     @Override
+     protected void onPostExecute(String s) {
+     super.onPostExecute(s);
+     toastMessage("Successfully saved");
+     Intent intent = new Intent(HeartRate.this, StressAndHealth.class);
+     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+     startActivity(intent);
+     finish();
+     }
+     }**/
+
+    class SendData extends AsyncTask {
+
+        @Override
+        protected Object doInBackground(Object[] objects) {
+            doPost();
+            return null;
+        }
+
+        protected void doPost() {
+            try {
+                URL url = new URL(ServerURL);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setRequestMethod("POST");
+                conn.setRequestProperty("Content-Type", "application/json");
+                conn.setRequestProperty("Accept", "application/json");
+                conn.setDoOutput(true);
+                conn.setDoInput(true);
+                conn.connect();
+
+                JSONObject jsonParam = new JSONObject();
+                jsonParam.put("nic", nic);
+                jsonParam.put("date", date);
+                jsonParam.put("before", newBefore);
+                jsonParam.put("after", newAfter);
+
+                conn.getOutputStream();
+                try {
+                    DataOutputStream os = new DataOutputStream(conn.getOutputStream());
+                    os.writeBytes(jsonParam.toString());
+
+                    os.flush();
+                    os.close();
+                } catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (ProtocolException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
+                Log.i("STATUS", String.valueOf(conn.getResponseCode()));
+                Log.i("MSG", conn.getResponseMessage());
+
+                conn.disconnect();
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }
+
+        protected void onPostExecute(Object object) {
+            super.onPostExecute(object);
+=======
     //function to add new user
     class PostData extends AsyncTask<String,String,String> {
         String before;
@@ -87,6 +190,7 @@ public class HeartRate extends AppCompatActivity {
         @Override
         protected void onPostExecute(String s) {
             super.onPostExecute(s);
+>>>>>>> 8c663238c12b171f34e850120dbd6f8a52a90673
             toastMessage("Successfully saved");
             Intent intent = new Intent(HeartRate.this, StressAndHealth.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
