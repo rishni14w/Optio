@@ -40,7 +40,8 @@ public class ViewProfile extends AppCompatActivity {
         name.setText(preferences.getString("AthleteName",null));
         playedSince.setText(preferences.getString("AthletePlayedSince",null));
         currentWeight.setText(preferences.getString("AthleteWeight",null));
-        new BackgroundTask().execute();
+        //TODO: Uncomment the line when the token is figured out 
+        //new BackgroundTask().execute();
         // Use a created model that has a created real-time endpoint
 
 
