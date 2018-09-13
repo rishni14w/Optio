@@ -24,7 +24,7 @@
             android:textSize="24sp"
             android:textColor="@color/colorAccent"/>
 
-            <!-- QUESTION 1 -->
+        <!-- QUESTION 1 -->
 
         <TextView
             android:id="@+id/Question_1_CS1_tv"
@@ -82,7 +82,7 @@
             android:layout_marginLeft="25dp"
             android:visibility="gone"/>
 
-            <!-- QUESTION 2 -->
+        <!-- QUESTION 2 -->
 
         <TextView
             android:id="@+id/Question_2_CS1_tv"
@@ -126,7 +126,7 @@
             android:layout_marginLeft="25dp"
             android:onClick="noneClicked_CS1_Q2"/>
 
-            <!-- QUESTION 3 -->
+        <!-- QUESTION 3 -->
 
         <TextView
             android:id="@+id/Question_3_CS1_tv"
@@ -163,7 +163,7 @@
             android:onClick="noneClicked_CS1_Q3"/>
 
 
-            <!-- QUESTION 4 -->
+        <!-- QUESTION 4 -->
 
         <TextView
             android:id="@+id/Question_4_CS1_tv"
@@ -242,7 +242,7 @@
             android:textSize="24sp"
             android:textColor="@color/colorAccent"/>
 
-            <!-- QUESTION 1 -->
+        <!-- QUESTION 1 -->
         <TextView
             android:id="@+id/Question_1_CS2_tv"
             android:layout_width="match_parent"
@@ -293,7 +293,7 @@
             android:layout_marginLeft="25dp"
             android:onClick="noneClicked_CS2_Q1"/>
 
-            <!-- QUESTION 2 -->
+        <!-- QUESTION 2 -->
 
         <TextView
             android:id="@+id/Question_2_CS2_tv"
@@ -345,7 +345,7 @@
             android:layout_marginLeft="25dp"
             android:onClick="noneClicked_CS2_Q2"/>
 
-            <!-- QUESTION 3 -->
+        <!-- QUESTION 3 -->
 
         <TextView
             android:id="@+id/Question_3_CS2_tv"
@@ -434,7 +434,7 @@
             android:textSize="24sp"
             android:textColor="@color/colorAccent"/>
 
-            <!-- QUESTION 1 -->
+        <!-- QUESTION 1 -->
         <TextView
             android:id="@+id/Question_1_CS3_tv"
             android:layout_width="match_parent"
@@ -476,7 +476,7 @@
             android:visibility="gone"/>
 
         <CheckBox
-                android:id="@+id/Answer_1_CS3_Q1_checkBox"
+            android:id="@+id/Answer_1_CS3_Q1_checkBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/Answer_1_CS3_Q1"
@@ -539,7 +539,7 @@
             android:layout_marginLeft="25dp"
             android:visibility="gone"/>
 
-            <!-- QUESTION 2 -->
+        <!-- QUESTION 2 -->
         <TextView
             android:id="@+id/Question_2_CS3_tv"
             android:layout_width="match_parent"
@@ -616,7 +616,7 @@
             android:visibility="gone"
             android:onClick="noneClicked_CS3_Q2"/>
 
-            <!-- QUESTION 3 -->
+        <!-- QUESTION 3 -->
         <TextView
             android:id="@+id/Question_3_CS3_tv"
             android:layout_width="match_parent"
