@@ -30,8 +30,7 @@
         android:layout_weight="1"
         android:ems="10"
         android:hint="@string/placeholder_heart_rate"
-        android:inputType="number"
-        android:maxLength="3"/>
+        android:inputType="number" />
 
     <TextView
         android:id="@+id/heart_rate_before_bpm"
@@ -66,8 +65,7 @@
         android:layout_weight="1"
         android:ems="10"
         android:hint="@string/placeholder_heart_rate"
-        android:inputType="number"
-        android:maxLength="3"/>
+        android:inputType="number" />
 
     <TextView
         android:id="@+id/heart_rate_after_bpm"
