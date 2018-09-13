@@ -116,45 +116,45 @@ public class HeartRate extends AppCompatActivity {
 
     //function to add new heartrate
     /**class PostData extends AsyncTask<String,String,String> {
-        String before;
-        String after;
+     String before;
+     String after;
 
-        public PostData(String before, String after) {
-            this.before = before;
-            this.after = after;
-        }
+     public PostData(String before, String after) {
+     this.before = before;
+     this.after = after;
+     }
 
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
+     @Override
+     protected void onPreExecute() {
+     super.onPreExecute();
+     }
 
-        @TargetApi(Build.VERSION_CODES.KITKAT)
-        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-        @Override
-        protected String doInBackground(String... params) {
-            //android.os.Debug.waitForDebugger();
-            String urlString = params[0];
-            HTTPDataHandler hh = new HTTPDataHandler();
+     @TargetApi(Build.VERSION_CODES.KITKAT)
+     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+     @Override
+     protected String doInBackground(String... params) {
+     //android.os.Debug.waitForDebugger();
+     String urlString = params[0];
+     HTTPDataHandler hh = new HTTPDataHandler();
 
-            String json = "{\n";
-            json += "\t\"before\":\"" + before + "\",\n";
-            json += "\t\"after\":\"" + after + "\",\n";
-            json += "}";
-            hh.PostHTTPData(urlString, json);
-            return "";
-        }
+     String json = "{\n";
+     json += "\t\"before\":\"" + before + "\",\n";
+     json += "\t\"after\":\"" + after + "\",\n";
+     json += "}";
+     hh.PostHTTPData(urlString, json);
+     return "";
+     }
 
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            toastMessage("Successfully saved");
-            Intent intent = new Intent(HeartRate.this, StressAndHealth.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
-            finish();
-        }
-    }**/
+     @Override
+     protected void onPostExecute(String s) {
+     super.onPostExecute(s);
+     toastMessage("Successfully saved");
+     Intent intent = new Intent(HeartRate.this, StressAndHealth.class);
+     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+     startActivity(intent);
+     finish();
+     }
+     }**/
 
     class SendData extends AsyncTask {
 
