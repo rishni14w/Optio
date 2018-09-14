@@ -1,17 +1,26 @@
 package com.example.rishni.optio.model;
 
 public class Vaccination {
-    private  Id _id;
+    private String id;
+    private String nic;
     private String name;
     private String cause;
     private String date;
 
-    public Id get_id() {
-        return _id;
+    public String getId() {
+        return id;
     }
 
-    public void set_id(Id _id) {
-        this._id = _id;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getNic() {
+        return nic;
+    }
+
+    public void setNic(String nic) {
+        this.nic = nic;
     }
 
     public String getName() {
