@@ -5,26 +5,43 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
 public class VaccinationEdit extends AppCompatActivity {
+    String ServerURL = "https://murmuring-cove-69371.herokuapp.com/vaccination";
 
-    String oid;
+    String id_received;
     String name;
+    String updateName;
+    String updateCause;
+    String updateDate;
+    String nic;
 
     private EditText editText_Name_edit;
     private EditText editText_Cause_edit;
@@ -50,7 +67,7 @@ public class VaccinationEdit extends AppCompatActivity {
         ((TextView)findViewById(R.id.date_given_txt_edit)).setText(date);
 
 
-        oid= getIntent().getExtras().getString("oid");
+        id_received= getIntent().getExtras().getString("oid");
 
         editText_Name_edit=findViewById(R.id.vaccination_name_txt_edit);
         editText_Cause_edit=findViewById(R.id.vaccination_cause_txt_edit);
@@ -73,6 +90,9 @@ public class VaccinationEdit extends AppCompatActivity {
                 new DatePickerDialog(VaccinationEdit.this,datep,calendar.get(Calendar.YEAR),calendar.get(Calendar.MONTH),calendar.get(Calendar.DAY_OF_MONTH)).show();
             }
         });
+
+        SharedPreferences sharedPref=getApplicationContext().getSharedPreferences("AthletePref",0);
+        nic=sharedPref.getString("AthleteNic","");
     }
 
     @Override
@@ -93,14 +113,15 @@ public class VaccinationEdit extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.update)
         {
-            String updateName=editText_Name_edit.getText().toString();
-            String updateCause=editText_Cause_edit.getText().toString();
-            String updateDate=editText_Date_edit.getText().toString();
+            updateName=editText_Name_edit.getText().toString();
+            updateCause=editText_Cause_edit.getText().toString();
+            updateDate=editText_Date_edit.getText().toString();
 
             Boolean result=validation.isEmpty(updateName,updateCause,updateDate);
             if(result.equals(false))
             {
-                new PutData(updateName,updateCause,updateDate).execute(db.getAddressSingle_Vaccination(oid));
+                //new PutData(updateName,updateCause,updateDate).execute(db.getAddressSingle_Vaccination(oid));
+                new PutData().execute();
             }
             else
             {
@@ -133,7 +154,7 @@ public class VaccinationEdit extends AppCompatActivity {
 
 
     //function to edit vaccination
-    class PutData extends AsyncTask<String,String,String>
+   /** class PutData extends AsyncTask<String,String,String>
     {
         String name;
         String cause;
@@ -174,6 +195,84 @@ public class VaccinationEdit extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
+    }**/
+
+   class PutData extends AsyncTask{
+
+       @Override
+       protected Object doInBackground(Object[] objects) {
+           ServerURL = ServerURL+"/"+id_received;
+           doPut();
+           return null;
+       }
+
+       protected void doPut()
+       {
+           try{
+               URL url = new URL(ServerURL);
+               HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+               conn.setRequestMethod("PUT");
+               conn.setRequestProperty("Content-Type", "application/json");
+               conn.setRequestProperty("Accept","application/json");
+               conn.setDoOutput(true);
+               conn.setDoInput(true);
+               conn.connect();
+
+               JSONObject jsonParam = new JSONObject();
+               jsonParam.put("nic",nic);
+               jsonParam.put("name",updateName);
+               jsonParam.put("cause",updateCause);
+               jsonParam.put("date",updateDate);
+
+               conn.getOutputStream();
+               try
+               {
+                   DataOutputStream os = new DataOutputStream(conn.getOutputStream());
+                   os.writeBytes(jsonParam.toString());
+
+                   os.flush();
+                   os.close();
+               }catch (MalformedURLException e) {
+                   e.printStackTrace();
+               } catch (ProtocolException e) {
+                   e.printStackTrace();
+               } catch (IOException e) {
+                   e.printStackTrace();
+               }
+
+
+               Log.i("STATUS", String.valueOf(conn.getResponseCode()));
+               Log.i("MSG" , conn.getResponseMessage());
+
+               conn.disconnect();
+
+           } catch (MalformedURLException e) {
+               e.printStackTrace();
+           } catch (ProtocolException e) {
+               e.printStackTrace();
+           } catch (IOException e) {
+               e.printStackTrace();
+           } catch (JSONException e) {
+               e.printStackTrace();
+           }
+       }
+
+       protected void onPostExecute(Object object) {
+           super.onPostExecute(object);
+           toastMessage("Successfully updated");
+           Intent intent = new Intent(VaccinationEdit.this, Vaccination_View.class);
+           intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+           startActivity(intent);
+           finish();
+       }
+
+
+   }
+
+    private void toastMessage(String message)
+    {
+        Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
     }
+
 
 }
