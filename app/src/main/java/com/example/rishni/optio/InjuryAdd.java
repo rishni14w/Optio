@@ -1,14 +1,11 @@
 package com.example.rishni.optio;
 
-import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -39,7 +36,6 @@ public class InjuryAdd extends AppCompatActivity {
     private EditText editText_Recovery;
     private EditText editText_Details;
 
-    //ProgressBar mProgressBar;
 
     Calendar calendar=Calendar.getInstance();
     DatePickerDialog.OnDateSetListener date;
@@ -111,7 +107,6 @@ public class InjuryAdd extends AppCompatActivity {
             Boolean result=validation.isEmpty(newType,newDate);
             if(result.equals(false))
             {
-                //new PostData(newType,newDate,newRecovery,newDetails).execute(db.getAddressAPI_Injury());
                 new SendData().execute();
             }
             else
@@ -136,56 +131,6 @@ public class InjuryAdd extends AppCompatActivity {
 
         return super.onOptionsItemSelected(item);
     }
-
-    //function to add new user
-    /**class PostData extends AsyncTask<String,String,String>
-    {
-        String type;
-        String date;
-        String recovery;
-        String details;
-
-        public PostData(String type, String date, String recovery, String details) {
-            this.type = type;
-            this.date = date;
-            this.recovery = recovery;
-            this.details = details;
-        }
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-        @TargetApi(Build.VERSION_CODES.KITKAT)
-        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-        @Override
-        protected String doInBackground(String... params) {
-            //android.os.Debug.waitForDebugger();
-            String urlString= params[0];
-            HTTPDataHandler hh=new HTTPDataHandler();
-
-            String json="{\n";
-            json+="\t\"type\":\""+type+"\",\n";
-            json+="\t\"date\":\""+date+"\",\n";
-            json+="\t\"recovery\":\""+recovery+"\",\n";
-            json+="\t\"details\":\""+details+"\",\n";
-            json+="}";
-            hh.PostHTTPData(urlString,json);
-            return "";
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            Intent intent=new Intent(InjuryAdd.this,Injury_View.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
-            finish();
-
-        }
-    }
-**/
 
     //post injury details
     class SendData extends AsyncTask {

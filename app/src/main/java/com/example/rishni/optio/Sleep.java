@@ -76,7 +76,6 @@ public class Sleep extends AppCompatActivity {
 
                     Date currentTime= Calendar.getInstance().getTime();
                     date=currentTime.toString();
-                    //new PostData(duration).execute(db.getAddressAPI_Sleep());
 
                     new SendData().execute();
                 }
@@ -115,45 +114,6 @@ public class Sleep extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    //function to add new sleep duration
-    /**class PostData extends AsyncTask<String,String,String> {
-        String duration;
-
-        public PostData(String duration) {
-            this.duration = duration;
-        }
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-        @TargetApi(Build.VERSION_CODES.KITKAT)
-        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-        @Override
-        protected String doInBackground(String... params) {
-            //android.os.Debug.waitForDebugger();
-            String urlString = params[0];
-            HTTPDataHandler hh = new HTTPDataHandler();
-
-            String json = "{\n";
-            json += "\t\"duration\":\"" + duration + "\",\n";
-            json += "}";
-            hh.PostHTTPData(urlString, json);
-            return "";
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            toastMessage("Successfully saved");
-            Intent intent = new Intent(Sleep.this, StressAndHealth.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
-            finish();
-        }
-    }
-**/
     //post sleep details
     class SendData extends AsyncTask {
 

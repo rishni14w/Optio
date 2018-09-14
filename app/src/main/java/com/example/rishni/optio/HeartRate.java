@@ -1,13 +1,10 @@
 package com.example.rishni.optio;
 
-import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -75,7 +72,6 @@ public class HeartRate extends AppCompatActivity {
                     Date currentTime= Calendar.getInstance().getTime();
                     date=currentTime.toString();
 
-                    //new PostData(newBefore,newAfter).execute(db.getAddressAPI_Heartrate());
                     new SendData().execute();
                 }
                 else
@@ -114,47 +110,6 @@ public class HeartRate extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    //function to add new heartrate
-    /**class PostData extends AsyncTask<String,String,String> {
-     String before;
-     String after;
-
-     public PostData(String before, String after) {
-     this.before = before;
-     this.after = after;
-     }
-
-     @Override
-     protected void onPreExecute() {
-     super.onPreExecute();
-     }
-
-     @TargetApi(Build.VERSION_CODES.KITKAT)
-     @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-     @Override
-     protected String doInBackground(String... params) {
-     //android.os.Debug.waitForDebugger();
-     String urlString = params[0];
-     HTTPDataHandler hh = new HTTPDataHandler();
-
-     String json = "{\n";
-     json += "\t\"before\":\"" + before + "\",\n";
-     json += "\t\"after\":\"" + after + "\",\n";
-     json += "}";
-     hh.PostHTTPData(urlString, json);
-     return "";
-     }
-
-     @Override
-     protected void onPostExecute(String s) {
-     super.onPostExecute(s);
-     toastMessage("Successfully saved");
-     Intent intent = new Intent(HeartRate.this, StressAndHealth.class);
-     intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-     startActivity(intent);
-     finish();
-     }
-     }**/
 
     class SendData extends AsyncTask {
 
@@ -227,6 +182,4 @@ public class HeartRate extends AppCompatActivity {
     {
         Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
     }
-
-
 }

@@ -1,10 +1,7 @@
 package com.example.rishni.optio;
 
-import android.annotation.TargetApi;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -13,16 +10,12 @@ import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.rishni.optio.model.Injury;
-
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.ProtocolException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Injury_detail extends AppCompatActivity {
     String ServerURL = "https://murmuring-cove-69371.herokuapp.com/injury";
@@ -99,41 +92,6 @@ public class Injury_detail extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    //function to delete injury
-    /**class DeleteData extends AsyncTask<String,String,String>
-    {
-        String injury_type;
-
-        public DeleteData(String injury_type) {
-            this.injury_type = injury_type;
-        }
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-        @TargetApi(Build.VERSION_CODES.KITKAT)
-        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-        @Override
-        protected String doInBackground(String... params) {
-            String urlString= params[0];
-            HTTPDataHandler hh=new HTTPDataHandler();
-            String json="{\"type\":\""+injury_type+"\"}";
-            hh.DeleteHTTPData(urlString,json);
-            return "";
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-
-            Intent intent=new Intent(Injury_detail.this,Injury_View.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
-            finish();
-        }
-    }**/
 
     class DeleteData extends AsyncTask{
 
@@ -183,7 +141,7 @@ public class Injury_detail extends AppCompatActivity {
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
-            } 
+            }
         }
 
         protected void onPostExecute(Object object) {
@@ -194,8 +152,6 @@ public class Injury_detail extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-
-
     }
 
     private void toastMessage(String message)

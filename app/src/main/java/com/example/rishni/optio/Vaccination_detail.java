@@ -1,12 +1,7 @@
 package com.example.rishni.optio;
 
-import android.annotation.TargetApi;
-import android.app.AlertDialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,9 +9,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -95,43 +87,6 @@ public class Vaccination_detail extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-
-    //function to delete injury
-    /**class DeleteData extends AsyncTask<String,String,String>
-    {
-        String vaccination_name;
-
-        public DeleteData(String vaccination_name) {
-            this.vaccination_name = vaccination_name;
-        }
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-        @TargetApi(Build.VERSION_CODES.KITKAT)
-        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-        @Override
-        protected String doInBackground(String... params) {
-            String urlString= params[0];
-            HTTPDataHandler hh=new HTTPDataHandler();
-            String json="{\"name\":\""+vaccination_name+"\"}";
-            hh.DeleteHTTPData(urlString,json);
-            return "";
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-
-            Intent intent=new Intent(Vaccination_detail.this,Vaccination_View.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
-            finish();
-        }
-    }**/
-
     class DeleteData extends AsyncTask{
 
         @Override
@@ -153,17 +108,10 @@ public class Vaccination_detail extends AppCompatActivity {
                 conn.setDoInput(true);
                 conn.connect();
 
-                //JSONObject jsonParam = new JSONObject();
-                //jsonParam.put("nic",nic);
-                //jsonParam.put("name",updateName);
-                //jsonParam.put("cause",updateCause);
-                //jsonParam.put("date",updateDate);
-
                 conn.getOutputStream();
                 try
                 {
                     DataOutputStream os = new DataOutputStream(conn.getOutputStream());
-                    //os.writeBytes(jsonParam.toString());
 
                     os.flush();
                     os.close();
@@ -187,9 +135,7 @@ public class Vaccination_detail extends AppCompatActivity {
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
-            } //catch (JSONException e) {
-                //e.printStackTrace();
-            //}
+            }
         }
 
         protected void onPostExecute(Object object) {
@@ -200,8 +146,6 @@ public class Vaccination_detail extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-
-
     }
 
     private void toastMessage(String message)

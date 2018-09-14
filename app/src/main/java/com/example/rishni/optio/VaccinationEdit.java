@@ -1,14 +1,11 @@
 package com.example.rishni.optio;
 
-import android.annotation.TargetApi;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -120,7 +117,6 @@ public class VaccinationEdit extends AppCompatActivity {
             Boolean result=validation.isEmpty(updateName,updateCause,updateDate);
             if(result.equals(false))
             {
-                //new PutData(updateName,updateCause,updateDate).execute(db.getAddressSingle_Vaccination(oid));
                 new PutData().execute();
             }
             else
@@ -128,74 +124,21 @@ public class VaccinationEdit extends AppCompatActivity {
                 AlertDialog dialog=new AlertDialog.Builder(this).setTitle("Error").setMessage("Cannot keep fields empty").setPositiveButton("OK", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        //Intent intent=new Intent(VaccinationAdd.this,Vaccination_View.class);
-                        //intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                        //startActivity(intent);
-                        //finish();
+
                     }
                 }).create();
                 dialog.show();
             }
-
-
         }
-
         else
         {
             Intent intent=new Intent(this,Vaccination_View.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             finish();
-
         }
-
         return super.onOptionsItemSelected(item);
     }
-
-
-    //function to edit vaccination
-   /** class PutData extends AsyncTask<String,String,String>
-    {
-        String name;
-        String cause;
-        String date;
-
-        public PutData(String name, String cause, String date) {
-            this.name = name;
-            this.cause = cause;
-            this.date = date;
-        }
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-        @TargetApi(Build.VERSION_CODES.KITKAT)
-        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-        @Override
-        protected String doInBackground(String... params) {
-            String urlString= params[0];
-            HTTPDataHandler hh=new HTTPDataHandler();
-            String json="{\n";
-            json+="\t\"name\":\""+name+"\",\n";
-            json+="\t\"cause\":\""+cause+"\",\n";
-            json+="\t\"date\":\""+date+"\",\n";
-            json+="}";
-            hh.PutHTTPData(urlString,json);
-            return "";
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-
-            Intent intent=new Intent(VaccinationEdit.this,Vaccination_View.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
-            finish();
-        }
-    }**/
 
    class PutData extends AsyncTask{
 
@@ -265,8 +208,6 @@ public class VaccinationEdit extends AppCompatActivity {
            startActivity(intent);
            finish();
        }
-
-
    }
 
     private void toastMessage(String message)
