@@ -1,11 +1,8 @@
 package com.example.rishni.optio;
 
-import android.annotation.TargetApi;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -27,7 +24,6 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class BodyComposition extends AppCompatActivity {
-    //String ServerURL = "http://10.0.2.2:8080/bodycomposition";
     String ServerURL = "https://murmuring-cove-69371.herokuapp.com/bodycomposition";
     private EditText editText_weight;
     private EditText editText_waist;
@@ -108,9 +104,6 @@ public class BodyComposition extends AppCompatActivity {
 
             Date currentTime= Calendar.getInstance().getTime();
             date=currentTime.toString();
-            //toastMessage("date = "+currentTime);
-            //new PostData(newWeight,newWaist,newHip,date).execute(db.getAddressAPI_BodyComposition());
-            //toastMessage("nic= "+nic);
             new PutData().execute();
         }
         else
@@ -124,70 +117,21 @@ public class BodyComposition extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    //function to add new body comp
-    /**class PostData extends AsyncTask<String,String,String> {
-        String weight;
-        String waist;
-        String hip;
-        String date;
-
-        public PostData(String weight, String waist, String hip, String date) {
-            this.weight = weight;
-            this.waist = waist;
-            this.hip = hip;
-            this.date = date;
-        }
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-        }
-
-        @TargetApi(Build.VERSION_CODES.KITKAT)
-        @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-        @Override
-        protected String doInBackground(String... params) {
-            //android.os.Debug.waitForDebugger();
-            String urlString = params[0];
-            HTTPDataHandler hh = new HTTPDataHandler();
-
-            String json = "{\n";
-            json += "\t\"weight\":\"" + weight + "\",\n";
-            json += "\t\"waist\":\"" + waist + "\",\n";
-            json += "\t\"hip\":\"" + hip + "\",\n";
-            json += "\t\"date\":\"" + date + "\",\n";
-            json += "}";
-            hh.PostHTTPData(urlString, json);
-            return "";
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            toastMessage("Successfully saved");
-            Intent intent = new Intent(BodyComposition.this, StressAndHealth.class);
-            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-            startActivity(intent);
-            finish();
-        }
-    }**/
-
-
-    //post body comp
-    /**class SendData extends AsyncTask{
+    class PutData extends AsyncTask{
 
         @Override
         protected Object doInBackground(Object[] objects) {
-            doPost();
+            ServerURL = ServerURL+"/"+id_received;
+            doPut();
             return null;
         }
 
-        protected void doPost()
+        protected void doPut()
         {
             try{
                 URL url = new URL(ServerURL);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                conn.setRequestMethod("POST");
+                conn.setRequestMethod("PUT");
                 conn.setRequestProperty("Content-Type", "application/json");
                 conn.setRequestProperty("Accept","application/json");
                 conn.setDoOutput(true);
@@ -238,88 +182,13 @@ public class BodyComposition extends AppCompatActivity {
 
         protected void onPostExecute(Object object) {
             super.onPostExecute(object);
-            toastMessage("Successfully saved");
-            Intent intent = new Intent(BodyComposition.this, StressAndHealth.class);
+            toastMessage("Successfully updated");
+            Intent intent = new Intent(BodyComposition.this, BodyComposition_View.class);
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
             startActivity(intent);
             finish();
         }
-**/
-
-        class PutData extends AsyncTask{
-
-            @Override
-            protected Object doInBackground(Object[] objects) {
-                ServerURL = ServerURL+"/"+id_received;
-                doPut();
-                return null;
-            }
-
-            protected void doPut()
-            {
-                try{
-                    URL url = new URL(ServerURL);
-                    HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-                    conn.setRequestMethod("PUT");
-                    conn.setRequestProperty("Content-Type", "application/json");
-                    conn.setRequestProperty("Accept","application/json");
-                    conn.setDoOutput(true);
-                    conn.setDoInput(true);
-                    conn.connect();
-
-                    JSONObject jsonParam = new JSONObject();
-                    jsonParam.put("nic",nic);
-                    jsonParam.put("date",date);
-                    jsonParam.put("weight",newWeight);
-                    jsonParam.put("waist",newWaist);
-                    jsonParam.put("hip",newHip);
-                    jsonParam.put("height",newHeight);
-                    jsonParam.put("activitylevel",newActivityLevel);
-
-                    conn.getOutputStream();
-                    try
-                    {
-                        DataOutputStream os = new DataOutputStream(conn.getOutputStream());
-                        os.writeBytes(jsonParam.toString());
-
-                        os.flush();
-                        os.close();
-                    }catch (MalformedURLException e) {
-                        e.printStackTrace();
-                    } catch (ProtocolException e) {
-                        e.printStackTrace();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-
-                    Log.i("STATUS", String.valueOf(conn.getResponseCode()));
-                    Log.i("MSG" , conn.getResponseMessage());
-
-                    conn.disconnect();
-
-                } catch (MalformedURLException e) {
-                    e.printStackTrace();
-                } catch (ProtocolException e) {
-                    e.printStackTrace();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                } catch (JSONException e) {
-                    e.printStackTrace();
-                }
-            }
-
-            protected void onPostExecute(Object object) {
-                super.onPostExecute(object);
-                toastMessage("Successfully updated");
-                Intent intent = new Intent(BodyComposition.this, BodyComposition_View.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                startActivity(intent);
-                finish();
-            }
-
-
-        }
+    }
 
     private void toastMessage(String message)
     {
