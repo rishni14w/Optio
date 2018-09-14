@@ -1,18 +1,27 @@
 package com.example.rishni.optio.model;
 
 public class Injury {
-    private  Id _id;
+    private String id;
+    private String nic;
     private String type;
     private String date;
     private String recovery;
     private String details;
 
-    public Id get_id() {
-        return _id;
+    public String getId() {
+        return id;
     }
 
-    public void set_id(Id _id) {
-        this._id = _id;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getNic() {
+        return nic;
+    }
+
+    public void setNic(String nic) {
+        this.nic = nic;
     }
 
     public String getType() {
