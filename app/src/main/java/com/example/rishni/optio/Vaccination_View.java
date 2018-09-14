@@ -6,7 +6,6 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.JsonReader;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -35,7 +34,6 @@ public class Vaccination_View extends AppCompatActivity {
 
     Vaccination vaccinationSelected=null;
     List<Vaccination> vaccinations=new ArrayList<Vaccination>();
-    List<String> vaccination_s=new ArrayList<String>();
 
     String nic;
     String name;
@@ -60,8 +58,8 @@ public class Vaccination_View extends AppCompatActivity {
         nic=sharedPref.getString("AthleteNic","");
 
         //load data when app opened
-        //new GetData().execute(db.getAddressAPI_Vaccination());
         new GetData().execute();
+
         //select item from listview
         lstView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
@@ -81,8 +79,6 @@ public class Vaccination_View extends AppCompatActivity {
 
 
                 startActivity(intent);
-
-
             }
         });
     }
@@ -111,48 +107,8 @@ public class Vaccination_View extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
-
         return super.onOptionsItemSelected(item);
     }
-
-    //function process data
-    /**class GetData extends AsyncTask<String,Void,String>
-    {
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            mProgressBar.setVisibility(View.VISIBLE);
-
-        }
-
-        @Override
-        protected String doInBackground(String... params) {
-            //running process
-            String stream=null;
-            String urlString= params[0];
-
-            HTTPDataHandler http=new HTTPDataHandler();
-            stream=http.GetHTTPData(urlString);
-            return stream;
-
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            //done process
-
-            //use GSon to parse JSON to class
-            Gson gson=new Gson();
-            Type listType=new TypeToken<List<Vaccination>>(){}.getType();
-            vaccinations=gson.fromJson(s,listType);//parse to list
-            CustomAdapter_Vaccination adapter=new CustomAdapter_Vaccination(getApplicationContext(),vaccinations);//create adapter
-            lstView.setAdapter(adapter); //set adapter to listview
-            mProgressBar.setVisibility(View.GONE);
-        }
-    }
-**/
 
     private class GetData extends AsyncTask<Void,Void,Void> {
 
@@ -201,53 +157,13 @@ public class Vaccination_View extends AppCompatActivity {
                 Type listType=new TypeToken<List<Vaccination>>(){}.getType();
                 vaccinations=gson.fromJson(stream,listType);//parse to list
 
-
-
-                /**conn.setRequestMethod("GET");
-                conn.setRequestProperty("Content-Type", "application/json");
-                conn.setRequestProperty("Accept","application/json");
-
-                InputStream responseBody = conn.getInputStream();
-                InputStreamReader responseBodyReader = new InputStreamReader(responseBody,"UTF-8");
-                JsonReader jsonReader = new JsonReader(responseBodyReader);
-                jsonReader.beginArray();
-                jsonReader.beginObject();
-                while (jsonReader.hasNext()){
-                    String idName = jsonReader.nextName();
-                    id = jsonReader.nextString();
-                    String nicName = jsonReader.nextName();
-                    String nicString = jsonReader.nextString();
-                    String nameName = jsonReader.nextName();
-                    name = jsonReader.nextString();
-                    String causeName = jsonReader.nextName();
-                    cause = jsonReader.nextString();
-                    String dateName = jsonReader.nextName();
-                    date = jsonReader.nextString();
-                    //jsonReader.skipValue();
-
-                    vaccination_s.add(id);
-                    vaccination_s.add(name);
-                    vaccination_s.add(cause);
-                    vaccination_s.add(date);
-
-                }
-
-                jsonReader.close();**/
-
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-
         }
         protected void onPostExecute(Void voids) {
             super.onPostExecute(voids);
-            //Gson gson=new Gson();
-            //Type listType=new TypeToken<List<Vaccination>>(){}.getType();
-            //vaccinations=gson.fromJson(voids,listType);//parse to list
-            //CustomAdapter_Vaccination adapter=new CustomAdapter_Vaccination(getApplicationContext(),vaccination_s);//create adapter
-            //lstView.setAdapter(adapter); //set adapter to listview
-           // mProgressBar.setVisibility(View.GONE);
+
             CustomAdapter_Vaccination adapter=new CustomAdapter_Vaccination(getApplicationContext(),vaccinations);//create adapter
             lstView.setAdapter(adapter); //set adapter to listview
             mProgressBar.setVisibility(View.GONE);
