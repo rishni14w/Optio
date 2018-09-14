@@ -12,9 +12,7 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 
-import com.example.rishni.optio.model.Id;
 import com.example.rishni.optio.model.Injury;
-import com.example.rishni.optio.model.Vaccination;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
@@ -53,8 +51,8 @@ public class Injury_View extends AppCompatActivity {
         SharedPreferences sharedPref=getApplicationContext().getSharedPreferences("AthletePref",0);
         nic=sharedPref.getString("AthleteNic","");
         //load data when app opened
-        //new GetData().execute(db.getAddressAPI_Injury());
         new GetData().execute();
+
         //select item from listview
         lstView.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
@@ -109,44 +107,6 @@ public class Injury_View extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    //function process data
-    /**class GetData extends AsyncTask<String,Void,String>
-    {
-
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-            mProgressBar.setVisibility(View.VISIBLE);
-
-        }
-
-        @Override
-        protected String doInBackground(String... params) {
-            //running process
-            String stream=null;
-            String urlString= params[0];
-
-            HTTPDataHandler http=new HTTPDataHandler();
-            stream=http.GetHTTPData(urlString);
-            return stream;
-
-        }
-
-        @Override
-        protected void onPostExecute(String s) {
-            super.onPostExecute(s);
-            //done process
-
-            //use GSon to parse JSON to class
-            Gson gson=new Gson();
-            Type listType=new TypeToken<List<Injury>>(){}.getType();
-            injurys=gson.fromJson(s,listType);//parse to list
-            CustomAdapter adapter=new CustomAdapter(getApplicationContext(),injurys);//create adapter
-            lstView.setAdapter(adapter); //set adapter to listview
-            mProgressBar.setVisibility(View.GONE);
-        }
-    }
-     **/
 
     private class GetData extends AsyncTask<Void,Void,Void> {
 
@@ -200,8 +160,6 @@ public class Injury_View extends AppCompatActivity {
             } catch (Exception e) {
                 e.printStackTrace();
             }
-
-
         }
         protected void onPostExecute(Void voids) {
             super.onPostExecute(voids);
