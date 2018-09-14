@@ -9,12 +9,27 @@ import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.DataOutputStream;
+import java.io.IOException;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.ProtocolException;
+import java.net.URL;
 
 public class Vaccination_detail extends AppCompatActivity {
-    String oid;
+
+    String ServerURL = "https://murmuring-cove-69371.herokuapp.com/vaccination";
+
+    String id_received;
     String name;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,7 +46,7 @@ public class Vaccination_detail extends AppCompatActivity {
         String date= getIntent().getExtras().getString("date");
         ((TextView)findViewById(R.id.date_given_txt_detail)).setText(date);
 
-        oid= getIntent().getExtras().getString("oid");
+        id_received= getIntent().getExtras().getString("oid");
 
     }
 
@@ -46,7 +61,8 @@ public class Vaccination_detail extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if(item.getItemId()==R.id.delete)
         {
-            new DeleteData(name).execute(db.getAddressSingle_Vaccination(oid));
+            //new DeleteData(name).execute(db.getAddressSingle_Vaccination(oid));
+            new DeleteData().execute();
 
         }
         if(item.getItemId()==R.id.edit)
@@ -65,7 +81,7 @@ public class Vaccination_detail extends AppCompatActivity {
             intent.putExtra("name_d",name_value_s);
             intent.putExtra("cause_d",cause_value_s);
             intent.putExtra("date_d",date_value_s);
-            intent.putExtra("oid",oid);
+            intent.putExtra("oid",id_received);
 
             startActivity(intent);
 
@@ -81,7 +97,7 @@ public class Vaccination_detail extends AppCompatActivity {
 
 
     //function to delete injury
-    class DeleteData extends AsyncTask<String,String,String>
+    /**class DeleteData extends AsyncTask<String,String,String>
     {
         String vaccination_name;
 
@@ -114,5 +130,82 @@ public class Vaccination_detail extends AppCompatActivity {
             startActivity(intent);
             finish();
         }
+    }**/
+
+    class DeleteData extends AsyncTask{
+
+        @Override
+        protected Object doInBackground(Object[] objects) {
+            ServerURL = ServerURL+"/"+id_received;
+            doDelete();
+            return null;
+        }
+
+        protected void doDelete()
+        {
+            try{
+                URL url = new URL(ServerURL);
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setRequestMethod("DELETE");
+                conn.setRequestProperty("Content-Type", "application/json");
+                conn.setRequestProperty("Accept","application/json");
+                conn.setDoOutput(true);
+                conn.setDoInput(true);
+                conn.connect();
+
+                //JSONObject jsonParam = new JSONObject();
+                //jsonParam.put("nic",nic);
+                //jsonParam.put("name",updateName);
+                //jsonParam.put("cause",updateCause);
+                //jsonParam.put("date",updateDate);
+
+                conn.getOutputStream();
+                try
+                {
+                    DataOutputStream os = new DataOutputStream(conn.getOutputStream());
+                    //os.writeBytes(jsonParam.toString());
+
+                    os.flush();
+                    os.close();
+                }catch (MalformedURLException e) {
+                    e.printStackTrace();
+                } catch (ProtocolException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+
+
+                Log.i("STATUS", String.valueOf(conn.getResponseCode()));
+                Log.i("MSG" , conn.getResponseMessage());
+
+                conn.disconnect();
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            } //catch (JSONException e) {
+                //e.printStackTrace();
+            //}
+        }
+
+        protected void onPostExecute(Object object) {
+            super.onPostExecute(object);
+            toastMessage("Successfully deleted");
+            Intent intent = new Intent(Vaccination_detail.this, Vaccination_View.class);
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+            finish();
+        }
+
+
+    }
+
+    private void toastMessage(String message)
+    {
+        Toast.makeText(this,message,Toast.LENGTH_SHORT).show();
     }
 }
