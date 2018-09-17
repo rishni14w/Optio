@@ -3,7 +3,7 @@
     package="com.example.rishni.optio">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:allowBackup="true"
@@ -58,7 +58,8 @@
             android:name=".StepService"
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
-        <activity android:name=".BodyComposition_View"></activity>
+        <activity android:name=".BodyComposition_View" />
+        <activity android:name=".StressLevel"></activity>
     </application>
 
 </manifest>

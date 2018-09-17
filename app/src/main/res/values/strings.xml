@@ -558,4 +558,8 @@
     <string name="pi_addbtn">Save</string>
     <string name="pi_trainerID">Trainer\'s ID</string>
 
+    //stresslevel
+    <string name="stresslevel">Stress Level</string>
+    <string name="user_stresslevel">Current Stress Level :</string>
+    <string name="stressScore">Stress score :</string>
 </resources>

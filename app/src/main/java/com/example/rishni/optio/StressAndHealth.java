@@ -83,4 +83,14 @@ public class StressAndHealth extends AppCompatActivity {
         }
 
     }
+
+    public void stresslevel_clicked(View view)
+    {
+        if (view.getId()==R.id.stresslevel_btn)
+        {
+            Intent i= new Intent(this,StressLevel.class);
+            startActivity(i);
+        }
+
+    }
 }
