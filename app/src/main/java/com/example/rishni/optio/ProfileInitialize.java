@@ -100,6 +100,7 @@ public class ProfileInitialize extends AppCompatActivity {
                 jsonParam.put("joinedDate",p_joinedDate);
                 jsonParam.put("dob",p_dob);
                 jsonParam.put("trainerID",p_trainerId);
+                jsonParam.put("approved","false");
 
                 DataOutputStream os = new DataOutputStream(conn.getOutputStream());
                 os.writeBytes(jsonParam.toString());
