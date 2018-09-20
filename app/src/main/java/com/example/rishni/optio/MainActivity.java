@@ -9,6 +9,8 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.rishni.optio.model.DietHome;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -16,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Button btnExercise = findViewById(R.id.buttonExercise);
+        Button btn1 = findViewById(R.id.button2);
         btnExercise.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -23,6 +26,7 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
         SharedPreferences preferences = getApplicationContext().getSharedPreferences("AthletePref",0);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putString("AthleteName","John Doe");
@@ -50,6 +54,9 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
         }else if(view.getId()==R.id.buttonExercise){
             Intent i = new Intent(MainActivity.this,WeeklySteps.class);
+            startActivity(i);
+        }else if (view.getId()==R.id.button2){
+            Intent i = new Intent(MainActivity.this, DietHome.class);
             startActivity(i);
         }
 
