@@ -11,6 +11,7 @@ public class ExerciseHome extends AppCompatActivity implements View.OnClickListe
     private Button profileBtn;
     private Button stepsBtn;
     private Button scheduleBtn;
+    private Button tempProfileBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +24,7 @@ public class ExerciseHome extends AppCompatActivity implements View.OnClickListe
         profileBtn = (Button) findViewById(R.id.buttonProfile);
         stepsBtn = (Button) findViewById(R.id.buttonSteps);
         scheduleBtn = (Button) findViewById(R.id.buttonSchedule);
+        tempProfileBtn = (Button)findViewById(R.id.tempProfileButton);
 
         profileBtn.setOnClickListener(this);
         stepsBtn.setOnClickListener(this);
@@ -42,6 +44,11 @@ public class ExerciseHome extends AppCompatActivity implements View.OnClickListe
                 break;
             }
             case R.id.buttonSchedule:{
+                Intent i = new Intent(this,WorkoutHome.class);
+                startActivity(i);
+                break;
+            }
+            case R.id.tempProfileButton:{
                 Intent i = new Intent(this,ProfileInitialize.class);
                 startActivity(i);
                 break;
