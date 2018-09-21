@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="68dp"
+        android:layout_marginTop="40dp"
         android:text="Your Target Weight Message"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="32dp"
         android:text="Calorie Burn Message"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
@@ -42,47 +42,51 @@
         android:text="Choose your preferred Complexity"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.503"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/calorieBurnMsgLbl"
-        app:layout_constraintVertical_bias="0.017" />
+        app:layout_constraintVertical_bias="0.03" />
 
     <TextView
         android:id="@+id/complexityRecomendationLbl"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_height="24dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:text="We recommend "
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/complexityOptionsLblMain"
-        app:layout_constraintVertical_bias="0.025" />
+        app:layout_constraintTop_toBottomOf="@+id/complexityOptionsLblMain" />
 
-    <RadioButton
-        android:id="@+id/normalComlexityRadio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="12dp"
-        android:text="Normal"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/complexityRecomendationLbl" />
-
-    <RadioButton
-        android:id="@+id/advanceComplexityRadio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <RadioGroup
+        android:id="@+id/radioGroupComplexity"
+        android:layout_width="245dp"
+        android:layout_height="35dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="12dp"
-        android:text="Advanced"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.137"
-        app:layout_constraintStart_toEndOf="@+id/normalComlexityRadio"
-        app:layout_constraintTop_toBottomOf="@+id/complexityRecomendationLbl" />
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/complexityRecomendationLbl">
+
+        <RadioButton
+            android:id="@+id/normalComlexityRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Normal" />
+
+        <RadioButton
+            android:id="@+id/advanceComplexityRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="Advanced" />
+
+    </RadioGroup>
 
     <TextView
         android:id="@+id/workoutPlaceLbl"
@@ -90,33 +94,41 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:text="Choose where  you want to exercise"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/normalComlexityRadio" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupComplexity" />
 
-    <RadioButton
-        android:id="@+id/placeHomeRadio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="84dp"
-        android:layout_marginTop="12dp"
-        android:text="At Home"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/workoutPlaceLbl" />
-
-    <RadioButton
-        android:id="@+id/placeGymRadio"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+    <RadioGroup
+        android:id="@+id/radioGroupPlace"
+        android:layout_width="274dp"
+        android:layout_height="42dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:text="At the Gym"
+        android:layout_marginTop="16dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.189"
-        app:layout_constraintStart_toEndOf="@+id/placeHomeRadio"
-        tools:layout_editor_absoluteY="274dp" />
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/workoutPlaceLbl">
+
+        <RadioButton
+            android:id="@+id/placeGymRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="At the Gym" />
+
+        <RadioButton
+            android:id="@+id/placeHomeRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="At Home" />
+
+    </RadioGroup>
+
 
     <TextView
         android:id="@+id/equipMentLabel"
@@ -128,7 +140,7 @@
         android:text="Do You want any Equipment"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/placeHomeRadio" />
+        app:layout_constraintTop_toBottomOf="@+id/radioGroupPlace" />
 
     <CheckBox
         android:id="@+id/equipmentCheckBox"
@@ -146,15 +158,13 @@
         android:id="@+id/getExerciseBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="56dp"
         android:layout_marginEnd="8dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:text="Get Exercise"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/equipmentCheckBox"
-        app:layout_constraintVertical_bias="0.135" />
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
