@@ -59,7 +59,9 @@
             android:permission="android.permission.BIND_JOB_SERVICE" />
 
         <activity android:name=".BodyComposition_View" />
-        <activity android:name=".StressLevel"></activity>
+        <activity android:name=".StressLevel" />
+        <activity android:name=".WorkoutHome" />
+        <activity android:name=".WorkOutOptions"></activity>
     </application>
 
 </manifest>

@@ -102,6 +102,13 @@ public class BodyComposition extends AppCompatActivity {
             newHeight=editText_height.getText().toString();
             newActivityLevel=editText_activitylevel.getText().toString();
 
+            //Update SharedPreference with New Values
+            SharedPreferences preferences = getApplicationContext().getSharedPreferences("AthletePref",0);
+            SharedPreferences.Editor editor = preferences.edit();
+            editor.putString("AthleteWeight",newWeight);
+            editor.putString("AthleteHeight",newHeight);
+            editor.apply();
+
             Date currentTime= Calendar.getInstance().getTime();
             date=currentTime.toString();
             new PutData().execute();
