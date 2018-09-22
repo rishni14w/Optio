@@ -58,4 +58,7 @@
         <item>@color/dot_dark_Intro_screen6</item>
     </array>
     <color name ="White">#ffffff</color>
+    <color name="Green">#64DD17</color>
+    <color name="Yellow">#FFFF00</color>
+    <color name="LightGreen">#CCFF90</color>
 </resources>

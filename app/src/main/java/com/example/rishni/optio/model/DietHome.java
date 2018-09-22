@@ -14,9 +14,11 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.rishni.optio.MainActivity;
+import com.example.rishni.optio.MealPlans;
 import com.example.rishni.optio.R;
+import com.example.rishni.optio.StressAndHealth;
 
-//import static com.example.rishni.optio.R.anim.cursor_move_normal;
+import static com.example.rishni.optio.R.anim.cursor_move_normal;
 
 public class DietHome extends AppCompatActivity {
      public TextView age,feet,inches,pounds,result_txt,Check_result;
@@ -114,33 +116,6 @@ public class DietHome extends AppCompatActivity {
 
         }
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 */
 
 // menu button  Start here////
@@ -150,15 +125,19 @@ public class DietHome extends AppCompatActivity {
         rest_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(DietHome.this,MainActivity.class));
+                startActivity(new Intent(DietHome.this,GenerateDietPlan.class));
             }
         });
+
         diet_btn = (Button)findViewById(R.id.Diet_btn);
         diet_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 //startActivity(new Intent(ResultActivity.this,DietPlanActivity.class));
-                startActivity(new Intent(DietHome.this,GenerateDietPlan.class));
+                //startActivity(new Intent(activity_generate_diet.this,GenerateDietPlan.class));
+                startActivity(new Intent(DietHome.this,MealPlans.class));
+//                Intent i= new Intent(DietHome.this,GenerateDietPlan.class);
+//                startActivity(i);
             }
         });
 

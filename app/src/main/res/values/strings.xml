@@ -557,7 +557,7 @@
     <string name="pi_nic">NIC Number</string>
     <string name="pi_addbtn">Save</string>
     <string name="pi_trainerID">Trainer\'s ID</string>
-//Diet Planner
+    //Diet Planner
     <string name="diet_plan">Diet Plan Manger</string>
     <string name="are_you_a_cholesterol_patient">Are you a Cholesterol Patient ?</string>
     <string name="are_you_a_diabetics_patient">Are you a Diabetics Patient ?</string>
@@ -587,4 +587,10 @@
     <string name="diet_plan_name">Diet Plan Manger</string>
     <string name="create_meal">create Meal</string>
     <string name="AlterMeal">Alter Meal</string>
+    <string name="title_activity_meal_plans">MealPlans</string>
+    <string name="tab_text_1">BREAKFAST</string>
+    <string name="tab_text_2">LUNCH</string>
+    <string name="tab_text_3">DINNER</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
 </resources>

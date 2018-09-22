@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/diet_home_background"
+    android:background="@drawable/fruits1"
     tools:context="com.example.rishni.optio.model.DietHome">
 
     <ImageView
@@ -472,7 +472,9 @@
         app:layout_constraintHorizontal_bias="0.0"
         android:layout_marginBottom="0dp"
         app:layout_constraintBottom_toTopOf="@+id/guideline92"
+
         app:layout_constraintVertical_bias="0.0" />
+
 
     <android.support.constraint.Guideline
         android:layout_width="wrap_content"
@@ -552,7 +554,7 @@
         android:id="@+id/cross_btn"
         android:visibility="invisible"
         android:animateLayoutChanges="true"
-        android:onClick="btn2Clicked"
+        android:onClick="onClick"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/x"
