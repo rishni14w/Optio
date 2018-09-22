@@ -23,12 +23,14 @@ public class WorkOutOptions extends AppCompatActivity {
     RadioButton advancedComplexityRB;
     TextView complexityRecomLbl;
     CheckBox equipmentCheckBox;
+    RadioButton placeClicked;
     RadioButton homeRB;
     RadioButton GymRB;
     TextView equipmentLbl;
     TextView fitnessLbl;
     Button navigateToWorkout;
     int currentWeight;
+    int currentYear;
     TextView calorieMsg;
     //Todo : Add gender to initial profile front and back
     String gender = "male";
@@ -37,6 +39,7 @@ public class WorkOutOptions extends AppCompatActivity {
     //TODO: Change this to read from preference once ML end point is figured out
     int targetWeight = 60;
     double heartRate;
+    int joinedYear;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +48,19 @@ public class WorkOutOptions extends AppCompatActivity {
         readPreference();
         initView();
         setLabels();
+        placeGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                RadioButton checkedButton = (RadioButton)radioGroup.findViewById(i);
+                if(checkedButton.getText().toString().equalsIgnoreCase("At home")){
+                    equipmentLbl.setVisibility(View.VISIBLE);
+                    equipmentCheckBox.setVisibility(View.VISIBLE);
+                }else{
+                    equipmentLbl.setVisibility(View.INVISIBLE);
+                    equipmentCheckBox.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
     }
     public void initView(){
         fitnessLbl = (TextView)findViewById(R.id.targetMsgLbl);
@@ -54,6 +70,10 @@ public class WorkOutOptions extends AppCompatActivity {
         equipmentCheckBox = (CheckBox)findViewById(R.id.equipmentCheckBox);
         equipmentCheckBox.setVisibility(View.INVISIBLE);
         calorieMsg = (TextView)findViewById(R.id.calorieBurnMsgLbl);
+        complexityRecomLbl = (TextView)findViewById(R.id.complexityRecomendationLbl);
+        placeGroup = (RadioGroup)findViewById(R.id.radioGroupPlace);
+        placeClicked = (RadioButton)placeGroup.findViewById(placeGroup.getCheckedRadioButtonId());
+
 
     }
     public void readPreference() {
@@ -62,13 +82,18 @@ public class WorkOutOptions extends AppCompatActivity {
         String prefWeightArr[] = prefWeight.split(" ");
         Calendar cal = Calendar.getInstance();
         String athleteDob = preferences.getString("AthleteDob",null);
-        System.out.println(athleteDob);
+        String joinedDate =  preferences.getString("AthletePlayedSince",null);
+        String jDArr[] = joinedDate.split("-");
+
+
         try {
             Date birth = new SimpleDateFormat("yyyy-mm-dd").parse(athleteDob);
             cal.setTime(birth);
             int birthYear = cal.get(Calendar.YEAR);
-            int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+            currentYear = Calendar.getInstance().get(Calendar.YEAR);
             age = currentYear - birthYear;
+            joinedYear = Integer.parseInt(jDArr[0]);
+            System.out.println(joinedYear);
 
         }
         catch(ParseException e){
@@ -92,6 +117,11 @@ public class WorkOutOptions extends AppCompatActivity {
         getCalories();
         double totalTime = 1500/caloriesPerMin;
         calorieMsg.setText("You will burn "+caloriesPerMin+", exercising for 1 hour");
+        if((currentYear-joinedYear)>=2){
+            complexityRecomLbl.setText("We recommend Normal or Advanced");
+        }else{
+            complexityRecomLbl.setText("We recommend Normal or Advanced");
+        }
 
     }
     public void getCalories(){
