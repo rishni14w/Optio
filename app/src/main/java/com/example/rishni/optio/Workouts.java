@@ -1,6 +1,7 @@
 package com.example.rishni.optio;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -49,13 +50,18 @@ public class Workouts extends AppCompatActivity {
             @Override
             public boolean onChildClick(ExpandableListView parent, View v,
                                         int groupPosition, int childPosition, long id) {
-                Toast.makeText(
+                String videoName =listDataHeader.get(groupPosition) ;
+
+                //https://www.youtube.com/results?search_query=
+                //This opens up youtube app or youtube website when user clicks on the workout
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/results?search_query="+videoName)));
+                /*Toast.makeText(
                         getApplicationContext(),
                         listDataHeader.get(groupPosition)
                                 + " : "
                                 + listDataChild.get(
                                 listDataHeader.get(groupPosition)), Toast.LENGTH_SHORT)
-                        .show();
+                        .show();*/
                 return false;
             }
         });
@@ -64,6 +70,7 @@ public class Workouts extends AppCompatActivity {
      * Preparing the list data
      */
     private void prepareListData() {
+        //TODO: Change this to get the data from the server once the semantic web service is hosted
         listDataHeader = new ArrayList<String>();
         listDataChild = new HashMap<String, String>();
         String gymAdvanced[] = {"axle deadlift","front barbell squat","hang snatch","hanging leg raise",
