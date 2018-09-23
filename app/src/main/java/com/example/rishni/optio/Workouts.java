@@ -53,6 +53,7 @@ public class Workouts extends AppCompatActivity {
                 String videoName =listDataHeader.get(groupPosition) ;
 
                 //https://www.youtube.com/results?search_query=
+                //This opens up youtube app or youtube website when user clicks on the workout
                 startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.youtube.com/results?search_query="+videoName)));
                 /*Toast.makeText(
                         getApplicationContext(),
@@ -69,6 +70,7 @@ public class Workouts extends AppCompatActivity {
      * Preparing the list data
      */
     private void prepareListData() {
+        //TODO: Change this to get the data from the server once the semantic web service is hosted
         listDataHeader = new ArrayList<String>();
         listDataChild = new HashMap<String, String>();
         String gymAdvanced[] = {"axle deadlift","front barbell squat","hang snatch","hanging leg raise",
