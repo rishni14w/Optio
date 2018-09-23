@@ -61,7 +61,8 @@
         <activity android:name=".BodyComposition_View" />
         <activity android:name=".StressLevel" />
         <activity android:name=".WorkoutHome" />
-        <activity android:name=".WorkOutOptions"></activity>
+        <activity android:name=".WorkOutOptions" />
+        <activity android:name=".Workouts"></activity>
     </application>
 
 </manifest>

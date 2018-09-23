@@ -38,7 +38,7 @@ public class ViewProfile extends AppCompatActivity {
         playedSince = (TextView)findViewById(R.id.textViewMemberSince);
         currentHeight.setText(preferences.getString("AthleteHeight",null));
         name.setText(preferences.getString("AthleteName",null));
-        playedSince.setText(preferences.getString("AthletePlayedSince",null));
+        playedSince.setText(preferences.getString("AthleteJoinedDate",null));
         currentWeight.setText(preferences.getString("AthleteWeight",null));
         //TODO: Uncomment the line when the token is figured out
         //new BackgroundTask().execute();
