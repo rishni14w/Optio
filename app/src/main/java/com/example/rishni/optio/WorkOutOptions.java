@@ -1,5 +1,6 @@
 package com.example.rishni.optio;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -19,13 +20,12 @@ public class WorkOutOptions extends AppCompatActivity {
     boolean displayEquipment = false;
     RadioGroup placeGroup;
     RadioGroup complexityGroup;
-    RadioButton normalComplexityRB;
+    RadioButton complexityRB;
     RadioButton advancedComplexityRB;
     TextView complexityRecomLbl;
     CheckBox equipmentCheckBox;
     RadioButton placeClicked;
-    RadioButton homeRB;
-    RadioButton GymRB;
+    String physique;
     TextView equipmentLbl;
     TextView fitnessLbl;
     Button navigateToWorkout;
@@ -40,7 +40,9 @@ public class WorkOutOptions extends AppCompatActivity {
     int targetWeight = 60;
     double heartRate;
     int joinedYear;
-
+    String place;
+    String complexity;
+    String equipment;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -55,10 +57,35 @@ public class WorkOutOptions extends AppCompatActivity {
                 if(checkedButton.getText().toString().equalsIgnoreCase("At home")){
                     equipmentLbl.setVisibility(View.VISIBLE);
                     equipmentCheckBox.setVisibility(View.VISIBLE);
+                    place = "home";
                 }else{
                     equipmentLbl.setVisibility(View.INVISIBLE);
                     equipmentCheckBox.setVisibility(View.INVISIBLE);
+                    place = "gym";
                 }
+            }
+        });
+        navigateToWorkout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                int complexityId = complexityGroup.getCheckedRadioButtonId();
+                complexityRB = (RadioButton)findViewById(complexityId);
+                if(complexityRB.getText().toString().equalsIgnoreCase("normal")){
+                    complexity = "normal";
+                }else{
+                    complexity = "advaced";
+                }
+                if(equipmentCheckBox.isChecked()){
+                    equipment = "yes";
+                }else{
+                    equipment = "no";
+                }
+                Intent intent = new Intent(WorkOutOptions.this,Workouts.class);
+                intent.putExtra("place",place);
+                intent.putExtra("complexity",complexity);
+                intent.putExtra("physique",physique);
+                intent.putExtra("equipment",equipment);
+                startActivity(intent);
             }
         });
     }
@@ -73,7 +100,7 @@ public class WorkOutOptions extends AppCompatActivity {
         complexityRecomLbl = (TextView)findViewById(R.id.complexityRecomendationLbl);
         placeGroup = (RadioGroup)findViewById(R.id.radioGroupPlace);
         placeClicked = (RadioButton)placeGroup.findViewById(placeGroup.getCheckedRadioButtonId());
-
+        complexityGroup = (RadioGroup)findViewById(R.id.radioGroupComplexity);
 
     }
     public void readPreference() {
@@ -106,12 +133,14 @@ public class WorkOutOptions extends AppCompatActivity {
         int upperLimit = targetWeight + 5;
         if((currentWeight>=lowerLimit)&&(currentWeight<=upperLimit)){
             fitnessLbl.setText("You're on your Fitness target! Let's Keep it up!");
-
+            physique = "normal";
         }
         if(currentWeight<lowerLimit){
             fitnessLbl.setText("Let's work to gain some muscles!");
+            physique = "underweight";
         }
         if(currentWeight>upperLimit){
+            physique = "overweight";
             fitnessLbl.setText("Let's work to loose that weight!");
         }
         getCalories();

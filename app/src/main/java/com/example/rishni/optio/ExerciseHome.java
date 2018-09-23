@@ -29,6 +29,7 @@ public class ExerciseHome extends AppCompatActivity implements View.OnClickListe
         profileBtn.setOnClickListener(this);
         stepsBtn.setOnClickListener(this);
         scheduleBtn.setOnClickListener(this);
+        tempProfileBtn.setOnClickListener(this);
     }
     @Override
     public void onClick(View view) {
