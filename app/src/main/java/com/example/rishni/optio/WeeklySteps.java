@@ -212,9 +212,9 @@ public class WeeklySteps extends AppCompatActivity implements DatePickerDialog.O
         protected Void doInBackground(Void... voids) {
             SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
             WeekBefore = simpleDateFormat.format(sevenDaysAgo);
-           // ServerURL = ServerURL+"/"+nic+"/"+WeekBefore;
+            ServerURL = ServerURL+"/"+nic+"/"+WeekBefore;
             //TODO:Uncomment above after testing;
-            ServerURL=ServerURL+"/941232147V/2018-07-17";
+            //ServerURL=ServerURL+"/941232147V/2018-07-17";
 
             doGet();
             Log.d("WeeklySteps",ServerURL);
@@ -222,10 +222,11 @@ public class WeeklySteps extends AppCompatActivity implements DatePickerDialog.O
             final List<ILineDataSet> yValues= getLineDataValue();
             System.out.println("xValues size"+xValues);
             System.out.println("yValues size"+yValues);
-            setData(yValues,xValues);
+
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
+                    setData(yValues,xValues);
                     maximum = maxValue();
                     //TODO: Set the correct date according to the maximum value
                     maximumSteps.setText("Friday");
