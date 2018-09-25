@@ -145,7 +145,7 @@ public class WorkOutOptions extends AppCompatActivity {
         }
         getCalories();
         double totalTime = 1500/caloriesPerMin;
-        calorieMsg.setText("You will burn "+caloriesPerMin+", exercising for 1 hour");
+        calorieMsg.setText("You will burn "+Math.round(caloriesPerMin)+", exercising for 1 hour");
         if((currentYear-joinedYear)>=2){
             complexityRecomLbl.setText("We recommend Normal or Advanced");
         }else{

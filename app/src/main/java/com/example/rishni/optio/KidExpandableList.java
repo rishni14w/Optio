@@ -12,24 +12,29 @@ import java.util.HashMap;
 import java.util.List;
 
 /**
- * Created by Devni on 9/23/2018.
+ * Created by Devni on 9/25/2018.
  */
 
-
-public class ExpandableListAdapter extends BaseExpandableListAdapter {
+public class KidExpandableList extends BaseExpandableListAdapter {
     private Context _context;
     private List<String> _listDataHeader; // header titles
     // child data in format of header title, child title
     private HashMap<String, String> _listDataChild;
+    private HashMap<String, String> listVideoURL;
 
-
-    public ExpandableListAdapter(Context context, List<String> listDataHeader,
+    public KidExpandableList(Context context, List<String> listDataHeader,
                                  HashMap<String, String> listChildData) {
         this._context = context;
         this._listDataHeader = listDataHeader;
         this._listDataChild = listChildData;
     }
-
+    public KidExpandableList(Context context, List<String> listDataHeader,
+                                 HashMap<String, String> listChildData,HashMap<String,String> listVideoURL) {
+        this._context = context;
+        this._listDataHeader = listDataHeader;
+        this._listDataChild = listChildData;
+        this.listVideoURL = listVideoURL;
+    }
     @Override
     public int getGroupCount() {
         return this._listDataHeader.size();

@@ -88,7 +88,7 @@ public class Workouts extends AppCompatActivity {
         }else{
             for(int i=0;i<exCount;i++){
             listDataHeader.add(otherList[i]);
-            listDataChild.put(otherList[i],"youtube link");
+            listDataChild.put(otherList[i],"Search Now on Youtube");
         }
     }
 
