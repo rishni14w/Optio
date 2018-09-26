@@ -565,7 +565,7 @@
 
     //stress question ui
     <string name="stressq">Stress Question</string>
-    <string name="question">Why are you stressed out?</string>
+    <string name="question">Type your concern to get suggestions</string>
     <string name="user_question_placeholder">enter here</string>
-    <string name="recommend">Recommend</string>
+    <string name="recommend">Need advice</string>
 </resources>
