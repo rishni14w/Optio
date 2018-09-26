@@ -1,10 +1,12 @@
 package com.example.rishni.optio.model;
 
+import java.util.List;
+
 public class InputSuggestion {
     private String id;
     private String nic;
     private String input;
-    private String suggestion;
+    private List suggestion;
 
     public String getId() {
         return id;
@@ -16,6 +18,10 @@ public class InputSuggestion {
 
     public String getNic() {
         return nic;
+    }
+
+    public List getSuggestion() {
+        return suggestion;
     }
 
     public void setNic(String nic) {
@@ -30,11 +36,13 @@ public class InputSuggestion {
         this.input = input;
     }
 
-    public String getSuggestion() {
-        return suggestion;
+
+    public String getSuggestion(int index)
+    {
+        return (String) suggestion.get(index);
     }
 
-    public void setSuggestion(String suggestion) {
+    public void setSuggestion(List suggestion) {
         this.suggestion = suggestion;
     }
 }
