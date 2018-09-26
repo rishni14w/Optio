@@ -1,20 +1,44 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_margin="5dp"
     android:background="@android:color/white">
 
     <TextView
-        android:id="@+id/txt_recommendation"
-        android:layout_width="wrap_content"
+        android:id="@+id/inputted_concern_tv"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="input type"
-        android:textColor="@android:color/black"
-        android:textSize="20sp"
+        android:textColor="@color/colorPrimary"
+        android:textSize="23sp"
         android:layout_marginLeft="5dp"
-        android:padding="5dp"/>
+        android:padding="10dp"/>
+
+    <!--<TextView
+        android:id="@+id/suggestions_tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/inputted_concern_tv"
+        android:text="TextView"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="15dp"
+        android:padding="5dp"/> -->
+
+    <!--<ListView
+        android:id="@+id/lstView_suggestion"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp"
+        android:layout_width="match_parent"
+        android:layout_height="457dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:background="@android:color/white" /> -->
+
 </RelativeLayout>
