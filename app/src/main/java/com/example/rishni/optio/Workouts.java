@@ -30,7 +30,7 @@ public class Workouts extends AppCompatActivity {
     String complexity;
     String place;
     String nic;
-    String ServerURL = "http://10.0.2.2/";
+    String ServerURL = "http://10.0.2.2:8080/";
     ArrayList<String> exercisesList;
     boolean hasCreated = false;
     @Override
@@ -59,7 +59,7 @@ public class Workouts extends AppCompatActivity {
      * Preparing the list data
      */
     private void prepareListData() {
-        //TODO: Change this to get the data from the server once the semantic web service is hosted
+
         listDataHeader = new ArrayList<String>();
         listDataChild = new HashMap<String, String>();
         String gymAdvanced[] = {"axle deadlift","front barbell squat","hang snatch","hanging leg raise",
@@ -110,11 +110,12 @@ public class Workouts extends AppCompatActivity {
         }
         protected void doGet(){
             System.out.println("Workouts, this doGet method was called");
+            //TODO:Change to actual IP addresses once the semantic server is hosted.
             try {
                 if(hasCreated == false){
-                    ServerURL = "http://10.0.2.2/adultWorkout/"+nic;
+                    ServerURL = "http://10.0.2.2:8080/adultWorkout/"+nic;
                 }else{
-                    ServerURL ="http://10.0.2.2/adultWorkout/second/"+nic;
+                    ServerURL ="http://10.0.2.2:8080/adultWorkout/second/"+nic;
                 }
                 URL url = new URL(ServerURL);
                 HttpURLConnection conn = (HttpURLConnection) url.openConnection();
@@ -123,6 +124,7 @@ public class Workouts extends AppCompatActivity {
                 conn.setRequestProperty("Accept","application/json");
 
                 if(conn.getResponseCode()==200){
+                    System.out.println("Workouts, if statement reached");
                     Log.d("Workouts","response code 200");
                 }else{
                     Log.e("Workouts",conn.getResponseMessage());
