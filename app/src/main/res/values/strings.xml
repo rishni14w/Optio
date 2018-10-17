@@ -562,4 +562,10 @@
     <string name="stresslevel">Stress Level</string>
     <string name="user_stresslevel">Current Stress Level :</string>
     <string name="stressScore">Stress score :</string>
+
+    //stress question ui
+    <string name="stressq">Stress Question</string>
+    <string name="question">Type your concern to get suggestions</string>
+    <string name="user_question_placeholder">enter here</string>
+    <string name="recommend">Need advice</string>
 </resources>

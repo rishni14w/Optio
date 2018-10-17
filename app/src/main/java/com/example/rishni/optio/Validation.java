@@ -19,6 +19,14 @@ public class Validation {
         return false;
     }
 
+    public boolean isEmpty(String value1)
+    {
+        if((value1.isEmpty()))
+        {
+            return true;
+        }
+        return false;
+    }
     public boolean isGreaterthan(String value1,String value2)
     {
         int int1=Integer.parseInt(value1);

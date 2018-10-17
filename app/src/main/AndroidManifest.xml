@@ -63,7 +63,12 @@
         <activity android:name=".WorkoutHome" />
         <activity android:name=".WorkOutOptions" />
         <activity android:name=".Workouts" />
+
         <activity android:name=".model.ChildWorkout"></activity>
+
+        <activity android:name=".StressQuestion" />
+        <activity android:name=".Recommendation_details"></activity>
+
     </application>
 
 </manifest>

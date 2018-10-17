@@ -91,6 +91,15 @@ public class StressAndHealth extends AppCompatActivity {
             Intent i= new Intent(this,StressLevel.class);
             startActivity(i);
         }
+    }
+
+    public void stressq_clicked(View view)
+    {
+        if (view.getId()==R.id.stressq_btn)
+        {
+            Intent i= new Intent(this,StressQuestion.class);
+            startActivity(i);
+        }
 
     }
 }
