@@ -24,13 +24,13 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         SharedPreferences preferences = getApplicationContext().getSharedPreferences("AthletePref",0);
-        SharedPreferences.Editor editor = preferences.edit();
+        /*SharedPreferences.Editor editor = preferences.edit();
         editor.putString("AthleteName","John Doe");
         editor.putString("AthleteNic","906541226V");
         editor.putString("AthleteHeight","180 cm");
         editor.putString("AthleteWeight","75 kg");
         editor.putString("AthletePlayedSince","2009");
-        editor.commit();
+        editor.commit();*/
 
     }
 
