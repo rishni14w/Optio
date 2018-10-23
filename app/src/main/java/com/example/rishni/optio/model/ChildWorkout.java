@@ -25,6 +25,7 @@ import java.util.List;
 
 public class ChildWorkout extends AppCompatActivity {
 
+    //TODO:Change url once the semantic backend is hosted
     String ServerURL = "http://10.0.2.2:8080/";
     KidExpandableList listAdapter;
     ExpandableListView expListView;
@@ -45,7 +46,7 @@ public class ChildWorkout extends AppCompatActivity {
         new ChildServer().execute();
     }
     private void prepareListData() {
-        
+
         listDataHeader = new ArrayList<String>();
         listDataChild = new HashMap<String, String>();
         listVideoUrl = new HashMap<String, String>();
