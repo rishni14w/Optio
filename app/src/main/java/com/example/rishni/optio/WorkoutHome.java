@@ -18,6 +18,7 @@ public class WorkoutHome extends AppCompatActivity implements View.OnClickListen
 
     Button workoutBtn;
     Button trainingBtn;
+    Button complaintsBtn;
     int age = 0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +37,19 @@ public class WorkoutHome extends AppCompatActivity implements View.OnClickListen
         }
         catch(ParseException e){
             e.printStackTrace();
+        }
+        complaintsBtn = (Button)findViewById(R.id.complaintsBtn);
+        if(age>16){
+            complaintsBtn.setVisibility(View.VISIBLE);
+            complaintsBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(WorkoutHome.this,Complaint.class);
+                    startActivity(intent);
+                }
+            });
+        }else{
+            complaintsBtn.setVisibility(View.INVISIBLE);
         }
         workoutBtn = (Button)findViewById(R.id.workoutBtn);
         workoutBtn.setOnClickListener(this);
