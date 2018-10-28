@@ -568,4 +568,7 @@
     <string name="question">Type your concern to get suggestions</string>
     <string name="user_question_placeholder">enter here</string>
     <string name="recommend">Need advice</string>
+
+    //complaints UI
+    <string name="complaintLblText">Tell us if you are hurting!</string>
 </resources>
