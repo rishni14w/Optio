@@ -571,4 +571,7 @@
 
     //complaints UI
     <string name="complaintLblText">Tell us if you are hurting!</string>
+    //Training home
+    <string name="markAttendanceButton">Mark Attendance</string>
+    <string name="getDrillsButton">Training Drills</string>
 </resources>

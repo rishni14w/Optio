@@ -7,7 +7,6 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.Toast;
 
 import org.json.JSONException;
@@ -22,38 +21,39 @@ import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class Complaint extends AppCompatActivity {
+public class TrainingHome extends AppCompatActivity implements View.OnClickListener {
 
-    String nic = "958013587V";
-    Button complaintSubmit;
-    EditText complaintET;
-    String comment = "None";
+    Button markAttendance;
+    Button getDrills;
     String cdate;
-    String ServerURL = "https://murmuring-cove-69371.herokuapp.com/feedback";
+    String nic;
+    String ServerURL = "https://murmuring-cove-69371.herokuapp.com/attendance";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_complaint);
+        setContentView(R.layout.activity_training_home);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        Date date1 = new Date();
+        cdate = simpleDateFormat.format(date1);
         SharedPreferences preferences = getApplicationContext().getSharedPreferences("AthletePref",0);
         nic = preferences.getString("AthleteNic",null);
         if(nic.isEmpty()||nic.equalsIgnoreCase("")||nic==null){
             nic = "958013587V";
         }
+        markAttendance = (Button)findViewById(R.id.markAttendanceBtn);
+        markAttendance.setOnClickListener(this);
 
-        complaintET = (EditText)findViewById(R.id.complaintET);
-        complaintSubmit = (Button)findViewById(R.id.complaintSubmit);
-
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        Date date1 = new Date();
-        cdate = simpleDateFormat.format(date1);
-        complaintSubmit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                comment = complaintET.getText().toString();
-                new SendData().execute();
-            }
-        });
     }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.markAttendanceBtn:
+                new SendData().execute();
+                break;
+        }
+    }
+
     class SendData extends AsyncTask {
 
         @Override
@@ -75,7 +75,6 @@ public class Complaint extends AppCompatActivity {
 
                 JSONObject jsonParam = new JSONObject();
                 jsonParam.put("nic",nic);
-                jsonParam.put("comment",comment);
                 jsonParam.put("date",cdate);
 
                 DataOutputStream os = new DataOutputStream(conn.getOutputStream());
