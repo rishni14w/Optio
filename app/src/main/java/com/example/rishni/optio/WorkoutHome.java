@@ -53,6 +53,8 @@ public class WorkoutHome extends AppCompatActivity implements View.OnClickListen
         }
         workoutBtn = (Button)findViewById(R.id.workoutBtn);
         workoutBtn.setOnClickListener(this);
+        trainingBtn = (Button)findViewById(R.id.trainingBtn);
+        trainingBtn.setOnClickListener(this);
     }
 
     @Override
@@ -67,6 +69,10 @@ public class WorkoutHome extends AppCompatActivity implements View.OnClickListen
                     Intent intent = new Intent(WorkoutHome.this,ChildWorkout.class);
                     startActivity(intent);
                 }
+                break;
+            case R.id.trainingBtn:
+                Intent intent = new Intent(WorkoutHome.this,TrainingHome.class);
+                startActivity(intent);
                 break;
 
         }
