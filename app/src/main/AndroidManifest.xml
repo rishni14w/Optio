@@ -33,6 +33,7 @@
         <activity android:name=".ViewProfile" />
         <activity android:name=".PreCompetition" />
         <activity android:name=".WeeklySteps" />
+        <activity android:name=".model.DietHome" />
         <activity android:name=".Login">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -67,7 +68,7 @@
         <activity android:name=".StressQuestion" />
         <activity android:name=".Recommendation_details" />
         <activity android:name=".Complaint" />
-        <activity android:name=".TrainingHome"></activity>
+        <activity android:name=".TrainingHome" />
     </application>
 
 </manifest>
