@@ -9,6 +9,8 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.rishni.optio.model.DietHome;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -50,6 +52,9 @@ public class MainActivity extends AppCompatActivity {
             startActivity(i);
         }else if(view.getId()==R.id.buttonExercise){
             Intent i = new Intent(MainActivity.this,WeeklySteps.class);
+            startActivity(i);
+        }else if (view.getId()==R.id.button2){
+            Intent i = new Intent(MainActivity.this, DietHome.class);
             startActivity(i);
         }
 
