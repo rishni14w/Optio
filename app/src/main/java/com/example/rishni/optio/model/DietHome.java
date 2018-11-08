@@ -14,6 +14,7 @@ import android.widget.TextView;
 //import com.example.rishni.optio.CustomizeMealPlans;
 import com.example.rishni.optio.MainActivity;
 //import com.example.rishni.optio.MealPlans;
+import com.example.rishni.optio.MealPlans;
 import com.example.rishni.optio.R;
 import com.example.rishni.optio.StressAndHealth;
 
@@ -159,7 +160,7 @@ public class DietHome extends AppCompatActivity {
             public void onClick(View view) {
                 //startActivity(new Intent(ResultActivity.this,DietPlanActivity.class));
                 //startActivity(new Intent(activity_generate_diet.this,GenerateDietPlan.class));
-              //---  startActivity(new Intent(DietHome.this,MealPlans.class));
+              startActivity(new Intent(DietHome.this,MealPlans.class));
 //                Intent i= new Intent(DietHome.this,GenerateDietPlan.class);
 //                startActivity(i);
             }
