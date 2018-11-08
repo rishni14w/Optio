@@ -1,0 +1,76 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.rishni.optio.MealPlans$PlaceholderFragment">
+
+    <ImageView
+        android:id="@+id/imageView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/salad1" />
+
+    <TextView
+        android:id="@+id/foodName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageView5"
+        android:fontFamily="serif"
+        android:text="Basic Green smoothie"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/calorie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/foodName"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="36dp"
+        android:fontFamily="serif"
+        android:text="129.11Cal"
+        android:textColor="@color/common_google_signin_btn_text_dark_focused"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/accept"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="36dp"
+        android:fontFamily="serif"
+        android:text="9/17water,9/17 mixed fruit,22/17 spinach2/15 pinch cayenne pepper,1.9 chia seeds,3/11tbsp ground flaxseed" />
+
+    <Button
+        android:id="@+id/skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/calorie"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="61dp"
+        android:layout_marginEnd="30dp"
+        android:background="@color/Yellow"
+        android:fontFamily="serif"
+        android:text="SKIP" />
+
+    <Button
+        android:id="@+id/accept"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/skip"
+        android:layout_alignBottom="@+id/skip"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="86dp"
+        android:background="@color/Green"
+        android:fontFamily="serif"
+        android:text="Accept" />
+
+</RelativeLayout>
