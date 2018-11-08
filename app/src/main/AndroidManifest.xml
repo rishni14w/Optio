@@ -69,6 +69,10 @@
         <activity android:name=".Recommendation_details" />
         <activity android:name=".Complaint" />
         <activity android:name=".TrainingHome" />
+        <activity
+            android:name=".MealPlans"
+            android:label="@string/title_activity_meal_plans"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>
