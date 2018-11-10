@@ -1,5 +1,6 @@
 package com.example.rishni.optio;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
@@ -42,6 +43,8 @@ public class TrainingHome extends AppCompatActivity implements View.OnClickListe
         }
         markAttendance = (Button)findViewById(R.id.markAttendanceBtn);
         markAttendance.setOnClickListener(this);
+        getDrills = (Button)findViewById(R.id.getDrillsBtn);
+        getDrills.setOnClickListener(this);
 
     }
 
@@ -50,6 +53,10 @@ public class TrainingHome extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()){
             case R.id.markAttendanceBtn:
                 new SendData().execute();
+                break;
+            case R.id.getDrillsBtn:
+                Intent intent = new Intent(this,Training.class);
+                startActivity(intent);
                 break;
         }
     }

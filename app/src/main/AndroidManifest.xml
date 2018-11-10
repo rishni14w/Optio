@@ -72,7 +72,8 @@
         <activity
             android:name=".MealPlans"
             android:label="@string/title_activity_meal_plans"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".Training"></activity>
     </application>
 
 </manifest>
