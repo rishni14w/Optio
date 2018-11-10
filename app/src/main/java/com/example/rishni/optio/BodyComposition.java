@@ -124,7 +124,7 @@ public class BodyComposition extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    class PutData extends AsyncTask{
+    class PutData extends AsyncTask {
 
         @Override
         protected Object doInBackground(Object[] objects) {
