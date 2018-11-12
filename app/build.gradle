@@ -35,5 +35,5 @@ dependencies {
     implementation 'com.google.android.gms:play-services-fitness:8.4.0'
     implementation 'com.amazonaws:aws-android-sdk-core:2.6.+'
     implementation 'com.amazonaws:aws-android-sdk-machinelearning:2.6.+'
-
+    implementation 'com.loopj.android:android-async-http:1.4.9'
 }

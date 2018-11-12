@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/background1"
+    tools:context="com.example.rishni.optio.CustomizeMealPlans">
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="17dp"
+        android:layout_marginTop="30dp"
+        android:textColor="@color/colorWhite"
+        android:text="Customize Your Meal Plans Here.."
+        android:textSize="18sp" />
+
+    <Spinner
+        android:id="@+id/FoodName1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textView11"
+        android:layout_marginTop="39dp"
+        android:layout_toEndOf="@+id/textView12" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignTop="@+id/FoodName1"
+        android:textColor="@color/colorWhite"
+        android:text="Food Name 1" />
+
+    <TextView
+        android:id="@+id/textView16"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/FoodName1"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="35dp"
+        android:text="FoodName 2" />
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView16"
+        android:layout_alignStart="@+id/FoodName1" />
+
+    <TextView
+        android:id="@+id/textView17"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/textView16"
+        android:textColor="@color/colorWhite"
+        android:layout_marginTop="33dp"
+        android:text="Food Name 3" />
+
+    <Spinner
+        android:id="@+id/spinner3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView17"
+        android:layout_toEndOf="@+id/textView17" />
+
+    <TextView
+        android:id="@+id/Calorie1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/textView12"
+        android:layout_marginStart="48dp"
+        android:layout_toEndOf="@+id/FoodName1"
+        android:textColor="@color/colorWhite"
+        android:text="Calorie1" />
+
+    <TextView
+        android:id="@+id/Calorie2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignEnd="@+id/Calorie1"
+        android:layout_alignTop="@+id/textView16"
+        android:textColor="@color/colorWhite"
+        android:text="Calorie2" />
+
+    <TextView
+        android:id="@+id/Calorie3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignStart="@+id/Calorie2"
+        android:layout_alignTop="@+id/textView17"
+        android:textColor="@color/colorWhite"
+        android:text="Calorie3" />
+
+    <EditText
+        android:id="@+id/editText3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/FoodName1"
+        android:layout_alignParentEnd="true"
+        android:textColor="@color/colorWhite"
+        android:layout_marginEnd="23dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Amount1"
+        android:textSize="8sp" />
+
+    <EditText
+        android:id="@+id/editText4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Calorie2"
+        android:textColor="@color/colorWhite"
+        android:layout_alignStart="@+id/editText3"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Amount2"
+        android:textSize="8sp" />
+
+    <EditText
+        android:id="@+id/editText5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/Calorie3"
+        android:layout_alignStart="@+id/editText4"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:textColor="@color/colorWhite"
+        android:text="Amount3"
+        android:textSize="8sp" />
+
+    <Button
+        android:id="@+id/btn_TotalCalorie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/TotalCalorie"
+        android:layout_alignBottom="@+id/TotalCalorie"
+        android:layout_alignStart="@+id/textView11"
+        android:text="Total Calorie" />
+
+    <TextView
+        android:id="@+id/TotalCalorie"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorWhite"
+        android:layout_alignEnd="@+id/editText5"
+        android:layout_below="@+id/editText5"
+        android:layout_marginEnd="12dp"
+        android:layout_marginTop="57dp"
+        android:text="TotalCalorie"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/Save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_TotalCalorie"
+        android:layout_marginTop="44dp"
+        android:layout_toEndOf="@+id/Calorie3"
+        android:text="Save" />
+
+    <Button
+        android:id="@+id/Cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/Save"
+        android:layout_alignBottom="@+id/Save"
+        android:layout_alignEnd="@+id/btn_TotalCalorie"
+        android:text="Cancel" />
+
+</RelativeLayout>

@@ -1,147 +1,56 @@
 package com.example.rishni.optio.model;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.view.animation.AlphaAnimation;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 //import com.example.rishni.optio.CustomizeMealPlans;
-import com.example.rishni.optio.MainActivity;
 //import com.example.rishni.optio.MealPlans;
+import com.example.rishni.optio.CustomizeMealPlans;
 import com.example.rishni.optio.MealPlans;
 import com.example.rishni.optio.R;
-import com.example.rishni.optio.StressAndHealth;
+import com.loopj.android.http.*;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.IOException;
+import java.net.HttpURLConnection;
+
+import cz.msebera.android.httpclient.HttpEntity;
+import cz.msebera.android.httpclient.HttpResponse;
+import cz.msebera.android.httpclient.client.HttpClient;
+import cz.msebera.android.httpclient.client.methods.HttpPost;
+import cz.msebera.android.httpclient.entity.StringEntity;
+import cz.msebera.android.httpclient.impl.client.DefaultHttpClient;
+import cz.msebera.android.httpclient.util.EntityUtils;
 
 //import static com.example.rishni.optio.R.anim.cursor_move_normal;
 
 public class DietHome extends AppCompatActivity {
-    public TextView age,feet,inches,pounds,result_txt,Check_result,calorie;
-
-
-    private static Double Normal_up = 25.0;
-    private static Double Normal_Down = 18.0;
-    private static Double underweight =14.0;
-    private static Double Obes = 40.0;
-    private Button btn ,rest_btn,diet_btn,junk_button,statics_btn,cross_btn;
-
-    //public double weight,height,activityLevel,age,RMR;
-
+    public TextView age, feet, inches, pounds, result_txt, Check_result, calorie;
+    public String IDNumber ="937030045V";
+    public String saveddata ="";
+    public JSONObject jsono;
+    private Button btn, rest_btn, diet_btn, junk_button, statics_btn, cross_btn;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_diet_home);
 
-        double rice100gCal=150;
-        double weight=50.5;
-        double height=5.5;
-        double activityLevel=1.9;
-        double RMR;
-        double age=21;
-        double CalorieIntake;
-        String Gender="F";
 
-        if (Gender=="F"){
-            //RMR	= 9.9 * weight + ( 6.25 * height ) - ( 4.92 * age) + 5
-            //RMR	= 9.9 * Weight ( Kg ) + ( 6.25 * Height ( cm ) ) - ( 4.92 * Age) -161
-            RMR	= (9.9 *weight)+(6.25*height)-(4.92*age)+161;
-        }else {
-            RMR	= (9.9 *weight)+(6.25*height)-(4.92*age)+5;
-        }
+        calorie = (TextView) findViewById(R.id.cal_final);
 
-        CalorieIntake = RMR *activityLevel;
-        String a=Double.toString(CalorieIntake);
-        calorie = (TextView) findViewById(R.id.weight_txt);
-        calorie.setText(a);
-
-
-
-/*
-        ImageView under = (ImageView) findViewById(R.id.image_underWeight);
-        ImageView Normal = (ImageView) findViewById(R.id.imageNormal);
-        ImageView Over = (ImageView) findViewById(R.id.image_overWeight);
-        ImageView obes = (ImageView) findViewById(R.id.imageObese);
-
-
-        age = (TextView) findViewById(R.id.age_txt);
-        age.setText(getIntent().getStringExtra("AGE"));
-
-        feet = (TextView) findViewById(R.id.feet_txt);
-        feet.setText(getIntent().getStringExtra("FEET"));
-
-        inches = (TextView) findViewById(R.id.inches_txt);
-        inches.setText(getIntent().getStringExtra("INCHES"));
-
-        pounds = (TextView) findViewById(R.id.weight_txt);
-        pounds.setText(getIntent().getStringExtra("POUND"));
-
-        Bundle extras = getIntent().getExtras();
-
-        result_txt = (TextView) findViewById(R.id.Result_txt);
-
-        Check_result = (TextView) findViewById(R.id.textView2);
-        result_txt.setText(extras.getString("RESULT"));
-
-
-        TextView calorieTxt = (TextView) findViewById(R.id.calorie_text);
-        calorieTxt.setText((extras.getString("RESULT1")));
-
-        int value = getIntent().getIntExtra("RESULT", 0);
-
-
-//        if (result_txt.getText().toString().equals("")){
-//
-//
-//        }else {
-//            if(result_txt.getText().toString().trim().equals("17")){
-//                Check_result.setText("Under weight");
-//                under.setVisibility(View.VISIBLE);
-//                Animation anim = AnimationUtils.loadAnimation(this, R.anim.cursor_move);
-//                under.setAnimation(anim);
-//            }
-//            if((value>25 )&& (value>=30)){
-//                Check_result.setText("over weight");
-//                Over.setVisibility(View.VISIBLE);
-//            }
-//            if((value>= underweight) && (value<Normal_Down)){
-//                Check_result.setText("Obese");
-//                obes.setVisibility(View.VISIBLE);
-//
-//            }
-//        }
-
-/*
-        if ((value <= Normal_up) && (value <= Normal_Down)) {
-            Check_result.setText("Normal");
-            Normal.setVisibility(View.VISIBLE);
-            Animation anim_normal = AnimationUtils.loadAnimation(this, R.anim.cursor_move_normal);
-            Normal.setAnimation(anim_normal);
-
-        }
-
-        if ((value > 25) && (value >= 30)) {
-            Check_result.setText("over weight");
-            Over.setVisibility(View.VISIBLE);
-        }
-        if (value > 25) {
-            Check_result.setText("Under weight");
-            under.setVisibility(View.VISIBLE);
-            Animation anim = AnimationUtils.loadAnimation(this, R.anim.cursor_move);
-            under.setAnimation(anim);
-        }
-        if ((value >= underweight) && (value < Obes)) {
-            Check_result.setText("Obese");
-            obes.setVisibility(View.VISIBLE);
-
-        }
-    }
-*/
+        new JSONAsyncTask().execute();
+        new Final().execute();
+//        JSONAsyncTask newJsonAsyncTask = new JSONAsyncTask();
 
 // menu button  Start here////
 
@@ -150,7 +59,7 @@ public class DietHome extends AppCompatActivity {
         rest_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            //---    startActivity(new Intent(DietHome.this,GenerateDietPlan.class));
+               // startActivity(new Intent(DietHome.this,GenerateDietPlan.class));
             }
         });
 
@@ -160,7 +69,7 @@ public class DietHome extends AppCompatActivity {
             public void onClick(View view) {
                 //startActivity(new Intent(ResultActivity.this,DietPlanActivity.class));
                 //startActivity(new Intent(activity_generate_diet.this,GenerateDietPlan.class));
-              startActivity(new Intent(DietHome.this,MealPlans.class));
+                startActivity(new Intent(DietHome.this,MealPlans.class));
 //                Intent i= new Intent(DietHome.this,GenerateDietPlan.class);
 //                startActivity(i);
             }
@@ -171,7 +80,7 @@ public class DietHome extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 //       startActivity(new Intent(DietHome.this,ExercisesActivity.class));
-              //----  startActivity(new Intent(DietHome.this, CustomizeMealPlans.class));
+                startActivity(new Intent(DietHome.this, CustomizeMealPlans.class));
             }
         });
         statics_btn = (Button)findViewById(R.id.Static_btn);
@@ -182,11 +91,7 @@ public class DietHome extends AppCompatActivity {
             }
         });
         cross_btn =(Button)findViewById(R.id.cross_btn);
-
-
     }
-
-
     public void btnClicked(View view) {
         btn.setVisibility(View.INVISIBLE);
         btn.startAnimation(buttonClick);
@@ -232,4 +137,203 @@ public class DietHome extends AppCompatActivity {
 
     }
     // menu button  End here////
+
+    private class Final extends AsyncTask<String, Void, Void> {
+
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+        }
+
+        @Override
+        public Void doInBackground(String... urls) {
+            try {
+
+                //------------------>>
+                HttpGet httppost = new HttpGet("https://murmuring-cove-69371.herokuapp.com/calorie/"+IDNumber);
+                HttpClient httpclient = new DefaultHttpClient();
+                HttpResponse response = httpclient.execute(httppost);
+
+                // StatusLine stat = response.getStatusLine();
+                int status = response.getStatusLine().getStatusCode();
+
+                if (status == 200) {
+                    HttpEntity entity = response.getEntity();
+                    String data = EntityUtils.toString(entity);
+
+
+                    jsono = new JSONObject(data);
+
+                    if(jsono != null){
+                        Log.e("CalaryDataFinal",jsono.toString());
+                        Log.e("cal",jsono.getString("totalCalorie"));
+                    }
+                    return null;
+
+                }
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+
+                e.printStackTrace();
+            }
+            return null;
+        }
+
+        protected void onPostExecute(Void voids) {
+            super.onPostExecute(voids);
+            findViewById(R.id.cal_final).setVisibility(View.VISIBLE);
+            try {
+                calorie.setText(jsono.getString("totalCalorie"));
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+
+        }
+
+//    protected String doInBackground(String... strings) {
+//
+//        String response = "";
+//        Context context = getApplicationContext();
+//        CharSequence text = "Hello toast!";
+//        int duration = Toast.LENGTH_SHORT;
+//
+//        Toast toast = Toast.makeText(context, text, duration);
+//        toast.show();
+//
+//
+//        response = ServiceHandler.findJSONFromUrl("https://murmuring-cove-69371.herokuapp.com/getAthlete/937030045V");
+//        String data = response;
+//        return response;
+//    }
+
+
+    }
+
+    public class REST extends AsyncTask<Void, Void, Void> {
+        @Override
+        protected Void doInBackground(Void... params) {
+            HttpURLConnection urlConnection=null;
+            String json = null;
+            // The Username & Password
+
+            // -----------------------
+
+            try {
+                HttpResponse response;
+                JSONObject jsonObject = new JSONObject();
+                jsonObject.accumulate("nic", "937030045V");
+                json = jsonObject.toString();
+                HttpClient httpClient = new DefaultHttpClient();
+                HttpPost httpPost = new HttpPost("https://murmuring-cove-69371.herokuapp.com/calorie/");
+                httpPost.setEntity(new StringEntity(json, "UTF-8"));
+                httpPost.setHeader("Content-Type", "application/json");
+                httpPost.setHeader("Accept-Encoding", "application/json");
+                httpPost.setHeader("Accept-Language", "en-US");
+                response = httpClient.execute(httpPost);
+                String sresponse = response.getEntity().toString();
+                // Log.e("QueingSystem", sresponse);
+                Log.e("RESTDone", EntityUtils.toString(response.getEntity()));
+                //new Final().execute();
+
+            }
+            catch (Exception e) {
+                Log.d("InputStream", e.getLocalizedMessage());
+
+            } finally {
+                /* nothing to do here */
+            }
+            return null;
+        }
+
+        @Override
+        protected void onPostExecute(Void result) {
+            if (result != null) {
+                // do something
+            } else {
+                // error occured
+            }
+        }
+    }
+
+
+
+    class JSONAsyncTask extends AsyncTask<String, Void, Boolean> {
+
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+        }
+
+        @Override
+        public Boolean doInBackground(String... urls) {
+            try {
+
+                //------------------>>
+                HttpGet httppost = new HttpGet("https://murmuring-cove-69371.herokuapp.com/getAthlete/"+IDNumber);
+                HttpClient httpclient = new DefaultHttpClient();
+                HttpResponse response = httpclient.execute(httppost);
+
+                // StatusLine stat = response.getStatusLine();
+                int status = response.getStatusLine().getStatusCode();
+
+                if (status == 200) {
+                    HttpEntity entity = response.getEntity();
+                    String data = EntityUtils.toString(entity);
+
+
+                    JSONObject jsono = new JSONObject(data);
+
+                    if(jsono != null){
+                        Log.e("JSONAsyncTaskDone",jsono.toString());
+                        saveddata =jsono.toString();
+                        new REST().execute();
+                    }
+                    return true;
+
+                }
+
+
+            } catch (IOException e) {
+                e.printStackTrace();
+            } catch (JSONException e) {
+
+                e.printStackTrace();
+            }
+            return false;
+        }
+
+        protected void onPostExecute(Boolean result) {
+
+        }
+
+//    protected String doInBackground(String... strings) {
+//
+//        String response = "";
+//        Context context = getApplicationContext();
+//        CharSequence text = "Hello toast!";
+//        int duration = Toast.LENGTH_SHORT;
+//
+//        Toast toast = Toast.makeText(context, text, duration);
+//        toast.show();
+//
+//
+//        response = ServiceHandler.findJSONFromUrl("https://murmuring-cove-69371.herokuapp.com/getAthlete/937030045V");
+//        String data = response;
+//        return response;
+//    }
+
+
+    }
+
+
 }
+
+
+
